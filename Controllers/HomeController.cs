@@ -26,6 +26,15 @@ namespace web1.Controllers
             PagedList<Sanpham> lst = new PagedList<Sanpham>(lstSanpham, pageNum, pageSize);
             return View(lst);
         }
+        public IActionResult GiayTheoThuongHieu(int maThuongHieu, int? page)
+        {
+            int pageSize = 1;
+            int pageNum = page == null || page < 0 ? 1 : page.Value;
+            List<Sanpham> lstsanpham = db.Sanphams.Where(x => x.MaThuongHieu == maThuongHieu).OrderBy(X=>X.TenGiay).ToList();
+            PagedList<Sanpham> lst = new PagedList<Sanpham>(lstsanpham, pageNum, pageSize);
+            ViewBag.MaThuongHieu = maThuongHieu;
+            return View(lst);
+        }
         public IActionResult Privacy()
         {
             return View();

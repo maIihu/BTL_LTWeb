@@ -1,0 +1,69 @@
+﻿
+@{
+    ViewData["Title"] = "GiayTheoThuongHieu";
+    Layout = "~/Views/Shared/_LayoutHome.cshtml";
+}
+
+
+ @using X.PagedList.Mvc.Core;
+@model X.PagedList.IPagedList<Sanpham> 
+
+
+<!-- Container bao quanh toàn bộ nội dung -->
+<div class="List" style=" padding-left: 50px; padding-right: 50px">
+    <!-- Bọc các sản phẩm trong row -->
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+                <div class="product-item bg-light mb-4">
+                    <div class="product-img position-relative overflow-hidden">
+                        <div class="text-center">
+                            <img class="img-fluid  w-50" src="@Url.Content("~/img/AnhGiay/"+item.AnhBia)" alt="">
+                        </div>
+                        <div class="product-action">
+                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
+                            <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
+                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-sync-alt"></i></a>
+                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-search"></i></a>
+                        </div>
+                    </div>
+                    <div class="text-center py-4">
+                        <a class="h6 text-decoration-none text-truncate" href="">@item.TenGiay</a>
+                        <div class="d-flex align-items-center justify-content-center mt-2">
+                            <h5>@item.GiaBan</h5>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-center mb-1">
+                            <small class="fa fa-star text-primary mr-1"></small>
+                            <small class="fa fa-star text-primary mr-1"></small>
+                            <small class="fa fa-star text-primary mr-1"></small>
+                            <small class="fa fa-star text-primary mr-1"></small>
+                            <small class="fa fa-star text-primary mr-1"></small>
+                            <small>@item.SoLuongTon</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+
+    <!-- Phần phân trang -->
+     <div class="row">
+        <div class="col-12 text-center">
+            <div class="pagination-container">
+                @Html.PagedListPager(Model, page => Url.Action("GiayTheoThuongHieu", new { page = page , mathuonghieu = ViewBag.MaThuongHieu }),
+                         new PagedListRenderOptions
+                {
+                    LiElementClasses = new[] { "page-item" }, // Lớp CSS cho mỗi ô phân trang
+                    PageClasses = new[] { "page-link" }, // Lớp CSS cho liên kết trong mỗi ô
+                    UlElementClasses = new[] { "pagination", "justify-content-center" }, // Căn giữa phân trang
+                    ActiveLiElementClass = "active", // Lớp cho trang hiện tại
+                    PreviousElementClass = "page-item", // Lớp cho nút trang trước
+                    NextElementClass = "page-item" // Lớp cho nút trang tiếp theo
+                })
+            </div>
+        </div>
+    </div> 
+
+</div>
+
