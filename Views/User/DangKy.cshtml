@@ -1,0 +1,79 @@
+﻿@{
+    ViewData["Title"] = "DangKy";
+    Layout = "~/Views/Shared/_LayoutHome.cshtml";
+}
+@model web1.Models.Khachhang
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h4 class="text-center font-weight-bold">ĐĂNG KÝ TÀI KHOẢN</h4>
+
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <form asp-action="DangKy">
+                <div class="form-group">
+                    <label>Họ tên khách hàng<span class="text-danger">*</span></label>
+                    <input asp-for="HoTen" class="form-control" />
+                    <span asp-validation-for="HoTen" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label>Tên đăng nhập<span class="text-danger">*</span></label>
+                    <input asp-for="TaiKhoanKh" class="form-control" />
+                    <span asp-validation-for="TaiKhoanKh" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label>Mật khẩu<span class="text-danger">*</span></label>
+                    <input asp-for="MatKhau" type="password" class="form-control" />
+                    <span asp-validation-for="MatKhau" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label>Nhập lại mật khẩu<span class="text-danger">*</span></label>
+                    <input asp-for="NhapLaiMatKhau" type="password" class="form-control" />
+                    <span asp-validation-for="NhapLaiMatKhau" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label>Email<span class="text-danger">*</span></label>
+                    <input asp-for="EmailKh" class="form-control" />
+                    <span asp-validation-for="EmailKh" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label>Địa chỉ<span class="text-danger">*</span></label>
+                    <input asp-for="DiaChiKh" class="form-control" />
+                    <span asp-validation-for="DiaChiKh" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label>Số điện thoại<span class="text-danger">*</span></label>
+                    <input asp-for="DienThoaiKh" class="form-control" />
+                    <span asp-validation-for="DienThoaiKh" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label>Ngày sinh<span class="text-danger">*</span></label>
+                    <input asp-for="NgaySinh" class="form-control" type="date" />
+                    <span asp-validation-for="NgaySinh" class="text-danger"></span>
+                </div>
+
+                <div class="text-center">
+                    <input type="submit" value="Đăng ký" class="btn btn-success" />
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+    <hr />
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h5 class="text-center text-muted">ĐĂNG NHẬP TÀI KHOẢN</h5>
+            <div class="text-center mt-3">
+                <a href="@Url.Action("Dangnhap", "User")" class="btn btn-primary">Đăng nhập ngay</a>
+            </div>
+        </div>
+    </div>
+</div>

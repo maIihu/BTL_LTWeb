@@ -1,4 +1,4 @@
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using web1.Models;
 using web1.Repository;
 
@@ -6,6 +6,9 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Logging.ClearProviders();
+builder.Logging.AddConsole(); // Hoặc thêm các logger khác theo nhu cầu
 
 var connectionString = builder.Configuration.GetConnectionString("ShopGiayContext");
 builder.Services.AddDbContext<ShopGiayContext>(x=>x.UseSqlServer(connectionString));
@@ -30,14 +33,18 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
+
+
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseSession();
+
 app.UseAuthorization();
 
-app.UseSession();
+
 
 app.MapControllerRoute(
     name: "default",
