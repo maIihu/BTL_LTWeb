@@ -2,77 +2,78 @@
     ViewData["Title"] = "DangKy";
     Layout = "~/Views/Shared/_LayoutHome.cshtml";
 }
+
 @model web1.Models.Khachhang
-<div class="container mt-5">
-    <div class="row justify-content-center">
-        <div class="col-md-6">
-            <h4 class="text-center font-weight-bold">ĐĂNG KÝ TÀI KHOẢN</h4>
 
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+<div class="login">
+    <div class="wrap">
+        <div class="col-md-6 offset-md-3">
+            <!-- Trung tâm trang -->
+            @using (Html.BeginForm(null, null, FormMethod.Post, new { autocomplete = "off" }))
+            {
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="login-title border rounded p-4">
+                    <h4 class="title text-center font-weight-bold">ĐĂNG KÝ TÀI KHOẢN</h4>
+                    <div class="comments-area">
+                        <div class="form-group">
+                            <label for="HoTen" class="control-label">Họ tên khách hàng <span class="text-danger">*</span></label>
+                            @Html.TextBoxFor(m => m.HoTen, new { @class = "form-control", @placeholder = "Nhập họ tên", autocomplete = "off" })
+                            @Html.ValidationMessageFor(m => m.HoTen, "", new { @class = "text-danger" })
+                        </div>
 
-            <form asp-action="DangKy">
-                <div class="form-group">
-                    <label>Họ tên khách hàng<span class="text-danger">*</span></label>
-                    <input asp-for="HoTen" class="form-control" />
-                    <span asp-validation-for="HoTen" class="text-danger"></span>
+                        <div class="form-group">
+                            <label for="TaiKhoanKh" class="control-label">Tên đăng nhập <span class="text-danger">*</span></label>
+                            @Html.TextBoxFor(m => m.TaiKhoanKh, new { @class = "form-control", @placeholder = "Nhập tên đăng nhập", autocomplete = "off" })
+                            @Html.ValidationMessageFor(m => m.TaiKhoanKh, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="form-group">
+                            <label for="MatKhau" class="control-label">Mật khẩu <span class="text-danger">*</span></label>
+                            @Html.PasswordFor(m => m.MatKhau, new { @class = "form-control", @placeholder = "Nhập mật khẩu", autocomplete = "off" })
+                            @Html.ValidationMessageFor(m => m.MatKhau, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="form-group">
+                            <label for="MatKhauNhapLai" class="control-label">Nhập lại mật khẩu <span class="text-danger">*</span></label>
+                            @Html.PasswordFor(m => m.MatKhauNhapLai, new { @class = "form-control", @placeholder = "Nhập lại mật khẩu", autocomplete = "new-password" })
+                            @Html.ValidationMessageFor(m => m.MatKhauNhapLai, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="form-group">
+                            <label for="EmailKh" class="control-label">Email <span class="text-danger">*</span></label>
+                            @Html.TextBox("EmailKh", null, new { @type = "email", @class = "form-control", @placeholder = "Nhập email", autocomplete = "off" })
+                            @Html.ValidationMessage("EmailKh", "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="form-group">
+                            <label for="DiaChiKh" class="control-label">Địa chỉ <span class="text-danger">*</span></label>
+                            @Html.TextBoxFor(m => m.DiaChiKh, new { @class = "form-control", @placeholder = "Nhập địa chỉ", autocomplete = "off" })
+                            @Html.ValidationMessageFor(m => m.DiaChiKh, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="form-group">
+                            <label for="DienThoaiKh" class="control-label">Số điện thoại <span class="text-danger">*</span></label>
+                            @Html.TextBoxFor(m => m.DienThoaiKh, new { @class = "form-control", @placeholder = "Nhập số điện thoại", autocomplete = "off" })
+                            @Html.ValidationMessageFor(m => m.DienThoaiKh, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="form-group">
+                            <label for="NgaySinh" class="control-label">Ngày sinh <span class="text-danger">*</span></label>
+                            @Html.TextBox("NgaySinh", null, new { @type = "date", @class = "form-control", autocomplete = "off" })
+                            @Html.ValidationMessage("NgaySinh", "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="form-group text-center">
+                            <input type="submit" value="Đăng ký" class="btn btn-primary btn-lg rounded-pill" />
+                        </div>
+                    </div>
                 </div>
+            }
+            <div class="clear mb-4"></div>
 
-                <div class="form-group">
-                    <label>Tên đăng nhập<span class="text-danger">*</span></label>
-                    <input asp-for="TaiKhoanKh" class="form-control" />
-                    <span asp-validation-for="TaiKhoanKh" class="text-danger"></span>
-                </div>
-
-                <div class="form-group">
-                    <label>Mật khẩu<span class="text-danger">*</span></label>
-                    <input asp-for="MatKhau" type="password" class="form-control" />
-                    <span asp-validation-for="MatKhau" class="text-danger"></span>
-                </div>
-
-                <div class="form-group">
-                    <label>Nhập lại mật khẩu<span class="text-danger">*</span></label>
-                    <input asp-for="NhapLaiMatKhau" type="password" class="form-control" />
-                    <span asp-validation-for="NhapLaiMatKhau" class="text-danger"></span>
-                </div>
-
-                <div class="form-group">
-                    <label>Email<span class="text-danger">*</span></label>
-                    <input asp-for="EmailKh" class="form-control" />
-                    <span asp-validation-for="EmailKh" class="text-danger"></span>
-                </div>
-
-                <div class="form-group">
-                    <label>Địa chỉ<span class="text-danger">*</span></label>
-                    <input asp-for="DiaChiKh" class="form-control" />
-                    <span asp-validation-for="DiaChiKh" class="text-danger"></span>
-                </div>
-
-                <div class="form-group">
-                    <label>Số điện thoại<span class="text-danger">*</span></label>
-                    <input asp-for="DienThoaiKh" class="form-control" />
-                    <span asp-validation-for="DienThoaiKh" class="text-danger"></span>
-                </div>
-
-                <div class="form-group">
-                    <label>Ngày sinh<span class="text-danger">*</span></label>
-                    <input asp-for="NgaySinh" class="form-control" type="date" />
-                    <span asp-validation-for="NgaySinh" class="text-danger"></span>
-                </div>
-
-                <div class="text-center">
-                    <input type="submit" value="Đăng ký" class="btn btn-success" />
-                </div>
-            </form>
-
-        </div>
-    </div>
-
-    <hr />
-    <div class="row justify-content-center">
-        <div class="col-md-6">
-            <h5 class="text-center text-muted">ĐĂNG NHẬP TÀI KHOẢN</h5>
-            <div class="text-center mt-3">
-                <a href="@Url.Action("Dangnhap", "User")" class="btn btn-primary">Đăng nhập ngay</a>
+            <h4 class="title text-center" style="font-size: 18px; margin-top: 30px;">BẠN ĐÃ CÓ TÀI KHOẢN</h4>
+            <div class="text-center mb-3">
+                <a href="@Url.Action("DangNhap", "User")">Đăng nhập ngay</a>
             </div>
         </div>
     </div>

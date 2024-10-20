@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.EntityFrameworkCore;
 using web1.Models;
 using web1.Repository;
 
@@ -22,6 +23,13 @@ builder.Services.AddSession(options =>
     options.Cookie.HttpOnly = true;
     options.Cookie.IsEssential = true;
 });
+// Cấu hình dịch vụ authentication với cookie
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+.AddCookie(options =>
+{
+    options.LoginPath = "/User/DangNhap";  // Đường dẫn đến trang đăng nhập
+    options.LogoutPath = "/User/Logout";   // Đường dẫn để đăng xuất
+});
 
 var app = builder.Build();
 
@@ -42,7 +50,9 @@ app.UseRouting();
 
 app.UseSession();
 
+app.UseAuthentication();
 app.UseAuthorization();
+
 
 
 

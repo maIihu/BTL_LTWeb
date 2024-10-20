@@ -2,6 +2,10 @@
 using web1.Models;
 using web1.Helpers;
 using System.Diagnostics;
+using Microsoft.AspNetCore.Http;
+using System.Security.Claims;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies; // Thêm không gian tên này nếu chưa có
 
 namespace web1.Controllers
 {
@@ -15,79 +19,78 @@ namespace web1.Controllers
             _db = db;
             _logger = logger;
         }
-
-        // GET: Display registration form
+        [HttpGet]
         public IActionResult DangKy()
         {
             return View();
         }
-
-        // POST: Handle registration form submission
         [HttpPost]
-        [ValidateAntiForgeryToken]
         public IActionResult DangKy(Khachhang khachhang)
         {
-            if (ModelState.IsValid)
-            {
-                // Kiểm tra xem tài khoản đã tồn tại hay chưa
-                var existingUser = _db.Khachhangs.FirstOrDefault(kh => kh.TaiKhoanKh == khachhang.TaiKhoanKh);
-                if (existingUser != null)
-                {
-                    ModelState.AddModelError("TaiKhoanKh", "Tên đăng nhập đã tồn tại.");
-                    _logger.LogWarning("Tài khoản {TaiKhoanKh} đã tồn tại.", khachhang.TaiKhoanKh);
-                    return View(khachhang);
-                }
-
-                _db.Khachhangs.Add(khachhang);
-                _db.SaveChanges();
-                _logger.LogInformation("Đăng ký thành công cho tài khoản {TaiKhoanKh}.", khachhang.TaiKhoanKh);
-
-                return RedirectToAction("DangNhap");
-            }
-
-            // Trả về view với model nếu có lỗi
-            _logger.LogWarning("Lỗi khi đăng ký: {Errors}", ModelState.Values.SelectMany(v => v.Errors).Select(e => e.ErrorMessage));
-            return View(khachhang);
-        }
-
-        // GET: Display login form
-        public IActionResult DangNhap()
-        {
-            return View();
-        }
-
-        // POST: Handle login form submission
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult DangNhap(Khachhang model)
-        {
-            _logger.LogInformation("Received login request for account: {TaiKhoanKh}", model.TaiKhoanKh);
-
             if (!ModelState.IsValid)
             {
-                _logger.LogWarning("ModelState errors during login: {Errors}", ModelState.Values.SelectMany(v => v.Errors).Select(e => e.ErrorMessage));
-                return View(model);
+                return View(khachhang); // Trả về view nếu dữ liệu không hợp lệ
             }
 
-            var user = _db.Khachhangs
-                .FirstOrDefault(u => u.TaiKhoanKh == model.TaiKhoanKh && u.MatKhau == model.MatKhau);
+            // Kiểm tra xem tên đăng nhập đã tồn tại chưa
+            var existingUser = _db.Khachhangs.FirstOrDefault(u => u.TaiKhoanKh == khachhang.TaiKhoanKh);
+            if (existingUser != null)
+            {
+                ModelState.AddModelError("TaiKhoanKh", "Tên đăng nhập đã tồn tại.");
+                return View(khachhang);
+            }
+
+            // Thêm người dùng mới vào database
+            _db.Khachhangs.Add(khachhang);
+            _db.SaveChanges();
+
+            return RedirectToAction("DangNhap", "User"); // Chuyển hướng đến trang đăng nhập
+        }
+
+        public IActionResult DangNhap()
+        {
+            if (HttpContext.Session.GetString("Username") == null)
+            {
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Index", "Home");
+            }
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> DangNhap(Khachhang khachhang)
+        {
+            var user = _db.Khachhangs.FirstOrDefault(u => u.TaiKhoanKh == khachhang.TaiKhoanKh && u.MatKhau == khachhang.MatKhau);
 
             if (user != null)
             {
-                // Lưu thông tin người dùng vào session
-                HttpContext.Session.SetString("UserID", user.MaKh.ToString());
-                _logger.LogInformation("Đăng nhập thành công cho tài khoản {TaiKhoanKh}, chuyển hướng tới trang chủ.", model.TaiKhoanKh);
+                var claims = new List<Claim>
+                {
+                    new Claim(ClaimTypes.Name, user.TaiKhoanKh)   
+                };
+                var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+                var principal = new ClaimsPrincipal(identity);
+                await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
                 return RedirectToAction("Index", "Home");
             }
             else
             {
-                // Thêm thông báo lỗi nếu đăng nhập không thành công
-                ModelState.AddModelError("", "Tài khoản hoặc mật khẩu không đúng.");
-                _logger.LogWarning("Đăng nhập thất bại cho tài khoản {TaiKhoanKh}: Tài khoản hoặc mật khẩu không đúng.", model.TaiKhoanKh);
+                ModelState.AddModelError("", "Tên đăng nhập hoặc mật khẩu không đúng.");
             }
 
-            // Trả về view với model nếu không thành công
-            return View(model);
+            return View(khachhang);
         }
+
+        public async Task<IActionResult> Logout()
+        {
+            // Đăng xuất và xóa cookie
+            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+
+            // Chuyển hướng về trang đăng nhập
+            return RedirectToAction("DangNhap", "User");
+        }
+
     }
 }
