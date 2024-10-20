@@ -29,6 +29,10 @@
       "PackagePath": "staticwebassets\\css\\bootstrap.min.css"
     },
     {
+      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\css\\button-choose-size.css",
+      "PackagePath": "staticwebassets\\css\\button-choose-size.css"
+    },
+    {
       "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

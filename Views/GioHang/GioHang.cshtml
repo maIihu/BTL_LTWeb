@@ -1,0 +1,52 @@
+﻿@{
+    ViewData["Title"] = "Giỏ Hàng";
+    Layout = "~/Views/Shared/_LayoutHome.cshtml";
+}
+
+@model List<web1.Models.CtDonhang>
+
+<div class="container mt-5">
+    <h2 class="text-center">Giỏ Hàng</h2>
+    @if (Model != null && Model.Any())
+    {
+        // Lấy mã đơn hàng từ sản phẩm đầu tiên
+        int maDonHang = Model.First().MaDonHang; // Khai báo biến maDonHang
+        <h3>Mã Đơn Hàng: @maDonHang</h3> <!-- Hiển thị mã đơn hàng chỉ một lần -->
+
+        <div class="table-responsive">
+            <table class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>Sản phẩm</th>
+                        <th>Số lượng</th>
+                        <th>Giá</th>
+                        <th>Thành tiền</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.MaGiay</td>
+                            <td>@item.SoLuong</td>
+                            <td>@String.Format("{0:0,0}", item.GiaLucBan) đ</td>
+                            <td>@String.Format("{0:0,0}", item.GiaLucBan * item.SoLuong) đ</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        <div class="text-right mt-4">
+            <strong>
+                Tổng cộng:
+                @String.Format("{0:0,0}", Model.Sum(i => i.GiaLucBan * i.SoLuong)) đ
+            </strong>
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-warning text-center" role="alert">
+            Giỏ hàng của bạn đang trống.
+        </div>
+    }
+</div>

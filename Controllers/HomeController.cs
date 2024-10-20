@@ -1,4 +1,4 @@
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using web1.Models;
@@ -35,6 +35,18 @@ namespace web1.Controllers
             ViewBag.MaThuongHieu = maThuongHieu;
             return View(lst);
         }
+        // Dùng ViewBag
+        public IActionResult ChiTietGiay(int maSp)
+        {
+            var sanPham = db.Sanphams.SingleOrDefault(x => x.MaGiay == maSp);
+            if (sanPham != null)
+            {
+                ViewBag.AnhBia = sanPham.AnhBia; // Lấy ảnh và lưu vào ViewBag
+            }
+            return View(sanPham);
+        }
+
+
         public IActionResult Privacy()
         {
             return View();

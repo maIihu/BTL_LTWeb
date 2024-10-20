@@ -26,6 +26,14 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = D:\UTC_CNTT_Nam3_Ky1\BTL\web1
 build_property._RazorSourceGeneratorDebug = 
 
+[D:/UTC_CNTT_Nam3_Ky1/BTL/web1/Views/GioHang/GioHang.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2lvSGFuZ1xHaW9IYW5nLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/UTC_CNTT_Nam3_Ky1/BTL/web1/Views/Home/ChiTietGiay.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDaGlUaWV0R2lheS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/UTC_CNTT_Nam3_Ky1/BTL/web1/Views/Home/GiayTheoThuongHieu.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxHaWF5VGhlb1RodW9uZ0hpZXUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

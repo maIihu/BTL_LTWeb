@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "TysY6IKcUpV+KMu9ErmhU2IGm7fuz39AxnxehPuDcek=",
+  "Hash": "4BYhVj0qbUwP3aB5k8UA/iZKGXwndqNXTkbCY7LbVNo=",
   "Source": "web1",
   "BasePath": "_content/web1",
   "Mode": "Default",
@@ -167,6 +167,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Identity": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\css\\button-choose-size.css",
+      "SourceId": "web1",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\",
+      "BasePath": "_content/web1",
+      "RelativePath": "css/button-choose-size.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\button-choose-size.css"
     },
     {
       "Identity": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\css\\site.css",
