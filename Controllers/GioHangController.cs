@@ -50,5 +50,26 @@ namespace web1.Controllers
             return RedirectToAction("ChiTietGiay", new { maSp = MaGiay });
         }
 
+        [HttpPost]
+        public IActionResult RemoveFromCart(int MaGiay, int MaDonHang)
+        {
+            // Lấy giỏ hàng từ session
+            List<CtDonhang> cart = HttpContext.Session.Get<List<CtDonhang>>("Cart") ?? new List<CtDonhang>();
+
+            // Tìm sản phẩm cần xóa và xóa nó
+            var itemToRemove = cart.FirstOrDefault(item => item.MaGiay == MaGiay && item.MaDonHang == MaDonHang);
+            if (itemToRemove != null)
+            {
+                cart.Remove(itemToRemove);
+            }
+
+            // Lưu lại giỏ hàng vào session
+            HttpContext.Session.Set("Cart", cart);
+
+            // Chuyển hướng về trang giỏ hàng
+            return RedirectToAction("GioHang");
+        }
+
+
     }
 }

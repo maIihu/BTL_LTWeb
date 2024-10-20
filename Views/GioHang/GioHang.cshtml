@@ -21,6 +21,7 @@
                         <th>Số lượng</th>
                         <th>Giá</th>
                         <th>Thành tiền</th>
+                        <th></th> <!-- Thêm cột Hành động -->
                     </tr>
                 </thead>
                 <tbody>
@@ -31,6 +32,13 @@
                             <td>@item.SoLuong</td>
                             <td>@String.Format("{0:0,0}", item.GiaLucBan) đ</td>
                             <td>@String.Format("{0:0,0}", item.GiaLucBan * item.SoLuong) đ</td>
+                            <td>
+                                <form asp-action="RemoveFromCart" asp-controller="GioHang" method="post" style="display:inline;">
+                                    <input type="hidden" name="MaGiay" value="@item.MaGiay" />
+                                    <input type="hidden" name="MaDonHang" value="@maDonHang" /> <!-- Đảm bảo gửi mã đơn hàng -->
+                                    <button type="submit" class="btn btn-danger btn-sm">X</button> <!-- Nút xóa -->
+                                </form>
+                            </td>
                         </tr>
                     }
                 </tbody>

@@ -1,0 +1,28 @@
+# Bỏ qua các file và thư mục của Visual Studio Code
+.vscode/
+*.code-workspace
+
+# Bỏ qua các file biên dịch
+bin/
+obj/
+*.dll
+*.exe
+*.pdb
+*.user
+*.suo
+*.userprefs
+
+# Bỏ qua các file tạm
+*.tmp
+*.temp
+
+# Bỏ qua thư mục của các dependency
+node_modules/
+packages/
+
+# Bỏ qua các file log
+*.log
+
+# Bỏ qua các file của hệ thống
+Thumbs.db
+.DS_Store
