@@ -68,7 +68,8 @@ namespace web1.Controllers
             {
                 var claims = new List<Claim>
                 {
-                    new Claim(ClaimTypes.Name, user.TaiKhoanKh)   
+                    new Claim(ClaimTypes.Name, user.TaiKhoanKh)
+
                 };
                 var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
                 var principal = new ClaimsPrincipal(identity);
