@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@using web1.Helpers;
+
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -150,10 +152,20 @@
                                 <i class="fas fa-heart text-primary"></i>
                                 <span class="badge text-secondary border border-secondary rounded-circle" style="padding-bottom: 2px;">0</span>
                             </a>
+
+                            @{
+                                var cart = ViewContext.HttpContext.Session.Get<List<web1.Models.CtDonhang>>("Cart") ?? new List<web1.Models.CtDonhang>();
+                                var totalQuantity = cart.Sum(item => item.SoLuong); // Tính tổng số lượng
+                            }
+
                             <a href="@Url.Action("GioHang", "GioHang")" class="btn px-0 ml-3">
                                 <i class="fas fa-shopping-cart text-primary"></i>
-                                <span class="badge text-secondary border border-secondary rounded-circle" style="padding-bottom: 2px;">0</span>
+                                <span class="badge text-secondary border border-secondary rounded-circle" style="padding-bottom: 2px;">
+                                    @totalQuantity
+                                </span>
                             </a>
+
+
                         </div>
                     </div>
                 </nav>
