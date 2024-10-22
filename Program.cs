@@ -28,7 +28,7 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
 .AddCookie(options =>
 {
     options.LoginPath = "/User/DangNhap";  // Đường dẫn đến trang đăng nhập
-    options.LogoutPath = "/User/Logout";   // Đường dẫn để đăng xuất
+    options.LogoutPath = "/User/DangXuat";   // Đường dẫn để đăng xuất
 });
 
 var app = builder.Build();

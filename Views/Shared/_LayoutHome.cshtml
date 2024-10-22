@@ -50,15 +50,16 @@
                                 @User.Identity.Name <!-- Hiển thị tên người dùng -->
                             </button>
                             <div class="dropdown-menu dropdown-menu-right">
-                                <a href="@Url.Action("Logout", "User")" class="dropdown-item">Logout</a>
+                                <a href="@Url.Action("HoSo", "User")" class="dropdown-item">Hồ sơ</a>
+                                <a href="@Url.Action("DangXuat", "User")" class="dropdown-item">Đăng xuất</a>
                             </div>
                         }
                         else
                         {
-                            <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">My Account</button>
+                            <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">Tài khoản</button>
                             <div class="dropdown-menu dropdown-menu-right">
-                                <a href="@Url.Action("DangKy", "User")" class="dropdown-item">Sign up</a>
-                                <a href="@Url.Action("DangNhap", "User")" class="dropdown-item">Sign in</a>
+                                <a href="@Url.Action("DangKy", "User")" class="dropdown-item">Đăng ký</a>
+                                <a href="@Url.Action("DangNhap", "User")" class="dropdown-item">Đăng nhập</a>
                             </div>
                         }
                     </div>

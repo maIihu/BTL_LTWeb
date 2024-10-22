@@ -1,0 +1,30 @@
+﻿@model web1.Models.Khachhang
+@{
+    ViewData["Title"] = "HoSo";
+    Layout = "~/Views/Shared/_LayoutHome.cshtml";
+}
+
+<h2 class="text-center my-4 display-4">Thông tin cá nhân</h2> <!-- Sử dụng display-4 để tăng kích thước chữ -->
+@if (Model != null)
+{
+    <div class="container">
+        <div class="card shadow-sm" style="max-width: 600px; margin: auto;">
+            <!-- Giảm chiều rộng của card -->
+            <div class="card-header bg-primary text-white">
+                <h3 class="mb-0">Thông tin khách hàng:</h3>
+            </div>
+            <div class="card-body">
+                <p><strong>Tên đăng nhập:</strong> @Model.TaiKhoanKh</p>
+                <p><strong>Họ tên:</strong> @Model.HoTen</p>
+                <p><strong>Email:</strong> @Model.EmailKh</p>
+                <p><strong>Địa chỉ:</strong> @Model.DiaChiKh</p>
+                <p><strong>Số điện thoại:</strong> @Model.DienThoaiKh</p>
+                <p><strong>Ngày sinh:</strong> @Model.NgaySinh.ToShortDateString()</p>
+            </div>
+        </div>
+    </div>
+}
+else if (ViewBag.ErrorMessage != null)
+{
+    <div class="alert alert-danger mt-3">@ViewBag.ErrorMessage</div>
+}
