@@ -1,0 +1,51 @@
+﻿
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@using web1.Helpers;
+<div class="container-fluid bg-dark mb-30">
+    <div class="row px-xl-5">
+        @await Component.InvokeAsync("ThuongHieuMenu")
+        <div class="col-lg-9">
+            <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 py-lg-0 px-0">
+                <a href="" class="text-decoration-none d-block d-lg-none">
+                    <span class="h1 text-uppercase text-dark bg-light px-2">Multi</span>
+                    <span class="h1 text-uppercase text-light bg-primary px-2 ml-n1">Shop</span>
+                </a>
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                    <div class="navbar-nav mr-auto py-0">
+                        <a href="@Url.Action("Index", "Home")" class="nav-item nav-link active">Trang Chủ</a>
+                        <a href="contact.html" class="nav-item nav-link">Giày Nam</a>
+                        <a href="contact.html" class="nav-item nav-link">Giày Nữ</a>
+                        <a href="contact.html" class="nav-item nav-link">Tin tức</a>
+                        <a href="contact.html" class="nav-item nav-link">Giới Thiệu</a>
+                        <a href="contact.html" class="nav-item nav-link">Đóng Góp Y Kiến</a>
+                    </div>
+                    <div class="navbar-nav ml-auto py-0 d-none d-lg-block">
+                        <a href="" class="btn px-0">
+                            <i class="fas fa-heart text-primary"></i>
+                            <span class="badge text-secondary border border-secondary rounded-circle" style="padding-bottom: 2px;">0</span>
+                        </a>
+
+                        @{
+                            var cart = ViewContext.HttpContext.Session.Get<List<web1.Models.CtDonhang>>("Cart") ?? new List<web1.Models.CtDonhang>();
+                            var totalQuantity = cart.Sum(item => item.SoLuong); // Tính tổng số lượng
+                        }
+
+                        <a href="@Url.Action("GioHang", "GioHang")" class="btn px-0 ml-3">
+                            <i class="fas fa-shopping-cart text-primary"></i>
+                            <span class="badge text-secondary border border-secondary rounded-circle" style="padding-bottom: 2px;">
+                                @totalQuantity
+                            </span>
+                        </a>
+
+
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+</div>

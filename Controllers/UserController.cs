@@ -89,7 +89,7 @@ namespace web1.Controllers
                     var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
                     var principal = new ClaimsPrincipal(identity);
                     await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
-                    return RedirectToAction("Index", "Home"); // Chuyển hướng đến trang người dùng
+                    return RedirectToAction("Index", "Home"); 
                 }
                 else
                 {
@@ -114,7 +114,7 @@ namespace web1.Controllers
         {
             if (User.Identity.IsAuthenticated)
             {
-                string taiKhoan = User.Identity.Name; // Lấy tên đăng nhập
+                string taiKhoan = User.Identity.Name; 
                 var khachhang = _db.Khachhangs.FirstOrDefault(k => k.TaiKhoanKh == taiKhoan);
 
                 if (khachhang != null)
@@ -124,9 +124,49 @@ namespace web1.Controllers
             }
 
             ViewBag.ErrorMessage = "Không tìm thấy thông tin khách hàng.";
-            return View(null); // Trả về view với model null
+            return View(null); 
         }
 
+        public IActionResult DoiMatKhau()
+        {
+            return View();
+        }
 
+        [HttpPost]
+        public IActionResult DoiMatKhau(string matKhauCu, string matKhauMoi, string xacNhanMatKhauMoi)
+        {
+            if (User.Identity.IsAuthenticated)
+            {
+                // Lấy tên đăng nhập từ session hiện tại
+                string taiKhoan = User.Identity.Name;
+                var khachhang = _db.Khachhangs.FirstOrDefault(k => k.TaiKhoanKh == taiKhoan);
+
+                if (khachhang != null)
+                {
+                    // Kiểm tra mật khẩu cũ có đúng không
+                    if (khachhang.MatKhau == matKhauCu)
+                    {
+                        if (matKhauMoi == xacNhanMatKhauMoi)
+                        {
+                            // Cập nhật mật khẩu mới
+                            khachhang.MatKhau = matKhauMoi;
+                            _db.SaveChanges();
+
+                            ViewBag.SuccessMessage = "Đổi mật khẩu thành công.";
+                        }
+                        else
+                        {
+                            ModelState.AddModelError("", "Mật khẩu mới không khớp.");
+                        }
+                    }
+                    else
+                    {
+                        ModelState.AddModelError("", "Mật khẩu cũ không chính xác.");
+                    }
+                }
+            }
+
+            return View();
+        }
     }
 }
