@@ -89,6 +89,36 @@ namespace web1.Controllers
             return RedirectToAction("GioHang");
         }
 
+        [HttpPost]
+        public IActionResult Checkout([FromBody] List<CtDonhang> cartItems)
+        {
+            if (cartItems != null && cartItems.Any())
+            {
+                // Thực hiện logic thanh toán
+                // ...
+
+                // Sau khi thanh toán thành công, xóa hết sản phẩm trong giỏ hàng
+                var maDonHang = cartItems.FirstOrDefault()?.MaDonHang;
+                if (maDonHang.HasValue)
+                {
+                    // Xóa hết các sản phẩm của đơn hàng trong CSDL
+                    var chiTietDonHangs = _db.CtDonhangs.Where(x => x.MaDonHang == maDonHang.Value).ToList();
+                    if (chiTietDonHangs.Any())
+                    {
+                        _db.CtDonhangs.RemoveRange(chiTietDonHangs);
+                        _db.SaveChanges();
+                    }
+                }
+
+                // Xóa giỏ hàng trong session
+                HttpContext.Session.Remove("Cart");
+
+                // Trả về kết quả thành công
+                return Json(new { success = true, message = "Thanh toán thành công!" });
+            }
+
+            return Json(new { success = false, message = "Có lỗi xảy ra!" });
+        }
 
 
 
