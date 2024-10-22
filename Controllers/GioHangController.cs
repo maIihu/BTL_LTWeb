@@ -31,44 +31,65 @@ namespace web1.Controllers
 
             if (product != null)
             {
-                var cartItem = new CtDonhang
-                {
-                    MaGiay = product.MaGiay,
-                    SoLuong = SoLuong,
-                    GiaLucBan = product.GiaBan,
-                    ThanhTien = product.GiaBan * SoLuong
-                };
-
+                // Lấy giỏ hàng từ session
                 List<CtDonhang> cart = HttpContext.Session.Get<List<CtDonhang>>("Cart") ?? new List<CtDonhang>();
 
-                cart.Add(cartItem);
+                // Kiểm tra xem sản phẩm đã có trong giỏ hàng chưa
+                var existingItem = cart.FirstOrDefault(item => item.MaGiay == MaGiay);
 
+                if (existingItem != null)
+                {
+                    // Nếu sản phẩm đã có, cộng thêm số lượng
+                    existingItem.SoLuong += SoLuong;
+                    existingItem.ThanhTien = existingItem.GiaLucBan * existingItem.SoLuong; // Cập nhật tổng tiền
+                }
+                else
+                {
+                    // Nếu sản phẩm chưa có, thêm mới vào giỏ hàng
+                    var cartItem = new CtDonhang
+                    {
+                        MaGiay = product.MaGiay,
+                        SoLuong = SoLuong,
+                        GiaLucBan = product.GiaBan,
+                        ThanhTien = product.GiaBan * SoLuong
+                    };
+                    cart.Add(cartItem); // Thêm mới vào giỏ hàng
+                }
+
+                // Lưu lại giỏ hàng vào session
                 HttpContext.Session.Set("Cart", cart);
-                return RedirectToAction("GioHang");
+
+                return Json(new { success = true }); // Trả về thành công
             }
 
-            return RedirectToAction("ChiTietGiay", new { maSp = MaGiay });
+            return Json(new { success = false }); // Trả về thất bại nếu không tìm thấy sản phẩm
         }
 
         [HttpPost]
         public IActionResult RemoveFromCart(int MaGiay, int MaDonHang)
         {
-            // Lấy giỏ hàng từ session
             List<CtDonhang> cart = HttpContext.Session.Get<List<CtDonhang>>("Cart") ?? new List<CtDonhang>();
 
-            // Tìm sản phẩm cần xóa và xóa nó
+            Console.WriteLine($"Xóa sản phẩm với MaGiay: {MaGiay}, MaDonHang: {MaDonHang}");
+
             var itemToRemove = cart.FirstOrDefault(item => item.MaGiay == MaGiay && item.MaDonHang == MaDonHang);
+
             if (itemToRemove != null)
             {
                 cart.Remove(itemToRemove);
+                Console.WriteLine("Sản phẩm đã được xóa khỏi giỏ hàng.");
+            }
+            else
+            {
+                Console.WriteLine("Không tìm thấy sản phẩm để xóa.");
             }
 
-            // Lưu lại giỏ hàng vào session
             HttpContext.Session.Set("Cart", cart);
 
-            // Chuyển hướng về trang giỏ hàng
             return RedirectToAction("GioHang");
         }
+
+
 
 
     }

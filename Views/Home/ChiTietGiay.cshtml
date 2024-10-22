@@ -5,52 +5,52 @@
     Layout = "~/Views/Shared/_LayoutHome.cshtml";
 }
 
+
 <div class="container mt-5">
-    <div class="row align-items-center">
-        <!-- Hình ảnh sản phẩm -->
+    <div class="row align-items-start"> <!-- Đổi align-items-center thành align-items-start -->
         <div class="col-md-6 text-center">
-            <img src="~/img/AnhGiay/@Model.AnhBia" alt="Ảnh sản phẩm" class="img-fluid rounded shadow-sm">
+            <img src="~/img/AnhGiay/@Model.AnhBia" alt="Ảnh sản phẩm" class="img-fluid rounded shadow-sm product-image">
         </div>
 
-        <!-- Thông tin sản phẩm -->
-        <div class="col-md-6">
-            <h3 class="text-dark mb-3">@Model.TenGiay</h3>
-            <p class="text-muted mb-3">Mã sản phẩm: @Model.MaGiay</p>
-            <b class="text-danger mb-4">Giá Thành: @String.Format("{0:0,0}", Model.GiaBan) đ</b>
+        <div class="col-md-6 product-info">
+            <h2 class="text-dark mb-3 product-title">@Model.TenGiay</h2>
+            <h4 class="text-muted mb-3">Mã sản phẩm: @Model.MaGiay</h4>
+            <h5 class="product-price mb-4" style="color: red;">@String.Format("{0:0,0}", Model.GiaBan) đ</h5>
 
-            <!-- Form thêm sản phẩm vào giỏ hàng -->
-            <form asp-action="AddToCart" asp-controller="GioHang" method="post">
-                <!-- Hidden field để lưu mã sản phẩm -->
+            <form id="addToCartForm" method="post">
                 <input type="hidden" name="MaGiay" value="@Model.MaGiay" />
+                <input type="hidden" name="Size" id="selectedSize" required />
+                <input type="number" name="SoLuong" id="soLuong" class="form-control" min="1" value="1" style="width: 100px;" required />
 
-                <!-- Chọn size giày dưới dạng nút -->
-                <div class="form-group mt-3">
-                    <label class="form-label"><strong>Chọn size giày:</strong></label>
-                    <div class="d-flex gap-2">
-                        @for (int size = 38; size <= 44; size++)
-                        {
-                            <button type="button" class="btn btn-outline-primary" onclick="selectSize('@size')" id="sizeBtn@size">@size</button>
-                        }
-                        <input type="hidden" name="Size" id="selectedSize" required />
-                    </div>
+          
+                <div class="d-flex flex-column mt-3">
+                    <button type="button" class="btn btn-success rounded-pill btn-lg" style="width: 100%;" onclick="addToCart()">Thêm vào giỏ hàng</button>
+                    <button id="add-to-favorites" type="button" class="btn btn-outline-danger rounded-pill mt-2" style="width: 50px; height: 50px;">
+                        <i class="fas fa-heart"></i>
+                    </button>
                 </div>
 
-
-                <!-- Chọn số lượng -->
-                <div class="form-group mt-3">
-                    <label for="soLuong" class="form-label"><strong>Chọn số lượng:</strong></label>
-                    <input type="number" name="SoLuong" id="soLuong" class="form-control" min="1" value="1" style="width: 100px;" required />
-                </div>
-
-                <!-- Nút thêm vào giỏ hàng -->
-                <button type="submit" class="btn btn-success mt-3">Thêm vào giỏ hàng</button>
             </form>
-
-            <!-- Nút Thêm vào danh mục ưa thích -->
-            <button id="add-to-favorites" type="button" class="btn btn-outline-danger mt-3 ml-2">
-                <i class="fas fa-heart"></i> Thêm vào yêu thích
-            </button>
         </div>
     </div>
 </div>
 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+    function addToCart() {
+        var maGiay = $('input[name="MaGiay"]').val();
+        var size = $('#selectedSize').val();
+        var soLuong = $('#soLuong').val();
+
+        // Gửi yêu cầu AJAX
+        $.post('@Url.Action("AddToCart", "GioHang")', { MaGiay: maGiay, Size: size, SoLuong: soLuong })
+            .done(function (data) {              
+                alert('Sản phẩm đã được thêm vào giỏ hàng');
+                window.location.reload();
+            })
+            .fail(function () {
+                alert('Có lỗi xảy ra khi thêm sản phẩm vào giỏ hàng!');
+            });
+    }
+</script>
