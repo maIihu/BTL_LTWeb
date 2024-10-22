@@ -2,14 +2,17 @@
 
 namespace web1.Areas.Admin.Controllers
 {
+    [Area("admin")]
+    [Route("admin")]
+    [Route("admin/homeadmin")]
     public class HomeAdminController : Controller
     {
-        [Area("admin")]
-        [Route("admin")]
-        [Route("admin/homeadmin")]
+        [Route("")]
+        [Route("index")]
         public IActionResult Index()
         {
             return View();
         }
+
     }
 }
