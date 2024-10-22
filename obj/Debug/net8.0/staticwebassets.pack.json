@@ -1,1375 +1,1375 @@
 {
   "Files": [
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\web1.bundle.scp.css",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\web1.bundle.scp.css",
       "PackagePath": "staticwebassets\\web1.bundle.scp.css"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\LayouAdmin\\css\\bootstrap.min.css",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\LayouAdmin\\css\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\LayouAdmin\\css\\bootstrap.min.css"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\LayouAdmin\\css\\style.css",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\LayouAdmin\\css\\style.css",
       "PackagePath": "staticwebassets\\LayouAdmin\\css\\style.css"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\LayouAdmin\\img\\testimonial-1.jpg",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\LayouAdmin\\img\\testimonial-1.jpg",
       "PackagePath": "staticwebassets\\LayouAdmin\\img\\testimonial-1.jpg"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\LayouAdmin\\img\\testimonial-2.jpg",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\LayouAdmin\\img\\testimonial-2.jpg",
       "PackagePath": "staticwebassets\\LayouAdmin\\img\\testimonial-2.jpg"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\LayouAdmin\\img\\user.jpg",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\LayouAdmin\\img\\user.jpg",
       "PackagePath": "staticwebassets\\LayouAdmin\\img\\user.jpg"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\LayouAdmin\\js\\main.js",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\LayouAdmin\\js\\main.js",
       "PackagePath": "staticwebassets\\LayouAdmin\\js\\main.js"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\LayouAdmin\\lib\\chart\\chart.min.js",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\LayouAdmin\\lib\\chart\\chart.min.js",
       "PackagePath": "staticwebassets\\LayouAdmin\\lib\\chart\\chart.min.js"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\LayouAdmin\\lib\\easing\\easing.js",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\LayouAdmin\\lib\\easing\\easing.js",
       "PackagePath": "staticwebassets\\LayouAdmin\\lib\\easing\\easing.js"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\LayouAdmin\\lib\\easing\\easing.min.js",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\LayouAdmin\\lib\\easing\\easing.min.js",
       "PackagePath": "staticwebassets\\LayouAdmin\\lib\\easing\\easing.min.js"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\LayouAdmin\\lib\\owlcarousel\\LICENSE",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\LayouAdmin\\lib\\owlcarousel\\LICENSE",
       "PackagePath": "staticwebassets\\LayouAdmin\\lib\\owlcarousel"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\LayouAdmin\\lib\\owlcarousel\\assets\\ajax-loader.gif",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\LayouAdmin\\lib\\owlcarousel\\assets\\ajax-loader.gif",
       "PackagePath": "staticwebassets\\LayouAdmin\\lib\\owlcarousel\\assets\\ajax-loader.gif"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\LayouAdmin\\lib\\owlcarousel\\assets\\owl.carousel.css",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\LayouAdmin\\lib\\owlcarousel\\assets\\owl.carousel.css",
       "PackagePath": "staticwebassets\\LayouAdmin\\lib\\owlcarousel\\assets\\owl.carousel.css"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\LayouAdmin\\lib\\owlcarousel\\assets\\owl.carousel.min.css",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\LayouAdmin\\lib\\owlcarousel\\assets\\owl.carousel.min.css",
       "PackagePath": "staticwebassets\\LayouAdmin\\lib\\owlcarousel\\assets\\owl.carousel.min.css"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\LayouAdmin\\lib\\owlcarousel\\assets\\owl.theme.default.css",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\LayouAdmin\\lib\\owlcarousel\\assets\\owl.theme.default.css",
       "PackagePath": "staticwebassets\\LayouAdmin\\lib\\owlcarousel\\assets\\owl.theme.default.css"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\LayouAdmin\\lib\\owlcarousel\\assets\\owl.theme.default.min.css",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\LayouAdmin\\lib\\owlcarousel\\assets\\owl.theme.default.min.css",
       "PackagePath": "staticwebassets\\LayouAdmin\\lib\\owlcarousel\\assets\\owl.theme.default.min.css"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\LayouAdmin\\lib\\owlcarousel\\assets\\owl.theme.green.css",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\LayouAdmin\\lib\\owlcarousel\\assets\\owl.theme.green.css",
       "PackagePath": "staticwebassets\\LayouAdmin\\lib\\owlcarousel\\assets\\owl.theme.green.css"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\LayouAdmin\\lib\\owlcarousel\\assets\\owl.theme.green.min.css",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\LayouAdmin\\lib\\owlcarousel\\assets\\owl.theme.green.min.css",
       "PackagePath": "staticwebassets\\LayouAdmin\\lib\\owlcarousel\\assets\\owl.theme.green.min.css"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\LayouAdmin\\lib\\owlcarousel\\assets\\owl.video.play.png",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\LayouAdmin\\lib\\owlcarousel\\assets\\owl.video.play.png",
       "PackagePath": "staticwebassets\\LayouAdmin\\lib\\owlcarousel\\assets\\owl.video.play.png"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\LayouAdmin\\lib\\owlcarousel\\owl.carousel.js",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\LayouAdmin\\lib\\owlcarousel\\owl.carousel.js",
       "PackagePath": "staticwebassets\\LayouAdmin\\lib\\owlcarousel\\owl.carousel.js"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\LayouAdmin\\lib\\owlcarousel\\owl.carousel.min.js",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\LayouAdmin\\lib\\owlcarousel\\owl.carousel.min.js",
       "PackagePath": "staticwebassets\\LayouAdmin\\lib\\owlcarousel\\owl.carousel.min.js"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\LayouAdmin\\lib\\tempusdominus\\css\\tempusdominus-bootstrap-4.css",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\LayouAdmin\\lib\\tempusdominus\\css\\tempusdominus-bootstrap-4.css",
       "PackagePath": "staticwebassets\\LayouAdmin\\lib\\tempusdominus\\css\\tempusdominus-bootstrap-4.css"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\LayouAdmin\\lib\\tempusdominus\\css\\tempusdominus-bootstrap-4.min.css",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\LayouAdmin\\lib\\tempusdominus\\css\\tempusdominus-bootstrap-4.min.css",
       "PackagePath": "staticwebassets\\LayouAdmin\\lib\\tempusdominus\\css\\tempusdominus-bootstrap-4.min.css"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\LayouAdmin\\lib\\tempusdominus\\js\\moment-timezone.min.js",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\LayouAdmin\\lib\\tempusdominus\\js\\moment-timezone.min.js",
       "PackagePath": "staticwebassets\\LayouAdmin\\lib\\tempusdominus\\js\\moment-timezone.min.js"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\LayouAdmin\\lib\\tempusdominus\\js\\moment.min.js",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\LayouAdmin\\lib\\tempusdominus\\js\\moment.min.js",
       "PackagePath": "staticwebassets\\LayouAdmin\\lib\\tempusdominus\\js\\moment.min.js"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\LayouAdmin\\lib\\tempusdominus\\js\\tempusdominus-bootstrap-4.js",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\LayouAdmin\\lib\\tempusdominus\\js\\tempusdominus-bootstrap-4.js",
       "PackagePath": "staticwebassets\\LayouAdmin\\lib\\tempusdominus\\js\\tempusdominus-bootstrap-4.js"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\LayouAdmin\\lib\\tempusdominus\\js\\tempusdominus-bootstrap-4.min.js",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\LayouAdmin\\lib\\tempusdominus\\js\\tempusdominus-bootstrap-4.min.js",
       "PackagePath": "staticwebassets\\LayouAdmin\\lib\\tempusdominus\\js\\tempusdominus-bootstrap-4.min.js"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\LayouAdmin\\lib\\waypoints\\links.php",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\LayouAdmin\\lib\\waypoints\\links.php",
       "PackagePath": "staticwebassets\\LayouAdmin\\lib\\waypoints\\links.php"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\LayouAdmin\\lib\\waypoints\\waypoints.min.js",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\LayouAdmin\\lib\\waypoints\\waypoints.min.js",
       "PackagePath": "staticwebassets\\LayouAdmin\\lib\\waypoints\\waypoints.min.js"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap.scss",
       "PackagePath": "staticwebassets\\LayouAdmin\\scss\\bootstrap.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\_accordion.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\_accordion.scss",
       "PackagePath": "staticwebassets\\LayouAdmin\\scss\\bootstrap\\scss\\_accordion.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\_alert.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\_alert.scss",
       "PackagePath": "staticwebassets\\LayouAdmin\\scss\\bootstrap\\scss\\_alert.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\_badge.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\_badge.scss",
       "PackagePath": "staticwebassets\\LayouAdmin\\scss\\bootstrap\\scss\\_badge.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\_breadcrumb.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\_breadcrumb.scss",
       "PackagePath": "staticwebassets\\LayouAdmin\\scss\\bootstrap\\scss\\_breadcrumb.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\_button-group.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\_button-group.scss",
       "PackagePath": "staticwebassets\\LayouAdmin\\scss\\bootstrap\\scss\\_button-group.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\_buttons.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\_buttons.scss",
       "PackagePath": "staticwebassets\\LayouAdmin\\scss\\bootstrap\\scss\\_buttons.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\_card.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\_card.scss",
       "PackagePath": "staticwebassets\\LayouAdmin\\scss\\bootstrap\\scss\\_card.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\_carousel.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\_carousel.scss",
       "PackagePath": "staticwebassets\\LayouAdmin\\scss\\bootstrap\\scss\\_carousel.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\_close.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\_close.scss",
       "PackagePath": "staticwebassets\\LayouAdmin\\scss\\bootstrap\\scss\\_close.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\_containers.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\_containers.scss",
       "PackagePath": "staticwebassets\\LayouAdmin\\scss\\bootstrap\\scss\\_containers.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\_dropdown.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\_dropdown.scss",
       "PackagePath": "staticwebassets\\LayouAdmin\\scss\\bootstrap\\scss\\_dropdown.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\_forms.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\_forms.scss",
       "PackagePath": "staticwebassets\\LayouAdmin\\scss\\bootstrap\\scss\\_forms.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\_functions.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\_functions.scss",
       "PackagePath": "staticwebassets\\LayouAdmin\\scss\\bootstrap\\scss\\_functions.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\_grid.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\_grid.scss",
       "PackagePath": "staticwebassets\\LayouAdmin\\scss\\bootstrap\\scss\\_grid.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\_helpers.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\_helpers.scss",
       "PackagePath": "staticwebassets\\LayouAdmin\\scss\\bootstrap\\scss\\_helpers.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\_images.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\_images.scss",
       "PackagePath": "staticwebassets\\LayouAdmin\\scss\\bootstrap\\scss\\_images.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\_list-group.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\_list-group.scss",
       "PackagePath": "staticwebassets\\LayouAdmin\\scss\\bootstrap\\scss\\_list-group.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\_mixins.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\_mixins.scss",
       "PackagePath": "staticwebassets\\LayouAdmin\\scss\\bootstrap\\scss\\_mixins.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\_modal.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\_modal.scss",
       "PackagePath": "staticwebassets\\LayouAdmin\\scss\\bootstrap\\scss\\_modal.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\_nav.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\_nav.scss",
       "PackagePath": "staticwebassets\\LayouAdmin\\scss\\bootstrap\\scss\\_nav.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\_navbar.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\_navbar.scss",
       "PackagePath": "staticwebassets\\LayouAdmin\\scss\\bootstrap\\scss\\_navbar.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\_offcanvas.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\_offcanvas.scss",
       "PackagePath": "staticwebassets\\LayouAdmin\\scss\\bootstrap\\scss\\_offcanvas.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\_pagination.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\_pagination.scss",
       "PackagePath": "staticwebassets\\LayouAdmin\\scss\\bootstrap\\scss\\_pagination.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\_popover.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\_popover.scss",
       "PackagePath": "staticwebassets\\LayouAdmin\\scss\\bootstrap\\scss\\_popover.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\_progress.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\_progress.scss",
       "PackagePath": "staticwebassets\\LayouAdmin\\scss\\bootstrap\\scss\\_progress.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\_reboot.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\_reboot.scss",
       "PackagePath": "staticwebassets\\LayouAdmin\\scss\\bootstrap\\scss\\_reboot.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\_root.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\_root.scss",
       "PackagePath": "staticwebassets\\LayouAdmin\\scss\\bootstrap\\scss\\_root.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\_spinners.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\_spinners.scss",
       "PackagePath": "staticwebassets\\LayouAdmin\\scss\\bootstrap\\scss\\_spinners.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\_tables.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\_tables.scss",
       "PackagePath": "staticwebassets\\LayouAdmin\\scss\\bootstrap\\scss\\_tables.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\_toasts.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\_toasts.scss",
       "PackagePath": "staticwebassets\\LayouAdmin\\scss\\bootstrap\\scss\\_toasts.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\_tooltip.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\_tooltip.scss",
       "PackagePath": "staticwebassets\\LayouAdmin\\scss\\bootstrap\\scss\\_tooltip.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\_transitions.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\_transitions.scss",
       "PackagePath": "staticwebassets\\LayouAdmin\\scss\\bootstrap\\scss\\_transitions.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\_type.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\_type.scss",
       "PackagePath": "staticwebassets\\LayouAdmin\\scss\\bootstrap\\scss\\_type.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\_utilities.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\_utilities.scss",
       "PackagePath": "staticwebassets\\LayouAdmin\\scss\\bootstrap\\scss\\_utilities.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\_variables.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\_variables.scss",
       "PackagePath": "staticwebassets\\LayouAdmin\\scss\\bootstrap\\scss\\_variables.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\bootstrap-grid.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\bootstrap-grid.scss",
       "PackagePath": "staticwebassets\\LayouAdmin\\scss\\bootstrap\\scss\\bootstrap-grid.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\bootstrap-reboot.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\bootstrap-reboot.scss",
       "PackagePath": "staticwebassets\\LayouAdmin\\scss\\bootstrap\\scss\\bootstrap-reboot.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\bootstrap-utilities.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\bootstrap-utilities.scss",
       "PackagePath": "staticwebassets\\LayouAdmin\\scss\\bootstrap\\scss\\bootstrap-utilities.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\bootstrap.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\bootstrap.scss",
       "PackagePath": "staticwebassets\\LayouAdmin\\scss\\bootstrap\\scss\\bootstrap.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\forms\\_floating-labels.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\forms\\_floating-labels.scss",
       "PackagePath": "staticwebassets\\LayouAdmin\\scss\\bootstrap\\scss\\forms\\_floating-labels.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\forms\\_form-check.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\forms\\_form-check.scss",
       "PackagePath": "staticwebassets\\LayouAdmin\\scss\\bootstrap\\scss\\forms\\_form-check.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\forms\\_form-control.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\forms\\_form-control.scss",
       "PackagePath": "staticwebassets\\LayouAdmin\\scss\\bootstrap\\scss\\forms\\_form-control.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\forms\\_form-range.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\forms\\_form-range.scss",
       "PackagePath": "staticwebassets\\LayouAdmin\\scss\\bootstrap\\scss\\forms\\_form-range.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\forms\\_form-select.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\forms\\_form-select.scss",
       "PackagePath": "staticwebassets\\LayouAdmin\\scss\\bootstrap\\scss\\forms\\_form-select.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\forms\\_form-text.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\forms\\_form-text.scss",
       "PackagePath": "staticwebassets\\LayouAdmin\\scss\\bootstrap\\scss\\forms\\_form-text.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\forms\\_input-group.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\forms\\_input-group.scss",
       "PackagePath": "staticwebassets\\LayouAdmin\\scss\\bootstrap\\scss\\forms\\_input-group.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\forms\\_labels.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\forms\\_labels.scss",
       "PackagePath": "staticwebassets\\LayouAdmin\\scss\\bootstrap\\scss\\forms\\_labels.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\forms\\_validation.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\forms\\_validation.scss",
       "PackagePath": "staticwebassets\\LayouAdmin\\scss\\bootstrap\\scss\\forms\\_validation.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\helpers\\_clearfix.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\helpers\\_clearfix.scss",
       "PackagePath": "staticwebassets\\LayouAdmin\\scss\\bootstrap\\scss\\helpers\\_clearfix.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\helpers\\_colored-links.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\helpers\\_colored-links.scss",
       "PackagePath": "staticwebassets\\LayouAdmin\\scss\\bootstrap\\scss\\helpers\\_colored-links.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\helpers\\_position.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\helpers\\_position.scss",
       "PackagePath": "staticwebassets\\LayouAdmin\\scss\\bootstrap\\scss\\helpers\\_position.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\helpers\\_ratio.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\helpers\\_ratio.scss",
       "PackagePath": "staticwebassets\\LayouAdmin\\scss\\bootstrap\\scss\\helpers\\_ratio.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\helpers\\_stretched-link.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\helpers\\_stretched-link.scss",
       "PackagePath": "staticwebassets\\LayouAdmin\\scss\\bootstrap\\scss\\helpers\\_stretched-link.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\helpers\\_text-truncation.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\helpers\\_text-truncation.scss",
       "PackagePath": "staticwebassets\\LayouAdmin\\scss\\bootstrap\\scss\\helpers\\_text-truncation.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\helpers\\_visually-hidden.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\helpers\\_visually-hidden.scss",
       "PackagePath": "staticwebassets\\LayouAdmin\\scss\\bootstrap\\scss\\helpers\\_visually-hidden.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\mixins\\_alert.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\mixins\\_alert.scss",
       "PackagePath": "staticwebassets\\LayouAdmin\\scss\\bootstrap\\scss\\mixins\\_alert.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\mixins\\_border-radius.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\mixins\\_border-radius.scss",
       "PackagePath": "staticwebassets\\LayouAdmin\\scss\\bootstrap\\scss\\mixins\\_border-radius.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\mixins\\_box-shadow.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\mixins\\_box-shadow.scss",
       "PackagePath": "staticwebassets\\LayouAdmin\\scss\\bootstrap\\scss\\mixins\\_box-shadow.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\mixins\\_breakpoints.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\mixins\\_breakpoints.scss",
       "PackagePath": "staticwebassets\\LayouAdmin\\scss\\bootstrap\\scss\\mixins\\_breakpoints.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\mixins\\_buttons.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\mixins\\_buttons.scss",
       "PackagePath": "staticwebassets\\LayouAdmin\\scss\\bootstrap\\scss\\mixins\\_buttons.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\mixins\\_caret.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\mixins\\_caret.scss",
       "PackagePath": "staticwebassets\\LayouAdmin\\scss\\bootstrap\\scss\\mixins\\_caret.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\mixins\\_clearfix.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\mixins\\_clearfix.scss",
       "PackagePath": "staticwebassets\\LayouAdmin\\scss\\bootstrap\\scss\\mixins\\_clearfix.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\mixins\\_color-scheme.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\mixins\\_color-scheme.scss",
       "PackagePath": "staticwebassets\\LayouAdmin\\scss\\bootstrap\\scss\\mixins\\_color-scheme.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\mixins\\_container.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\mixins\\_container.scss",
       "PackagePath": "staticwebassets\\LayouAdmin\\scss\\bootstrap\\scss\\mixins\\_container.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\mixins\\_deprecate.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\mixins\\_deprecate.scss",
       "PackagePath": "staticwebassets\\LayouAdmin\\scss\\bootstrap\\scss\\mixins\\_deprecate.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\mixins\\_forms.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\mixins\\_forms.scss",
       "PackagePath": "staticwebassets\\LayouAdmin\\scss\\bootstrap\\scss\\mixins\\_forms.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\mixins\\_gradients.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\mixins\\_gradients.scss",
       "PackagePath": "staticwebassets\\LayouAdmin\\scss\\bootstrap\\scss\\mixins\\_gradients.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\mixins\\_grid.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\mixins\\_grid.scss",
       "PackagePath": "staticwebassets\\LayouAdmin\\scss\\bootstrap\\scss\\mixins\\_grid.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\mixins\\_image.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\mixins\\_image.scss",
       "PackagePath": "staticwebassets\\LayouAdmin\\scss\\bootstrap\\scss\\mixins\\_image.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\mixins\\_list-group.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\mixins\\_list-group.scss",
       "PackagePath": "staticwebassets\\LayouAdmin\\scss\\bootstrap\\scss\\mixins\\_list-group.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\mixins\\_lists.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\mixins\\_lists.scss",
       "PackagePath": "staticwebassets\\LayouAdmin\\scss\\bootstrap\\scss\\mixins\\_lists.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\mixins\\_pagination.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\mixins\\_pagination.scss",
       "PackagePath": "staticwebassets\\LayouAdmin\\scss\\bootstrap\\scss\\mixins\\_pagination.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\mixins\\_reset-text.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\mixins\\_reset-text.scss",
       "PackagePath": "staticwebassets\\LayouAdmin\\scss\\bootstrap\\scss\\mixins\\_reset-text.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\mixins\\_resize.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\mixins\\_resize.scss",
       "PackagePath": "staticwebassets\\LayouAdmin\\scss\\bootstrap\\scss\\mixins\\_resize.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\mixins\\_table-variants.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\mixins\\_table-variants.scss",
       "PackagePath": "staticwebassets\\LayouAdmin\\scss\\bootstrap\\scss\\mixins\\_table-variants.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\mixins\\_text-truncate.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\mixins\\_text-truncate.scss",
       "PackagePath": "staticwebassets\\LayouAdmin\\scss\\bootstrap\\scss\\mixins\\_text-truncate.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\mixins\\_transition.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\mixins\\_transition.scss",
       "PackagePath": "staticwebassets\\LayouAdmin\\scss\\bootstrap\\scss\\mixins\\_transition.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\mixins\\_utilities.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\mixins\\_utilities.scss",
       "PackagePath": "staticwebassets\\LayouAdmin\\scss\\bootstrap\\scss\\mixins\\_utilities.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\mixins\\_visually-hidden.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\mixins\\_visually-hidden.scss",
       "PackagePath": "staticwebassets\\LayouAdmin\\scss\\bootstrap\\scss\\mixins\\_visually-hidden.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\utilities\\_api.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\utilities\\_api.scss",
       "PackagePath": "staticwebassets\\LayouAdmin\\scss\\bootstrap\\scss\\utilities\\_api.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\vendor\\_rfs.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\LayouAdmin\\scss\\bootstrap\\scss\\vendor\\_rfs.scss",
       "PackagePath": "staticwebassets\\LayouAdmin\\scss\\bootstrap\\scss\\vendor\\_rfs.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\css\\bootstrap-grid.css",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\css\\bootstrap-grid.css",
       "PackagePath": "staticwebassets\\css\\bootstrap-grid.css"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\css\\bootstrap-grid.min.css",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\css\\bootstrap-grid.min.css",
       "PackagePath": "staticwebassets\\css\\bootstrap-grid.min.css"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\css\\bootstrap-reboot.css",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\css\\bootstrap-reboot.css",
       "PackagePath": "staticwebassets\\css\\bootstrap-reboot.css"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\css\\bootstrap-reboot.min.css",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\css\\bootstrap-reboot.min.css",
       "PackagePath": "staticwebassets\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\css\\bootstrap.css",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\css\\bootstrap.css",
       "PackagePath": "staticwebassets\\css\\bootstrap.css"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\css\\bootstrap.min.css",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\css\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\css\\bootstrap.min.css"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\css\\button-choose-size.css",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\css\\button-choose-size.css",
       "PackagePath": "staticwebassets\\css\\button-choose-size.css"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\css\\site.css",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\css\\style.css",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\css\\style.css",
       "PackagePath": "staticwebassets\\css\\style.css"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\css\\style.min.css",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\css\\style.min.css",
       "PackagePath": "staticwebassets\\css\\style.min.css"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\favicon.ico",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\img\\AnhGiay\\Reebokwmns.jpg",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\img\\AnhGiay\\Reebokwmns.jpg",
       "PackagePath": "staticwebassets\\img\\AnhGiay\\Reebokwmns.jpg"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\img\\AnhGiay\\adiasx.jpg",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\img\\AnhGiay\\adiasx.jpg",
       "PackagePath": "staticwebassets\\img\\AnhGiay\\adiasx.jpg"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\img\\AnhGiay\\adidasforum.jpg",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\img\\AnhGiay\\adidasforum.jpg",
       "PackagePath": "staticwebassets\\img\\AnhGiay\\adidasforum.jpg"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\img\\AnhGiay\\adidasr1.jpg",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\img\\AnhGiay\\adidasr1.jpg",
       "PackagePath": "staticwebassets\\img\\AnhGiay\\adidasr1.jpg"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\img\\AnhGiay\\adidasstanmith.jpg",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\img\\AnhGiay\\adidasstanmith.jpg",
       "PackagePath": "staticwebassets\\img\\AnhGiay\\adidasstanmith.jpg"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\img\\AnhGiay\\adidastrang.jpg",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\img\\AnhGiay\\adidastrang.jpg",
       "PackagePath": "staticwebassets\\img\\AnhGiay\\adidastrang.jpg"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\img\\AnhGiay\\asicsnu.jpg",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\img\\AnhGiay\\asicsnu.jpg",
       "PackagePath": "staticwebassets\\img\\AnhGiay\\asicsnu.jpg"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\img\\AnhGiay\\asicsthethao.jpg",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\img\\AnhGiay\\asicsthethao.jpg",
       "PackagePath": "staticwebassets\\img\\AnhGiay\\asicsthethao.jpg"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\img\\AnhGiay\\balenciagatrang.jpg",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\img\\AnhGiay\\balenciagatrang.jpg",
       "PackagePath": "staticwebassets\\img\\AnhGiay\\balenciagatrang.jpg"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\img\\AnhGiay\\balenden.jpg",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\img\\AnhGiay\\balenden.jpg",
       "PackagePath": "staticwebassets\\img\\AnhGiay\\balenden.jpg"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\img\\AnhGiay\\banner1.jpg",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\img\\AnhGiay\\banner1.jpg",
       "PackagePath": "staticwebassets\\img\\AnhGiay\\banner1.jpg"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\img\\AnhGiay\\banner2.jpg",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\img\\AnhGiay\\banner2.jpg",
       "PackagePath": "staticwebassets\\img\\AnhGiay\\banner2.jpg"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\img\\AnhGiay\\converse1970s.jpg",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\img\\AnhGiay\\converse1970s.jpg",
       "PackagePath": "staticwebassets\\img\\AnhGiay\\converse1970s.jpg"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\img\\AnhGiay\\converse1970sdoden.jpg",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\img\\AnhGiay\\converse1970sdoden.jpg",
       "PackagePath": "staticwebassets\\img\\AnhGiay\\converse1970sdoden.jpg"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\img\\AnhGiay\\converse1970strang.jpg",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\img\\AnhGiay\\converse1970strang.jpg",
       "PackagePath": "staticwebassets\\img\\AnhGiay\\converse1970strang.jpg"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\img\\AnhGiay\\converse1970svang.jpg",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\img\\AnhGiay\\converse1970svang.jpg",
       "PackagePath": "staticwebassets\\img\\AnhGiay\\converse1970svang.jpg"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\img\\AnhGiay\\converse1970sxanh.jpg",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\img\\AnhGiay\\converse1970sxanh.jpg",
       "PackagePath": "staticwebassets\\img\\AnhGiay\\converse1970sxanh.jpg"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\img\\AnhGiay\\dep1.jpg",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\img\\AnhGiay\\dep1.jpg",
       "PackagePath": "staticwebassets\\img\\AnhGiay\\dep1.jpg"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\img\\AnhGiay\\depadidas.jpg",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\img\\AnhGiay\\depadidas.jpg",
       "PackagePath": "staticwebassets\\img\\AnhGiay\\depadidas.jpg"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\img\\AnhGiay\\depreebok.jpg",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\img\\AnhGiay\\depreebok.jpg",
       "PackagePath": "staticwebassets\\img\\AnhGiay\\depreebok.jpg"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\img\\AnhGiay\\nike1.jpg",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\img\\AnhGiay\\nike1.jpg",
       "PackagePath": "staticwebassets\\img\\AnhGiay\\nike1.jpg"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\img\\AnhGiay\\nike2090.jpg",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\img\\AnhGiay\\nike2090.jpg",
       "PackagePath": "staticwebassets\\img\\AnhGiay\\nike2090.jpg"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\img\\AnhGiay\\nike270.jpg",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\img\\AnhGiay\\nike270.jpg",
       "PackagePath": "staticwebassets\\img\\AnhGiay\\nike270.jpg"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\img\\AnhGiay\\nike90.jpg",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\img\\AnhGiay\\nike90.jpg",
       "PackagePath": "staticwebassets\\img\\AnhGiay\\nike90.jpg"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\img\\AnhGiay\\nike97.jpg",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\img\\AnhGiay\\nike97.jpg",
       "PackagePath": "staticwebassets\\img\\AnhGiay\\nike97.jpg"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\img\\AnhGiay\\nikemercurial.jpg",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\img\\AnhGiay\\nikemercurial.jpg",
       "PackagePath": "staticwebassets\\img\\AnhGiay\\nikemercurial.jpg"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\img\\AnhGiay\\nikesc.jpg",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\img\\AnhGiay\\nikesc.jpg",
       "PackagePath": "staticwebassets\\img\\AnhGiay\\nikesc.jpg"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\img\\AnhGiay\\pumaastro.jpg",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\img\\AnhGiay\\pumaastro.jpg",
       "PackagePath": "staticwebassets\\img\\AnhGiay\\pumaastro.jpg"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\img\\AnhGiay\\pumars.jpg",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\img\\AnhGiay\\pumars.jpg",
       "PackagePath": "staticwebassets\\img\\AnhGiay\\pumars.jpg"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\img\\AnhGiay\\pumarsx.jpg",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\img\\AnhGiay\\pumarsx.jpg",
       "PackagePath": "staticwebassets\\img\\AnhGiay\\pumarsx.jpg"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\img\\AnhGiay\\pumathunder.jpg",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\img\\AnhGiay\\pumathunder.jpg",
       "PackagePath": "staticwebassets\\img\\AnhGiay\\pumathunder.jpg"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\img\\AnhGiay\\pumatrang.jpg",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\img\\AnhGiay\\pumatrang.jpg",
       "PackagePath": "staticwebassets\\img\\AnhGiay\\pumatrang.jpg"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\img\\AnhGiay\\reebokden.jpg",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\img\\AnhGiay\\reebokden.jpg",
       "PackagePath": "staticwebassets\\img\\AnhGiay\\reebokden.jpg"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\img\\AnhGiay\\t4.jpg",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\img\\AnhGiay\\t4.jpg",
       "PackagePath": "staticwebassets\\img\\AnhGiay\\t4.jpg"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\img\\AnhGiay\\t5.jpg",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\img\\AnhGiay\\t5.jpg",
       "PackagePath": "staticwebassets\\img\\AnhGiay\\t5.jpg"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\img\\AnhGiay\\t6.jpg",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\img\\AnhGiay\\t6.jpg",
       "PackagePath": "staticwebassets\\img\\AnhGiay\\t6.jpg"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\img\\AnhGiay\\test.jpg",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\img\\AnhGiay\\test.jpg",
       "PackagePath": "staticwebassets\\img\\AnhGiay\\test.jpg"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\img\\AnhGiay\\test1.jpg",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\img\\AnhGiay\\test1.jpg",
       "PackagePath": "staticwebassets\\img\\AnhGiay\\test1.jpg"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\img\\AnhGiay\\tintuc1.jpg",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\img\\AnhGiay\\tintuc1.jpg",
       "PackagePath": "staticwebassets\\img\\AnhGiay\\tintuc1.jpg"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\img\\AnhGiay\\van1.jpg",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\img\\AnhGiay\\van1.jpg",
       "PackagePath": "staticwebassets\\img\\AnhGiay\\van1.jpg"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\img\\AnhGiay\\vanshc.jpg",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\img\\AnhGiay\\vanshc.jpg",
       "PackagePath": "staticwebassets\\img\\AnhGiay\\vanshc.jpg"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\img\\AnhGiay\\vansnu.jpg",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\img\\AnhGiay\\vansnu.jpg",
       "PackagePath": "staticwebassets\\img\\AnhGiay\\vansnu.jpg"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\img\\AnhGiay\\vansnu2.jpg",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\img\\AnhGiay\\vansnu2.jpg",
       "PackagePath": "staticwebassets\\img\\AnhGiay\\vansnu2.jpg"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\img\\AnhGiay\\vansoldschool.jpg",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\img\\AnhGiay\\vansoldschool.jpg",
       "PackagePath": "staticwebassets\\img\\AnhGiay\\vansoldschool.jpg"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\img\\AnhGiay\\vanssk8.jpg",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\img\\AnhGiay\\vanssk8.jpg",
       "PackagePath": "staticwebassets\\img\\AnhGiay\\vanssk8.jpg"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\js\\main.js",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\js\\main.js",
       "PackagePath": "staticwebassets\\js\\main.js"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\js\\site.js",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\lib\\animate\\animate.min.css",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\lib\\animate\\animate.min.css",
       "PackagePath": "staticwebassets\\lib\\animate\\animate.min.css"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\lib\\bootstrap\\LICENSE",
       "PackagePath": "staticwebassets\\lib\\bootstrap"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\lib\\chart\\chart.min.js",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\lib\\chart\\chart.min.js",
       "PackagePath": "staticwebassets\\lib\\chart\\chart.min.js"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\lib\\easing\\easing.js",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\lib\\easing\\easing.js",
       "PackagePath": "staticwebassets\\lib\\easing\\easing.js"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\lib\\easing\\easing.min.js",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\lib\\easing\\easing.min.js",
       "PackagePath": "staticwebassets\\lib\\easing\\easing.min.js"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\lib\\owlcarousel\\LICENSE",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\lib\\owlcarousel\\LICENSE",
       "PackagePath": "staticwebassets\\lib\\owlcarousel"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\lib\\owlcarousel\\assets\\ajax-loader.gif",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\lib\\owlcarousel\\assets\\ajax-loader.gif",
       "PackagePath": "staticwebassets\\lib\\owlcarousel\\assets\\ajax-loader.gif"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\lib\\owlcarousel\\assets\\owl.carousel.css",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\lib\\owlcarousel\\assets\\owl.carousel.css",
       "PackagePath": "staticwebassets\\lib\\owlcarousel\\assets\\owl.carousel.css"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\lib\\owlcarousel\\assets\\owl.carousel.min.css",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\lib\\owlcarousel\\assets\\owl.carousel.min.css",
       "PackagePath": "staticwebassets\\lib\\owlcarousel\\assets\\owl.carousel.min.css"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\lib\\owlcarousel\\assets\\owl.theme.default.css",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\lib\\owlcarousel\\assets\\owl.theme.default.css",
       "PackagePath": "staticwebassets\\lib\\owlcarousel\\assets\\owl.theme.default.css"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\lib\\owlcarousel\\assets\\owl.theme.default.min.css",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\lib\\owlcarousel\\assets\\owl.theme.default.min.css",
       "PackagePath": "staticwebassets\\lib\\owlcarousel\\assets\\owl.theme.default.min.css"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\lib\\owlcarousel\\assets\\owl.theme.green.css",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\lib\\owlcarousel\\assets\\owl.theme.green.css",
       "PackagePath": "staticwebassets\\lib\\owlcarousel\\assets\\owl.theme.green.css"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\lib\\owlcarousel\\assets\\owl.theme.green.min.css",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\lib\\owlcarousel\\assets\\owl.theme.green.min.css",
       "PackagePath": "staticwebassets\\lib\\owlcarousel\\assets\\owl.theme.green.min.css"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\lib\\owlcarousel\\assets\\owl.video.play.png",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\lib\\owlcarousel\\assets\\owl.video.play.png",
       "PackagePath": "staticwebassets\\lib\\owlcarousel\\assets\\owl.video.play.png"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\lib\\owlcarousel\\owl.carousel.js",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\lib\\owlcarousel\\owl.carousel.js",
       "PackagePath": "staticwebassets\\lib\\owlcarousel\\owl.carousel.js"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\lib\\owlcarousel\\owl.carousel.min.js",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\lib\\owlcarousel\\owl.carousel.min.js",
       "PackagePath": "staticwebassets\\lib\\owlcarousel\\owl.carousel.min.js"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\lib\\tempusdominus\\css\\tempusdominus-bootstrap-4.css",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\lib\\tempusdominus\\css\\tempusdominus-bootstrap-4.css",
       "PackagePath": "staticwebassets\\lib\\tempusdominus\\css\\tempusdominus-bootstrap-4.css"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\lib\\tempusdominus\\css\\tempusdominus-bootstrap-4.min.css",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\lib\\tempusdominus\\css\\tempusdominus-bootstrap-4.min.css",
       "PackagePath": "staticwebassets\\lib\\tempusdominus\\css\\tempusdominus-bootstrap-4.min.css"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\lib\\tempusdominus\\js\\moment-timezone.min.js",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\lib\\tempusdominus\\js\\moment-timezone.min.js",
       "PackagePath": "staticwebassets\\lib\\tempusdominus\\js\\moment-timezone.min.js"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\lib\\tempusdominus\\js\\moment.min.js",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\lib\\tempusdominus\\js\\moment.min.js",
       "PackagePath": "staticwebassets\\lib\\tempusdominus\\js\\moment.min.js"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\lib\\tempusdominus\\js\\tempusdominus-bootstrap-4.js",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\lib\\tempusdominus\\js\\tempusdominus-bootstrap-4.js",
       "PackagePath": "staticwebassets\\lib\\tempusdominus\\js\\tempusdominus-bootstrap-4.js"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\lib\\tempusdominus\\js\\tempusdominus-bootstrap-4.min.js",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\lib\\tempusdominus\\js\\tempusdominus-bootstrap-4.min.js",
       "PackagePath": "staticwebassets\\lib\\tempusdominus\\js\\tempusdominus-bootstrap-4.min.js"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\lib\\waypoints\\links.php",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\lib\\waypoints\\links.php",
       "PackagePath": "staticwebassets\\lib\\waypoints\\links.php"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\lib\\waypoints\\waypoints.min.js",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\lib\\waypoints\\waypoints.min.js",
       "PackagePath": "staticwebassets\\lib\\waypoints\\waypoints.min.js"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\mail\\contact.js",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\mail\\contact.js",
       "PackagePath": "staticwebassets\\mail\\contact.js"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\mail\\contact.php",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\mail\\contact.php",
       "PackagePath": "staticwebassets\\mail\\contact.php"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\mail\\jqBootstrapValidation.min.js",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\mail\\jqBootstrapValidation.min.js",
       "PackagePath": "staticwebassets\\mail\\jqBootstrapValidation.min.js"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\scss\\bootstrap\\scss\\_alert.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\scss\\bootstrap\\scss\\_alert.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_alert.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\scss\\bootstrap\\scss\\_badge.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\scss\\bootstrap\\scss\\_badge.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_badge.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\scss\\bootstrap\\scss\\_breadcrumb.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\scss\\bootstrap\\scss\\_breadcrumb.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_breadcrumb.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\scss\\bootstrap\\scss\\_button-group.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\scss\\bootstrap\\scss\\_button-group.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_button-group.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\scss\\bootstrap\\scss\\_buttons.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\scss\\bootstrap\\scss\\_buttons.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_buttons.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\scss\\bootstrap\\scss\\_card.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\scss\\bootstrap\\scss\\_card.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_card.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\scss\\bootstrap\\scss\\_carousel.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\scss\\bootstrap\\scss\\_carousel.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_carousel.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\scss\\bootstrap\\scss\\_close.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\scss\\bootstrap\\scss\\_close.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_close.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\scss\\bootstrap\\scss\\_code.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\scss\\bootstrap\\scss\\_code.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_code.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\scss\\bootstrap\\scss\\_custom-forms.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\scss\\bootstrap\\scss\\_custom-forms.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_custom-forms.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\scss\\bootstrap\\scss\\_dropdown.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\scss\\bootstrap\\scss\\_dropdown.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_dropdown.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\scss\\bootstrap\\scss\\_forms.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\scss\\bootstrap\\scss\\_forms.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_forms.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\scss\\bootstrap\\scss\\_functions.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\scss\\bootstrap\\scss\\_functions.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_functions.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\scss\\bootstrap\\scss\\_grid.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\scss\\bootstrap\\scss\\_grid.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_grid.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\scss\\bootstrap\\scss\\_images.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\scss\\bootstrap\\scss\\_images.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_images.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\scss\\bootstrap\\scss\\_input-group.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\scss\\bootstrap\\scss\\_input-group.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_input-group.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\scss\\bootstrap\\scss\\_jumbotron.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\scss\\bootstrap\\scss\\_jumbotron.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_jumbotron.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\scss\\bootstrap\\scss\\_list-group.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\scss\\bootstrap\\scss\\_list-group.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_list-group.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\scss\\bootstrap\\scss\\_media.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\scss\\bootstrap\\scss\\_media.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_media.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\scss\\bootstrap\\scss\\_mixins.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\scss\\bootstrap\\scss\\_mixins.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_mixins.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\scss\\bootstrap\\scss\\_modal.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\scss\\bootstrap\\scss\\_modal.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_modal.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\scss\\bootstrap\\scss\\_nav.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\scss\\bootstrap\\scss\\_nav.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_nav.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\scss\\bootstrap\\scss\\_navbar.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\scss\\bootstrap\\scss\\_navbar.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_navbar.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\scss\\bootstrap\\scss\\_pagination.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\scss\\bootstrap\\scss\\_pagination.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_pagination.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\scss\\bootstrap\\scss\\_popover.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\scss\\bootstrap\\scss\\_popover.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_popover.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\scss\\bootstrap\\scss\\_print.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\scss\\bootstrap\\scss\\_print.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_print.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\scss\\bootstrap\\scss\\_progress.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\scss\\bootstrap\\scss\\_progress.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_progress.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\scss\\bootstrap\\scss\\_reboot.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\scss\\bootstrap\\scss\\_reboot.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_reboot.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\scss\\bootstrap\\scss\\_root.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\scss\\bootstrap\\scss\\_root.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_root.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\scss\\bootstrap\\scss\\_spinners.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\scss\\bootstrap\\scss\\_spinners.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_spinners.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\scss\\bootstrap\\scss\\_tables.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\scss\\bootstrap\\scss\\_tables.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_tables.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\scss\\bootstrap\\scss\\_toasts.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\scss\\bootstrap\\scss\\_toasts.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_toasts.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\scss\\bootstrap\\scss\\_tooltip.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\scss\\bootstrap\\scss\\_tooltip.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_tooltip.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\scss\\bootstrap\\scss\\_transitions.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\scss\\bootstrap\\scss\\_transitions.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_transitions.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\scss\\bootstrap\\scss\\_type.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\scss\\bootstrap\\scss\\_type.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_type.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\scss\\bootstrap\\scss\\_utilities.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\scss\\bootstrap\\scss\\_utilities.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_utilities.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\scss\\bootstrap\\scss\\_variables.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\scss\\bootstrap\\scss\\_variables.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_variables.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\scss\\bootstrap\\scss\\bootstrap-grid.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\scss\\bootstrap\\scss\\bootstrap-grid.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\bootstrap-grid.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\scss\\bootstrap\\scss\\bootstrap-reboot.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\scss\\bootstrap\\scss\\bootstrap-reboot.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\bootstrap-reboot.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\scss\\bootstrap\\scss\\bootstrap.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\scss\\bootstrap\\scss\\bootstrap.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\bootstrap.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_alert.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_alert.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_alert.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_background-variant.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_background-variant.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_background-variant.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_badge.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_badge.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_badge.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_border-radius.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_border-radius.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_border-radius.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_box-shadow.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_box-shadow.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_box-shadow.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_breakpoints.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_breakpoints.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_breakpoints.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_buttons.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_buttons.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_buttons.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_caret.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_caret.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_caret.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_clearfix.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_clearfix.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_clearfix.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_deprecate.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_deprecate.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_deprecate.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_float.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_float.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_float.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_forms.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_forms.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_forms.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_gradients.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_gradients.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_gradients.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_grid-framework.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_grid-framework.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_grid-framework.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_grid.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_grid.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_grid.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_hover.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_hover.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_hover.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_image.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_image.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_image.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_list-group.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_list-group.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_list-group.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_lists.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_lists.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_lists.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_nav-divider.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_nav-divider.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_nav-divider.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_pagination.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_pagination.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_pagination.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_reset-text.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_reset-text.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_reset-text.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_resize.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_resize.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_resize.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_screen-reader.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_screen-reader.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_screen-reader.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_size.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_size.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_size.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_table-row.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_table-row.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_table-row.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_text-emphasis.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_text-emphasis.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_text-emphasis.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_text-hide.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_text-hide.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_text-hide.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_text-truncate.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_text-truncate.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_text-truncate.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_transition.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_transition.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_transition.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_visibility.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_visibility.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_visibility.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\scss\\bootstrap\\scss\\utilities\\_align.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\scss\\bootstrap\\scss\\utilities\\_align.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\utilities\\_align.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\scss\\bootstrap\\scss\\utilities\\_background.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\scss\\bootstrap\\scss\\utilities\\_background.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\utilities\\_background.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\scss\\bootstrap\\scss\\utilities\\_borders.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\scss\\bootstrap\\scss\\utilities\\_borders.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\utilities\\_borders.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\scss\\bootstrap\\scss\\utilities\\_clearfix.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\scss\\bootstrap\\scss\\utilities\\_clearfix.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\utilities\\_clearfix.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\scss\\bootstrap\\scss\\utilities\\_display.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\scss\\bootstrap\\scss\\utilities\\_display.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\utilities\\_display.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\scss\\bootstrap\\scss\\utilities\\_embed.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\scss\\bootstrap\\scss\\utilities\\_embed.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\utilities\\_embed.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\scss\\bootstrap\\scss\\utilities\\_flex.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\scss\\bootstrap\\scss\\utilities\\_flex.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\utilities\\_flex.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\scss\\bootstrap\\scss\\utilities\\_float.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\scss\\bootstrap\\scss\\utilities\\_float.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\utilities\\_float.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\scss\\bootstrap\\scss\\utilities\\_interactions.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\scss\\bootstrap\\scss\\utilities\\_interactions.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\utilities\\_interactions.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\scss\\bootstrap\\scss\\utilities\\_overflow.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\scss\\bootstrap\\scss\\utilities\\_overflow.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\utilities\\_overflow.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\scss\\bootstrap\\scss\\utilities\\_position.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\scss\\bootstrap\\scss\\utilities\\_position.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\utilities\\_position.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\scss\\bootstrap\\scss\\utilities\\_screenreaders.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\scss\\bootstrap\\scss\\utilities\\_screenreaders.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\utilities\\_screenreaders.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\scss\\bootstrap\\scss\\utilities\\_shadows.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\scss\\bootstrap\\scss\\utilities\\_shadows.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\utilities\\_shadows.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\scss\\bootstrap\\scss\\utilities\\_sizing.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\scss\\bootstrap\\scss\\utilities\\_sizing.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\utilities\\_sizing.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\scss\\bootstrap\\scss\\utilities\\_spacing.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\scss\\bootstrap\\scss\\utilities\\_spacing.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\utilities\\_spacing.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\scss\\bootstrap\\scss\\utilities\\_stretched-link.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\scss\\bootstrap\\scss\\utilities\\_stretched-link.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\utilities\\_stretched-link.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\scss\\bootstrap\\scss\\utilities\\_text.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\scss\\bootstrap\\scss\\utilities\\_text.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\utilities\\_text.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\scss\\bootstrap\\scss\\utilities\\_visibility.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\scss\\bootstrap\\scss\\utilities\\_visibility.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\utilities\\_visibility.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\scss\\bootstrap\\scss\\vendor\\_rfs.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\scss\\bootstrap\\scss\\vendor\\_rfs.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\vendor\\_rfs.scss"
     },
     {
-      "Id": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\wwwroot\\scss\\style.scss",
+      "Id": "D:\\Code\\LapTrinhWeb\\web1\\wwwroot\\scss\\style.scss",
       "PackagePath": "staticwebassets\\scss\\style.scss"
     },
     {
