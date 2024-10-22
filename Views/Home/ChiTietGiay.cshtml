@@ -23,17 +23,18 @@
                 <!-- Hidden field để lưu mã sản phẩm -->
                 <input type="hidden" name="MaGiay" value="@Model.MaGiay" />
 
-
-                <!-- Chọn size giày -->
+                <!-- Chọn size giày dưới dạng nút -->
                 <div class="form-group mt-3">
                     <label class="form-label"><strong>Chọn size giày:</strong></label>
-                    <select name="Size" class="form-control" required>
+                    <div class="d-flex gap-2">
                         @for (int size = 38; size <= 44; size++)
                         {
-                            <option value="@size">@size</option>
+                            <button type="button" class="btn btn-outline-primary" onclick="selectSize('@size')" id="sizeBtn@size">@size</button>
                         }
-                    </select>
+                        <input type="hidden" name="Size" id="selectedSize" required />
+                    </div>
                 </div>
+
 
                 <!-- Chọn số lượng -->
                 <div class="form-group mt-3">
@@ -52,3 +53,4 @@
         </div>
     </div>
 </div>
+

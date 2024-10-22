@@ -5,7 +5,7 @@ using System.Diagnostics;
 using Microsoft.AspNetCore.Http;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Authentication.Cookies; // Thêm không gian tên này nếu chưa có
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 namespace web1.Controllers
 {
@@ -60,29 +60,49 @@ namespace web1.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> DangNhap(Khachhang khachhang)
+        public async Task<IActionResult> DangNhap(string taikhoan, string matkhau)
         {
-            var user = _db.Khachhangs.FirstOrDefault(u => u.TaiKhoanKh == khachhang.TaiKhoanKh && u.MatKhau == khachhang.MatKhau);
-
-            if (user != null)
+            // Kiểm tra xem tài khoản có chứa "admin" không
+            if (taikhoan.Contains("admin")) // Thay "admin" nếu cần
             {
+                // Tạo danh sách claim cho admin
                 var claims = new List<Claim>
                 {
-                    new Claim(ClaimTypes.Name, user.TaiKhoanKh)
-
+                    new Claim(ClaimTypes.Name, taikhoan),
+                    new Claim("IsAdmin", "true") // Thêm claim để xác định là admin
                 };
+
                 var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
                 var principal = new ClaimsPrincipal(identity);
                 await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Index", "HomeAdmin", new { area = "Admin" }); // Chuyển hướng đến trang Admin
             }
             else
             {
-                ModelState.AddModelError("", "Tên đăng nhập hoặc mật khẩu không đúng.");
+                // Kiểm tra tên đăng nhập và mật khẩu cho người dùng thông thường
+                var user = _db.Khachhangs.FirstOrDefault(u => u.TaiKhoanKh == taikhoan && u.MatKhau == matkhau);
+
+                if (user != null)
+                {
+                    var claims = new List<Claim>
+            {
+                new Claim(ClaimTypes.Name, user.TaiKhoanKh)
+            };
+
+                    var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+                    var principal = new ClaimsPrincipal(identity);
+                    await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
+                    return RedirectToAction("Index", "Home"); // Chuyển hướng đến trang người dùng
+                }
+                else
+                {
+                    ModelState.AddModelError("", "Tên đăng nhập hoặc mật khẩu không đúng.");
+                }
             }
 
-            return View(khachhang);
+            return View(); // Trả về view nếu có lỗi
         }
+
 
         public async Task<IActionResult> Logout()
         {

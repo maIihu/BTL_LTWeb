@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\web1.csproj": {}
+    "D:\\Code\\LapTrinhWeb\\web1\\web1.csproj": {}
   },
   "projects": {
-    "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\web1.csproj": {
+    "D:\\Code\\LapTrinhWeb\\web1\\web1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\web1.csproj",
+        "projectUniqueName": "D:\\Code\\LapTrinhWeb\\web1\\web1.csproj",
         "projectName": "web1",
-        "projectPath": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\web1.csproj",
-        "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
-        "outputPath": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\obj\\",
+        "projectPath": "D:\\Code\\LapTrinhWeb\\web1\\web1.csproj",
+        "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
+        "outputPath": "D:\\Code\\LapTrinhWeb\\web1\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -96,7 +96,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

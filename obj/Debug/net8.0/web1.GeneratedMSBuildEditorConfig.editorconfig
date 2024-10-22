@@ -17,83 +17,87 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = web1
 build_property.RootNamespace = web1
-build_property.ProjectDir = D:\UTC_CNTT_Nam3_Ky1\BTL\web1\
+build_property.ProjectDir = D:\Code\LapTrinhWeb\web1\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\UTC_CNTT_Nam3_Ky1\BTL\web1
+build_property.MSBuildProjectDirectory = D:\Code\LapTrinhWeb\web1
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/UTC_CNTT_Nam3_Ky1/BTL/web1/Areas/Admin/Views/HomeAdmin/Index.cshtml]
+[D:/Code/LapTrinhWeb/web1/Areas/Admin/Views/HomeAdmin/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZUFkbWluXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/UTC_CNTT_Nam3_Ky1/BTL/web1/Areas/Admin/Views/Login/DangNhap.cshtml]
+[D:/Code/LapTrinhWeb/web1/Areas/Admin/Views/Login/DangNhap.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTG9naW5cRGFuZ05oYXAuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/UTC_CNTT_Nam3_Ky1/BTL/web1/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml]
+[D:/Code/LapTrinhWeb/web1/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9MYXlvdXRBZG1pbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/UTC_CNTT_Nam3_Ky1/BTL/web1/Areas/Admin/Views/Shared/_LayoutLogin.cshtml]
+[D:/Code/LapTrinhWeb/web1/Areas/Admin/Views/Shared/_LayoutLogin.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9MYXlvdXRMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/UTC_CNTT_Nam3_Ky1/BTL/web1/Views/GioHang/GioHang.cshtml]
+[D:/Code/LapTrinhWeb/web1/Views/GioHang/GioHang.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2lvSGFuZ1xHaW9IYW5nLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/UTC_CNTT_Nam3_Ky1/BTL/web1/Views/Home/ChiTietGiay.cshtml]
+[D:/Code/LapTrinhWeb/web1/Views/GioHang/_CartSummary.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2lvSGFuZ1xfQ2FydFN1bW1hcnkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Code/LapTrinhWeb/web1/Views/Home/ChiTietGiay.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDaGlUaWV0R2lheS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/UTC_CNTT_Nam3_Ky1/BTL/web1/Views/Home/GiayTheoThuongHieu.cshtml]
+[D:/Code/LapTrinhWeb/web1/Views/Home/GiayTheoThuongHieu.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxHaWF5VGhlb1RodW9uZ0hpZXUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/UTC_CNTT_Nam3_Ky1/BTL/web1/Views/Home/Index.cshtml]
+[D:/Code/LapTrinhWeb/web1/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/UTC_CNTT_Nam3_Ky1/BTL/web1/Views/Home/Privacy.cshtml]
+[D:/Code/LapTrinhWeb/web1/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/UTC_CNTT_Nam3_Ky1/BTL/web1/Views/Shared/Components/ThuongHieuMenu/Default.cshtml]
+[D:/Code/LapTrinhWeb/web1/Views/Shared/Components/ThuongHieuMenu/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcVGh1b25nSGlldU1lbnVcRGVmYXVsdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/UTC_CNTT_Nam3_Ky1/BTL/web1/Views/Shared/Error.cshtml]
+[D:/Code/LapTrinhWeb/web1/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/UTC_CNTT_Nam3_Ky1/BTL/web1/Views/Shared/_LayoutHome.cshtml]
+[D:/Code/LapTrinhWeb/web1/Views/Shared/_LayoutHome.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRIb21lLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/UTC_CNTT_Nam3_Ky1/BTL/web1/Views/Shared/_ValidationScriptsPartial.cshtml]
+[D:/Code/LapTrinhWeb/web1/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/UTC_CNTT_Nam3_Ky1/BTL/web1/Views/User/DangKy.cshtml]
+[D:/Code/LapTrinhWeb/web1/Views/User/DangKy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxEYW5nS3kuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/UTC_CNTT_Nam3_Ky1/BTL/web1/Views/User/DangNhap.cshtml]
+[D:/Code/LapTrinhWeb/web1/Views/User/DangNhap.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxEYW5nTmhhcC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/UTC_CNTT_Nam3_Ky1/BTL/web1/Views/_ViewImports.cshtml]
+[D:/Code/LapTrinhWeb/web1/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/UTC_CNTT_Nam3_Ky1/BTL/web1/Views/_ViewStart.cshtml]
+[D:/Code/LapTrinhWeb/web1/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/UTC_CNTT_Nam3_Ky1/BTL/web1/Views/Shared/_Layout.cshtml]
+[D:/Code/LapTrinhWeb/web1/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-ftkg9skh8q
