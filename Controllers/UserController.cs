@@ -118,10 +118,10 @@ namespace web1.Controllers
                     return View(khachhang);
                 }
             }
-
-            ViewBag.ErrorMessage = "Không tìm thấy thông tin khách hàng.";
             return View(null); 
         }
+
+       
 
         public IActionResult DoiMatKhau()
         {
@@ -144,7 +144,6 @@ namespace web1.Controllers
                         {
                             khachhang.MatKhau = matKhauMoi;
                             _db.SaveChanges();
-
                             ViewBag.SuccessMessage = "Đổi mật khẩu thành công.";
                         }
                         else

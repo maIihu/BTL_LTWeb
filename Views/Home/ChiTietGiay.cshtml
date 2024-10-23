@@ -5,9 +5,8 @@
     Layout = "~/Views/Shared/_LayoutHome.cshtml";
 }
 
-
 <div class="container mt-5">
-    <div class="row align-items-start"> <!-- Đổi align-items-center thành align-items-start -->
+    <div class="row align-items-start">
         <div class="col-md-6 text-center">
             <img src="~/img/AnhGiay/@Model.AnhBia" alt="Ảnh sản phẩm" class="img-fluid rounded shadow-sm product-image">
         </div>
@@ -18,11 +17,18 @@
             <h5 class="product-price mb-4" style="color: red;">@String.Format("{0:0,0}", Model.GiaBan) đ</h5>
 
             <form id="addToCartForm" method="post">
-                <input type="hidden" name="MaGiay" value="@Model.MaGiay" />
-                <input type="hidden" name="Size" id="selectedSize" required />
-                <input type="number" name="SoLuong" id="soLuong" class="form-control" min="1" value="1" style="width: 100px;" required />
+                <input type="hidden" name="MaGiay" id="maGiay" value="@Model.MaGiay" />
 
-          
+                <div class="d-flex align-items-center">
+                    <div class="input-group-prepend">
+                        <button type="button" id="decreaseQuantity" class="btn btn-outline-primary js-btn-minus" style="width: 40px;">-</button>
+                    </div>
+                    <input type="text" name="SoLuong" id="soLuong" class="form-control text-center" value="1" style="width: 60px;" readonly />
+                    <div class="input-group-prepend">
+                        <button type="button" id="increaseQuantity" class="btn btn-outline-primary js-btn-plus" style="width: 40px;">+</button>
+                    </div>
+                </div>
+
                 <div class="d-flex flex-column mt-3">
                     <button type="button" class="btn btn-success rounded-pill btn-lg" style="width: 100%;" onclick="addToCart()">Thêm vào giỏ hàng</button>
                     <button id="add-to-favorites" type="button" class="btn btn-outline-danger rounded-pill mt-2" style="width: 50px; height: 50px;">
@@ -38,19 +44,46 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 <script>
+    $(document).ready(function () {
+        // Tăng số lượng
+        $('#increaseQuantity').click(function () {
+            var currentQuantity = parseInt($('#soLuong').val());
+            $('#soLuong').val(currentQuantity + 1);
+        });
+
+        // Giảm số lượng
+        $('#decreaseQuantity').click(function () {
+            var currentQuantity = parseInt($('#soLuong').val());
+            if (currentQuantity > 1) {
+                $('#soLuong').val(currentQuantity - 1);
+            }
+        });
+    });
+
     function addToCart() {
-        var maGiay = $('input[name="MaGiay"]').val();
-        var size = $('#selectedSize').val();
+        var maGiay = $('#maGiay').val();
         var soLuong = $('#soLuong').val();
 
-        // Gửi yêu cầu AJAX
-        $.post('@Url.Action("AddToCart", "GioHang")', { MaGiay: maGiay, Size: size, SoLuong: soLuong })
-            .done(function (data) {              
-                alert('Sản phẩm đã được thêm vào giỏ hàng');
-                window.location.reload();
-            })
-            .fail(function () {
-                alert('Có lỗi xảy ra khi thêm sản phẩm vào giỏ hàng!');
+            $.ajax({
+            url: '@Url.Action("AddToCart", "GioHang")',
+            type: 'POST',
+            data: {
+                MaGiay: maGiay,
+                SoLuong: soLuong
+            },
+            success: function (response) {
+                if (response.success) {
+                    alert("Sản phẩm đã được thêm vào giỏ hàng.");
+                    window.location.reload();
+                    } else if (response.redirectUrl) {
+                        window.location.href = response.redirectUrl;
+                    } else {
+                        alert(response.message);
+                    }
+                },
+                error: function () {
+                    alert('Có lỗi xảy ra. Vui lòng thử lại.');
+                }
             });
-    }
+        }
 </script>

@@ -56,7 +56,7 @@
                         @if (User.Identity.IsAuthenticated)
                         {
                             <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">
-                                @User.Identity.Name <!-- Hiển thị tên người dùng -->
+                                @User.Identity.Name 
                             </button>
                             <div class="dropdown-menu dropdown-menu-right">
                                 <a href="@Url.Action("HoSo", "User")" class="dropdown-item">Hồ sơ</a>
@@ -73,9 +73,6 @@
                             </div>
                         }
                     </div>
-
-
-
                     <div class="btn-group mx-2">
                         <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">USD</button>
                         <div class="dropdown-menu dropdown-menu-right">

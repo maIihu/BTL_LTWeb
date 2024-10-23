@@ -1,8 +1,32 @@
-﻿
-@*
-    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@using web1.Helpers;
+﻿@using web1.Models
+@inject web1.Models.ShopGiayContext _db
+
+@{
+    // Lấy tên đăng nhập từ Claims
+    var currentUserName = User.Identity.Name;
+    int totalQuantity = 0;
+
+    if (!string.IsNullOrEmpty(currentUserName))
+    {
+        // Tìm người dùng dựa trên tên đăng nhập
+        var currentUser = _db.Khachhangs.FirstOrDefault(u => u.TaiKhoanKh == currentUserName);
+
+        if (currentUser != null)
+        {
+            // Tìm hóa đơn chưa giao hàng của người dùng
+            var currentOrder = _db.Donhangs.FirstOrDefault(o => o.MaKh == currentUser.MaKh && o.TinhTrangGiaoHang == null);
+
+            if (currentOrder != null)
+            {
+                // Tính tổng số lượng sản phẩm trong giỏ hàng
+                totalQuantity = _db.CtDonhangs
+                                 .Where(c => c.MaDonHang == currentOrder.MaDonHang)
+                                 .Sum(c => c.SoLuong);
+            }
+        }
+    }
+}
+
 <div class="container-fluid bg-dark mb-30">
     <div class="row px-xl-5">
         @await Component.InvokeAsync("ThuongHieuMenu")
@@ -30,19 +54,12 @@
                             <span class="badge text-secondary border border-secondary rounded-circle" style="padding-bottom: 2px;">0</span>
                         </a>
 
-                        @{
-                            var cart = ViewContext.HttpContext.Session.Get<List<web1.Models.CtDonhang>>("Cart") ?? new List<web1.Models.CtDonhang>();
-                            var totalQuantity = cart.Sum(item => item.SoLuong); // Tính tổng số lượng
-                        }
-
                         <a href="@Url.Action("GioHang", "GioHang")" class="btn px-0 ml-3">
                             <i class="fas fa-shopping-cart text-primary"></i>
                             <span class="badge text-secondary border border-secondary rounded-circle" style="padding-bottom: 2px;">
                                 @totalQuantity
                             </span>
                         </a>
-
-
                     </div>
                 </div>
             </nav>
