@@ -8,10 +8,7 @@
  @using X.PagedList.Mvc.Core;
 @model X.PagedList.IPagedList<Sanpham> 
 
-
-<!-- Container bao quanh toàn bộ nội dung -->
 <div class="List" style=" padding-left: 50px; padding-right: 50px">
-    <!-- Bọc các sản phẩm trong row -->
     <div class="row">
         @foreach (var item in Model)
         {
@@ -47,7 +44,6 @@
         }
     </div>
 
-    <!-- Phần phân trang -->
      <div class="row">
         <div class="col-12 text-center">
             <div class="pagination-container">

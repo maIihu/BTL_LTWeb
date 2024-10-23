@@ -63,11 +63,10 @@ namespace web1.Controllers
         {
             if (taikhoan.Contains("admin")) 
             {
-                // Tạo danh sách claim cho admin
                 var claims = new List<Claim>
                 {
                     new Claim(ClaimTypes.Name, taikhoan),
-                    new Claim("IsAdmin", "true") // Thêm claim để xác định là admin
+                    new Claim("IsAdmin", "true") 
                 };
 
                 var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
@@ -103,10 +102,7 @@ namespace web1.Controllers
 
         public async Task<IActionResult> DangXuat()
         {
-            // Đăng xuất và xóa cookie
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
-
-            // Chuyển hướng về trang đăng nhập
             return RedirectToAction("DangNhap", "User");
         }
 
@@ -137,18 +133,15 @@ namespace web1.Controllers
         {
             if (User.Identity.IsAuthenticated)
             {
-                // Lấy tên đăng nhập từ session hiện tại
                 string taiKhoan = User.Identity.Name;
                 var khachhang = _db.Khachhangs.FirstOrDefault(k => k.TaiKhoanKh == taiKhoan);
 
                 if (khachhang != null)
                 {
-                    // Kiểm tra mật khẩu cũ có đúng không
                     if (khachhang.MatKhau == matKhauCu)
                     {
                         if (matKhauMoi == xacNhanMatKhauMoi)
                         {
-                            // Cập nhật mật khẩu mới
                             khachhang.MatKhau = matKhauMoi;
                             _db.SaveChanges();
 
@@ -168,5 +161,10 @@ namespace web1.Controllers
 
             return View();
         }
+
+        public IActionResult QuenMatKhau() {
+            return View();
+        }
+
     }
 }

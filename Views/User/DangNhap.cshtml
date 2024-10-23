@@ -23,7 +23,7 @@
                             <input type="password" name="matkhau" class="form-control" placeholder="Nhập mật khẩu" required /> 
                         </div>
                         <p id="login-form-remember" class="text-center">
-                            <a href="#">Quên mật khẩu?</a>
+                            <a href="@Url.Action("QuenMatKhau", "User")">Quên mật khẩu?</a>
                         </p>
                         <div class="text-center">
                             <input type="submit" value="Đăng nhập" class="btn btn-success btn-lg rounded-pill"> 
@@ -37,7 +37,6 @@
             <h4 class="title text-center" style="font-size: 18px; margin-top: 30px;">BẠN CHƯA CÓ TÀI KHOẢN?</h4> 
             <div class="text-center mb-3">
                 <a href="@Url.Action("DangKy", "User")">
-                    <!-- Nút lớn với viền tròn -->
                     Đăng ký ngay
                 </a>
             </div>
