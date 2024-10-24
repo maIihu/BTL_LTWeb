@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
+using web1.Helpers;
 using web1.Models;
 using web1.Repository;
 
@@ -7,6 +8,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddTransient<IEmailSender, EmailSender>();
 
 builder.Logging.ClearProviders();
 builder.Logging.AddConsole(); // Hoặc thêm các logger khác theo nhu cầu

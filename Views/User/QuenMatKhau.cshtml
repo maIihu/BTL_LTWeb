@@ -1,8 +1,31 @@
 ﻿
+
 @{
-    ViewData["Title"] = "QuenMatKhau";
-    Layout = "~/Views/Shared/_LayoutHome.cshtml";
+    ViewData["Title"] = "Quên Mật Khẩu";
 }
 
-<h1>QuenMatKhau</h1>
+<h2>Quên Mật Khẩu</h2>
 
+<form asp-action="QuenMatKhau" method="post">
+    <div>
+        <label>Email:</label>
+        <input type="email" name="email" value="@ViewBag.Email" required />
+    </div>
+    <button type="submit" name="sendCode" value="true">Gửi mã xác nhận</button>
+
+    @if (ViewBag.Message != null)
+    {
+        <div>@ViewBag.Message</div>
+    }
+
+    <div>
+        <label>Mã xác nhận:</label>
+        <input type="text" name="verificationCode" />
+    </div>
+    <button type="submit">Xác nhận mã</button>
+
+    @if (ViewBag.ErrorMessage != null)
+    {
+        <div>@ViewBag.ErrorMessage</div>
+    }
+</form>
