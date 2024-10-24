@@ -1,0 +1,70 @@
+﻿@{
+    ViewData["Title"] = "HeThongCuaHang";
+    Layout = "~/Views/Shared/_LayoutHome.cshtml";
+}
+
+<div class="row" style="margin-left: 40px; margin-right: 40px;">
+    <div class="col-md-4">
+        <ul id="storeList" class="list-group">
+            <!-- Cửa hàng sẽ được render ở đây -->
+        </ul>
+    </div>
+    <div class="col-md-8">
+        <div id="map" style="height: 800px;"></div>
+    </div>
+</div>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+<script>
+    let map;
+
+    function initMap() {
+        // Tạo bản đồ với Leaflet
+        map = L.map('map').setView([21.028511, 105.804817], 12);  // Tâm bản đồ ban đầu là Hà Nội
+
+        // Thêm tile layer từ OpenStreetMap
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+
+        const stores = [
+            // Cửa hàng ở Hà Nội
+            { name: "MultiShop Hà Nội 1", lat: 21.071229, lng: 105.793999, address: "Bắc Từ Liêm, Hà Nội" },  // Xa về phía Tây Bắc Hà Nội
+            { name: "MultiShop Hà Nội 2", lat: 20.983172, lng: 105.822022, address: "Hà Đông, Hà Nội" },       // Khu vực Hà Đông
+            { name: "MultiShop Hà Nội 3", lat: 21.036237, lng: 105.849053, address: "Ba Đình, Hà Nội" },        // Khu vực Ba Đình
+
+            // Cửa hàng ở TP. Hồ Chí Minh
+            { name: "MultiShop TP.HCM 1", lat: 10.776889, lng: 106.700806, address: "Quận 1, TP. Hồ Chí Minh" },
+            { name: "MultiShop TP.HCM 2", lat: 10.762622, lng: 106.660172, address: "Quận 3, TP. Hồ Chí Minh" },
+
+            // Cửa hàng ở Đà Nẵng
+            { name: "MultiShop Đà Nẵng", lat: 16.047079, lng: 108.206230, address: "Hải Châu, Đà Nẵng" },
+
+            // Cửa hàng ở Vinh
+            { name: "MultiShop Vinh", lat: 18.679585, lng: 105.681335, address: "Thành phố Vinh, Nghệ An" }
+        ];
+
+
+        // Render danh sách cửa hàng
+        const storeList = document.getElementById('storeList');
+        stores.forEach(store => {
+            const li = document.createElement('li');
+            li.className = 'list-group-item';
+            li.innerHTML = `<strong>${store.name}</strong><br>${store.address}`;
+            storeList.appendChild(li);
+
+            // Thêm marker trên bản đồ với Leaflet
+            const marker = L.marker([store.lat, store.lng]).addTo(map)
+                .bindPopup(`<b>${store.name}</b><br>${store.address}`);
+
+            // Khi click vào cửa hàng trong danh sách, di chuyển đến vị trí marker trên bản đồ
+            li.addEventListener('click', () => {
+                map.setView([store.lat, store.lng], 18);
+                marker.openPopup();
+            });
+        });
+    }
+
+    // Khởi tạo bản đồ khi tài liệu đã sẵn sàng
+    document.addEventListener('DOMContentLoaded', initMap);
+</script>
