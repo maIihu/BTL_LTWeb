@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using Azure;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using web1.Models;
@@ -51,14 +52,32 @@ namespace web1.Controllers
         {
             return View();
         }
-        public IActionResult Shop()
+
+        public IActionResult GiayTheoLoai(int maLoai, int? page)
         {
-            return View();
+            int pageSize = 8;
+            int pageNum = page == null || page < 0 ? 1 : page.Value;
+            List<Sanpham> lstsanpham = db.Sanphams.Where(x => x.MaLoai == maLoai).OrderBy(X => X.TenGiay).ToList();
+            PagedList<Sanpham> lst = new PagedList<Sanpham>(lstsanpham, pageNum, pageSize);
+            ViewBag.MaLoai = maLoai;
+            ViewBag.Title = maLoai == 1 ? "Giày Nam" : "Giày Nữ";  
+            return View(lst);
         }
+
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+
+        public IActionResult DongGopYKien() { 
+            return View();
+        }
+
+        public IActionResult HeThongCuaHang()
+        {
+            return View();
         }
     }
 }

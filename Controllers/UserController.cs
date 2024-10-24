@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.EntityFrameworkCore;
 
 namespace web1.Controllers
 {
@@ -29,10 +30,9 @@ namespace web1.Controllers
         {
             if (!ModelState.IsValid)
             {
-                return View(khachhang); // Trả về view nếu dữ liệu không hợp lệ
+                return View(khachhang);
             }
 
-            // Kiểm tra xem tên đăng nhập đã tồn tại chưa
             var existingUser = _db.Khachhangs.FirstOrDefault(u => u.TaiKhoanKh == khachhang.TaiKhoanKh);
             if (existingUser != null)
             {
@@ -40,11 +40,10 @@ namespace web1.Controllers
                 return View(khachhang);
             }
 
-            // Thêm người dùng mới vào database
             _db.Khachhangs.Add(khachhang);
             _db.SaveChanges();
 
-            return RedirectToAction("DangNhap", "User"); // Chuyển hướng đến trang đăng nhập
+            return RedirectToAction("DangNhap", "User"); 
         }
 
         public IActionResult DangNhap()
@@ -62,37 +61,34 @@ namespace web1.Controllers
         [HttpPost]
         public async Task<IActionResult> DangNhap(string taikhoan, string matkhau)
         {
-            // Kiểm tra xem tài khoản có chứa "admin" không
-            if (taikhoan.Contains("admin")) // Thay "admin" nếu cần
+            if (taikhoan.Contains("admin")) 
             {
-                // Tạo danh sách claim cho admin
                 var claims = new List<Claim>
                 {
                     new Claim(ClaimTypes.Name, taikhoan),
-                    new Claim("IsAdmin", "true") // Thêm claim để xác định là admin
+                    new Claim("IsAdmin", "true") 
                 };
 
                 var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
                 var principal = new ClaimsPrincipal(identity);
                 await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
-                return RedirectToAction("Index", "HomeAdmin", new { area = "Admin" }); // Chuyển hướng đến trang Admin
+                return RedirectToAction("Index", "HomeAdmin", new { area = "Admin" });
             }
             else
             {
-                // Kiểm tra tên đăng nhập và mật khẩu cho người dùng thông thường
                 var user = _db.Khachhangs.FirstOrDefault(u => u.TaiKhoanKh == taikhoan && u.MatKhau == matkhau);
 
                 if (user != null)
                 {
                     var claims = new List<Claim>
-            {
-                new Claim(ClaimTypes.Name, user.TaiKhoanKh)
-            };
+                    {
+                        new Claim(ClaimTypes.Name, user.TaiKhoanKh)
+                    };
 
                     var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
                     var principal = new ClaimsPrincipal(identity);
                     await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
-                    return RedirectToAction("Index", "Home"); // Chuyển hướng đến trang người dùng
+                    return RedirectToAction("Index", "Home"); 
                 }
                 else
                 {
@@ -100,17 +96,73 @@ namespace web1.Controllers
                 }
             }
 
-            return View(); // Trả về view nếu có lỗi
+            return View();
         }
 
 
-        public async Task<IActionResult> Logout()
+        public async Task<IActionResult> DangXuat()
         {
-            // Đăng xuất và xóa cookie
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
-
-            // Chuyển hướng về trang đăng nhập
             return RedirectToAction("DangNhap", "User");
+        }
+
+        public IActionResult HoSo()
+        {
+            if (User.Identity.IsAuthenticated)
+            {
+                string taiKhoan = User.Identity.Name; 
+                var khachhang = _db.Khachhangs.FirstOrDefault(k => k.TaiKhoanKh == taiKhoan);
+
+                if (khachhang != null)
+                {
+                    return View(khachhang);
+                }
+            }
+            return View(null); 
+        }
+
+       
+
+        public IActionResult DoiMatKhau()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult DoiMatKhau(string matKhauCu, string matKhauMoi, string xacNhanMatKhauMoi)
+        {
+            if (User.Identity.IsAuthenticated)
+            {
+                string taiKhoan = User.Identity.Name;
+                var khachhang = _db.Khachhangs.FirstOrDefault(k => k.TaiKhoanKh == taiKhoan);
+
+                if (khachhang != null)
+                {
+                    if (khachhang.MatKhau == matKhauCu)
+                    {
+                        if (matKhauMoi == xacNhanMatKhauMoi)
+                        {
+                            khachhang.MatKhau = matKhauMoi;
+                            _db.SaveChanges();
+                            ViewBag.SuccessMessage = "Đổi mật khẩu thành công.";
+                        }
+                        else
+                        {
+                            ModelState.AddModelError("", "Mật khẩu mới không khớp.");
+                        }
+                    }
+                    else
+                    {
+                        ModelState.AddModelError("", "Mật khẩu cũ không chính xác.");
+                    }
+                }
+            }
+
+            return View();
+        }
+
+        public IActionResult QuenMatKhau() {
+            return View();
         }
 
     }

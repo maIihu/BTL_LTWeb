@@ -1,0 +1,31 @@
+﻿
+@model web1.Models.Quanly
+
+@{
+    ViewData["Title"] = "HoSo";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+<h2 class="text-center my-4 display-4">Thông tin Admin</h2>
+
+@if (Model != null)
+{
+    <div class="container">
+        <div class="card shadow-sm" style="max-width: 600px; margin: auto;">
+            <div class="card-header bg-primary text-white">
+                <h3 class="mb-0">Thông tin admin:</h3>
+            </div>
+            <div class="card-body">
+                <p><strong>Họ tên:</strong> @Model.HoTen</p>
+                <p><strong>Email:</strong> @Model.EmailQl</p>
+                <p><strong>Số điện thoại:</strong> @Model.DienThoaiQl</p>
+            </div>
+        </div>
+    </div>
+}
+else if (ViewBag.ErrorMessage != null)
+{
+    <div class="alert alert-danger mt-3">@ViewBag.ErrorMessage</div>
+}
+
