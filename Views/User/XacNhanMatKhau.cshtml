@@ -1,0 +1,24 @@
+﻿@{
+    ViewData["Title"] = "Đổi Mật Khẩu";
+}
+
+<h2>Xác Nhận Mật Khẩu Mới</h2>
+
+<form asp-action="XacNhanMatKhau" method="post">
+    <div>
+        <label>Mật khẩu mới:</label>
+        <input type="password" name="newPassword" required />
+    </div>
+
+    <div>
+        <label>Xác nhận mật khẩu:</label>
+        <input type="password" name="confirmPassword" required />
+    </div>
+
+    <button type="submit">Đổi mật khẩu</button>
+
+    @if (ViewBag.SuccessMessage != null)
+    {
+        <div>@ViewBag.SuccessMessage</div>
+    }
+</form>
