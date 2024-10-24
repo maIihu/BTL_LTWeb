@@ -17,7 +17,7 @@ namespace web1.Controllers
             this._db = db;
             _logger = logger;
         }
-
+        #region GioHang
         public IActionResult GioHang()
         {
             // Lấy tên đăng nhập từ Claims
@@ -56,7 +56,9 @@ namespace web1.Controllers
             ViewBag.TotalAmount = totalAmount; // Gửi tổng tiền đến view
             return View(cart);
         }
+        #endregion
 
+        #region ThemGioHang
         [HttpPost]
         public IActionResult AddToCart(int MaGiay, int Size, int SoLuong)
         {
@@ -131,7 +133,9 @@ namespace web1.Controllers
 
             return Json(new { success = false, message = "Sản phẩm không tồn tại." }); // Trả về thất bại nếu không tìm thấy sản phẩm
         }
+        #endregion
 
+        #region XoaSpKhoiGio
         [HttpPost]
         public IActionResult RemoveFromCart(int MaGiay)
         {
@@ -181,8 +185,9 @@ namespace web1.Controllers
 
             return RedirectToAction("GioHang");
         }
+        #endregion
 
-
+        #region ThemSlTrongGio
         [HttpPost]
         public JsonResult UpdateQuantity(int MaGiay, int SoLuong)
         {
@@ -242,7 +247,7 @@ namespace web1.Controllers
                 return Json(new { success = false, message = ex.Message });
             }
         }
-
+        #endregion
 
         [HttpPost]
         public IActionResult Checkout([FromBody] List<CtDonhang> cartItems)
