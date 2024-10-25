@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using web1.Models;
 
 namespace web1.Areas.Admin.Controllers
@@ -40,5 +41,31 @@ namespace web1.Areas.Admin.Controllers
             ViewBag.ErrorMessage = "Không tìm thấy thông tin admin.";
             return View(null);
         }
+
+
+
+        [HttpPost]
+        [Route("xoa-don-hang/{id}")]
+        public IActionResult XoaDonHang(int id)
+        {
+            var donHang = _db.Donhangs.Include(dh => dh.CtDonhangs)
+                                       .FirstOrDefault(dh => dh.MaDonHang == id);
+            if (donHang == null)
+            {
+                return NotFound();
+            }
+
+            // Xóa chi tiết đơn hàng trước
+            _db.CtDonhangs.RemoveRange(donHang.CtDonhangs);
+
+            // Sau đó xóa đơn hàng
+            _db.Donhangs.Remove(donHang);
+            _db.SaveChanges();
+
+            // Chuyển hướng về danh sách đơn hàng với thông báo
+            TempData["SuccessMessage"] = "Đơn hàng đã được xóa thành công.";
+            return RedirectToAction("DonHang");
+        }
+
     }
 }
