@@ -21,7 +21,7 @@ namespace web1.Controllers
             _logger = logger;
             _emailSender = emailSender;
         }
-
+        #region DangKy
         [HttpGet]
         public IActionResult DangKy()
         {
@@ -47,7 +47,9 @@ namespace web1.Controllers
 
             return RedirectToAction("DangNhap", "User"); 
         }
+        #endregion
 
+        #region DangNhap
         public IActionResult DangNhap()
         {
             if (HttpContext.Session.GetString("Username") == null)
@@ -101,13 +103,17 @@ namespace web1.Controllers
             return View();
         }
 
+        #endregion
 
+        #region DangXuat
         public async Task<IActionResult> DangXuat()
         {
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
             return RedirectToAction("DangNhap", "User");
         }
+        #endregion
 
+        #region HoSo
         public IActionResult HoSo()
         {
             if (User.Identity.IsAuthenticated)
@@ -122,9 +128,35 @@ namespace web1.Controllers
             }
             return View(null); 
         }
+        [HttpPost]
+        public IActionResult HoSo(Khachhang updatedKhachhang)
+        {
+            if (User.Identity.IsAuthenticated)
+            {
+                string taiKhoan = User.Identity.Name;
+                var khachhang = _db.Khachhangs.FirstOrDefault(k => k.TaiKhoanKh == taiKhoan);
 
-       
+                if (khachhang != null)
+                {
+                    // Update only the editable fields
+                    khachhang.HoTen = updatedKhachhang.HoTen;
+                    khachhang.DiaChiKh = updatedKhachhang.DiaChiKh;
+                    khachhang.DienThoaiKh = updatedKhachhang.DienThoaiKh;
+                    khachhang.NgaySinh = updatedKhachhang.NgaySinh;
 
+                    _db.SaveChanges();
+
+                    // Return JSON success response
+                    return Json(new { success = true });
+                }
+            }
+
+            return Json(new { success = false });
+        }
+
+        #endregion
+
+        #region DoiMatKhau
         public IActionResult DoiMatKhau()
         {
             return View();
@@ -162,8 +194,9 @@ namespace web1.Controllers
 
             return View();
         }
+        #endregion
 
-
+        #region QuenMatKhau
         [HttpGet]
         public IActionResult QuenMatKhau()
         {
@@ -173,7 +206,7 @@ namespace web1.Controllers
 
             return View();
         }
-
+        
         [HttpPost]
         public async Task<IActionResult> QuenMatKhau(string email, string verificationCode, bool sendCode)
         {
@@ -228,8 +261,6 @@ namespace web1.Controllers
             return View();
         }
 
-
-
         [HttpGet]
         public IActionResult XacNhanMatKhau()
         {
@@ -262,7 +293,38 @@ namespace web1.Controllers
             ModelState.AddModelError("", "Không thể đổi mật khẩu.");
             return View();
         }
+        #endregion
+
+        #region DonHang
+        public IActionResult DonHang()
+        {
+            if (User.Identity.IsAuthenticated)
+            {
+                string tk = User.Identity.Name;
+                var kh = _db.Khachhangs.FirstOrDefault(k => k.TaiKhoanKh == tk);
+                if (kh != null) { 
+                    var dsDonHang = _db.Donhangs.Where(dh => dh.MaKh == kh.MaKh).Include(dh => dh.CtDonhangs).ToList(); 
+                    return View(dsDonHang);                      
+                }
+            }
+            return RedirectToAction("DangNhap");
+        }
+        public IActionResult ChiTietDonHang(int id)
+        {
+            var donHang = _db.Donhangs
+                            .Include(dh => dh.CtDonhangs)
+                            .ThenInclude(ct => ct.MaGiayNavigation) // Bao gồm thông tin sản phẩm
+                            .FirstOrDefault(dh => dh.MaDonHang == id);
+
+            if (donHang == null)
+            {
+                return NotFound();
+            }
+
+            return View(donHang);
+        }
 
 
+        #endregion
     }
 }

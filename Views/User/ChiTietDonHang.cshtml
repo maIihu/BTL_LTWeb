@@ -1,0 +1,72 @@
+﻿@{
+    ViewData["Title"] = "ChiTietDonHang";
+    Layout = "~/Views/Shared/_LayoutHome.cshtml";
+}
+
+@model web1.Models.Donhang
+
+<div class="container mt-4">
+    <h2 class="text-center">Chi tiết đơn hàng #@Model.MaDonHang</h2>
+
+    <table class="table table-bordered table-striped">
+        <tbody>
+            <tr>
+                <th scope="row">Mã đơn hàng</th>
+                <td>@Model.MaDonHang</td>
+            </tr>
+            <tr>
+                <th scope="row">Ngày đặt</th>
+                <td>@Model.NgayDat?.ToString("dd/MM/yyyy")</td>
+            </tr>
+            <tr>
+                <th scope="row">Ngày giao</th>
+                <td>@Model.NgayGiao?.ToString("dd/MM/yyyy")</td>
+            </tr>
+            <tr>
+                <th scope="row">Tổng tiền</th>
+                <td>@Model.TongTien?.ToString("C")</td>
+            </tr>
+            <tr>
+                <th scope="row">Tình trạng giao hàng</th>
+                <td>@(Model.TinhTrangGiaoHang == true ? "Đã giao" : "Chưa giao")</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3 class="mt-4">Chi tiết sản phẩm</h3>
+
+    <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th>Sản phẩm</th>
+                <th>Số lượng</th>
+                <th>Giá</th>
+                <th>Tổng tiền</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model.CtDonhangs != null && Model.CtDonhangs.Any())
+            {
+                foreach (var ct in Model.CtDonhangs)
+                {
+                    <tr>
+                        <td>@ct.MaGiayNavigation?.TenGiay</td>
+                        <td>@ct.SoLuong</td>
+                        <td>@ct.MaGiayNavigation?.GiaBan.ToString("C")</td>
+                        <td>@((ct.SoLuong * ct.MaGiayNavigation?.GiaBan)?.ToString("C"))</td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr>
+                    <td colspan="4" class="text-center">Không có sản phẩm nào trong đơn hàng này.</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <div class="text-center mt-4">
+        <a href="@Url.Action("DonHang", "User")" class="btn btn-primary">Quay lại danh sách đơn hàng</a>
+    </div>
+</div>
