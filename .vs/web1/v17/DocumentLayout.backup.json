@@ -50,8 +50,7 @@
               "RelativeToolTip": "Areas\\Admin\\Views\\QuanLyAdmin\\ChiTietDonHang.cshtml",
               "ViewState": "AgIAABgAAAAAAAAAAAAAACwAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-25T15:38:12.084Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-25T15:38:12.084Z"
             },
             {
               "$type": "Document",
@@ -63,8 +62,7 @@
               "RelativeToolTip": "Areas\\Admin\\Views\\Shared\\_LayoutAdmin.cshtml",
               "ViewState": "AgIAAD8AAAAAAAAAAAAAAFoAAABbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-25T15:26:02.651Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-25T15:26:02.651Z"
             },
             {
               "$type": "Document",
@@ -72,12 +70,11 @@
               "Title": "DonHang.cshtml",
               "DocumentMoniker": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\Areas\\Admin\\Views\\QuanLyAdmin\\DonHang.cshtml",
               "RelativeDocumentMoniker": "Areas\\Admin\\Views\\QuanLyAdmin\\DonHang.cshtml",
-              "ToolTip": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\Areas\\Admin\\Views\\QuanLyAdmin\\DonHang.cshtml*",
-              "RelativeToolTip": "Areas\\Admin\\Views\\QuanLyAdmin\\DonHang.cshtml*",
+              "ToolTip": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\Areas\\Admin\\Views\\QuanLyAdmin\\DonHang.cshtml",
+              "RelativeToolTip": "Areas\\Admin\\Views\\QuanLyAdmin\\DonHang.cshtml",
               "ViewState": "AgIAAA8AAAAAAAAAAAAAACYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-25T15:24:25.332Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-25T15:24:25.332Z"
             },
             {
               "$type": "Document",
@@ -87,7 +84,7 @@
               "RelativeDocumentMoniker": "Areas\\Admin\\Controllers\\QuanLyAdmin.cs",
               "ToolTip": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\Areas\\Admin\\Controllers\\QuanLyAdmin.cs",
               "RelativeToolTip": "Areas\\Admin\\Controllers\\QuanLyAdmin.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAYwCgAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-25T15:23:17.097Z",
               "EditorCaption": ""
@@ -102,8 +99,7 @@
               "RelativeToolTip": "Areas\\Admin\\Controllers\\HomeAdminController.cs",
               "ViewState": "AgIAACMAAAAAAAAAAAAkwCwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-25T15:22:34.151Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-25T15:22:34.151Z"
             }
           ]
         }
