@@ -53,7 +53,7 @@
                                 <form asp-action="RemoveFromCart" asp-controller="GioHang" method="post" style="display:inline;">
                                     <input type="hidden" name="MaGiay" value="@item.MaGiay" />
                                     <input type="hidden" name="MaDonHang" value="@maDonHang" />
-                                    <button type="submit" class="btn btn-danger btn-sm">X</button>
+                                    <button class="remove-from-cart" data-productid="@item.MaGiay">Xóa</button>
                                 </form>
                             </td>
                         </tr>
@@ -211,7 +211,7 @@
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
-
+    // Tăng giảm số lượng
     $(document).ready(function () {
         // Tăng số lượng sản phẩm
         $('.increaseQuantity').click(function () {
@@ -219,7 +219,6 @@
             var $quantityInput = $('input[data-id="' + maGiay + '"]');
             var currentQuantity = parseInt($quantityInput.val());
             $quantityInput.val(currentQuantity + 1);
-
             updateCart(maGiay, currentQuantity + 1);
         });
 
@@ -245,7 +244,7 @@
         // Cập nhật số lượng sản phẩm trong giỏ hàng
         function updateCart(maGiay, soLuong) {
             $.ajax({
-                url: '@Url.Action("UpdateQuantity", "GioHang")',
+                url: '@Url.Action("UpdateQuantity", "Cart")',
                 type: 'POST',
                 data: {
                     MaGiay: maGiay,
@@ -263,6 +262,43 @@
                 }
             });
         }
+    });
+
+    // Xóa đơn hàng
+    $(document).ready(function () {
+        $('.remove-from-cart').click(function (e) {
+            e.preventDefault(); // Ngăn chặn hành động mặc định của nút
+
+            // Xác nhận người dùng có muốn xóa không
+            if (!confirm("Bạn có chắc chắn muốn xóa sản phẩm này khỏi giỏ hàng?")) {
+                return; // Nếu người dùng không xác nhận, không làm gì cả
+            }
+
+            var productId = $(this).data('productid');
+            var maDonHang = $(this).data('ma-don-hang');
+            var button = $(this); // Lưu nút để sử dụng sau
+
+            $.ajax({
+                url: '/GioHang/RemoveFromCart',
+                type: 'POST',
+                data: { maGiay: productId },
+                success: function (response) {
+                    if (response.success) {
+                        // Cập nhật danh sách sản phẩm
+                        button.closest('tr').remove(); // Xóa hàng trong bảng
+
+                        // Cập nhật tổng tiền
+                        $('table tbody tr:last td:last').text(response.totalAmount.toLocaleString() + ' đ');
+                        alert(response.message); // Hiển thị thông báo thành công
+                    } else {
+                        alert(response.message); // Hiển thị thông báo lỗi
+                    }
+                },
+                error: function () {
+                    alert("Có lỗi xảy ra. Vui lòng thử lại.");
+                }
+            });
+        });
     });
 
 
@@ -336,7 +372,7 @@
                 }
 
                 $.ajax({
-                    url: '@Url.Action("Checkout", "GioHang")',
+                    url: '@Url.Action("Checkout", "ShowCart")',
                     type: 'POST',
                     contentType: 'application/json',
                     data: JSON.stringify(cartItems),

@@ -65,18 +65,18 @@ namespace web1.Controllers
         [HttpPost]
         public async Task<IActionResult> DangNhap(string taikhoan, string matkhau)
         {
-            if (taikhoan.Contains("admin")) 
+            if (taikhoan.Contains("admin"))
             {
                 var claims = new List<Claim>
                 {
                     new Claim(ClaimTypes.Name, taikhoan),
-                    new Claim("IsAdmin", "true") 
+                    new Claim("IsAdmin", "true")
                 };
 
                 var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
                 var principal = new ClaimsPrincipal(identity);
                 await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
-                return RedirectToAction("Index", "HomeAdmin", new { area = "Admin" });
+                return Json(new { success = true, redirectUrl = Url.Action("Index", "HomeAdmin", new { area = "Admin" }) });
             }
             else
             {
@@ -92,16 +92,15 @@ namespace web1.Controllers
                     var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
                     var principal = new ClaimsPrincipal(identity);
                     await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
-                    return RedirectToAction("Index", "Home"); 
+                    return Json(new { success = true, redirectUrl = Url.Action("Index", "Home") });
                 }
                 else
                 {
-                    ModelState.AddModelError("", "Tên đăng nhập hoặc mật khẩu không đúng.");
+                    return Json(new { success = false, message = "Tên đăng nhập hoặc mật khẩu không đúng." });
                 }
             }
-
-            return View();
         }
+
 
         #endregion
 
@@ -118,7 +117,7 @@ namespace web1.Controllers
         {
             if (User.Identity.IsAuthenticated)
             {
-                string taiKhoan = User.Identity.Name; 
+                string taiKhoan = User.Identity.Name;
                 var khachhang = _db.Khachhangs.FirstOrDefault(k => k.TaiKhoanKh == taiKhoan);
 
                 if (khachhang != null)
@@ -126,7 +125,7 @@ namespace web1.Controllers
                     return View(khachhang);
                 }
             }
-            return View(null); 
+            return View(null);
         }
         [HttpPost]
         public IActionResult HoSo(Khachhang updatedKhachhang)
