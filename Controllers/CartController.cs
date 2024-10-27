@@ -8,17 +8,17 @@ using web1.Models;
 
 namespace web1.Controllers
 {
-    public class GioHangController : Controller
+    public class CartController : Controller
     {
-        private readonly ILogger<GioHangController> _logger;
+        private readonly ILogger<CartController> _logger;
         private readonly ShopGiayContext _db;  
-        public GioHangController(ShopGiayContext db, ILogger<GioHangController> logger)
+        public CartController(ShopGiayContext db, ILogger<CartController> logger)
         {
             this._db = db;
             _logger = logger;
         }
-        #region GioHang
-        public IActionResult GioHang()
+        #region XemGioHang
+        public IActionResult ShowCart()
         {
             // Lấy tên đăng nhập từ Claims
             var currentUserName = User.Identity.Name;
@@ -60,7 +60,7 @@ namespace web1.Controllers
 
         #region ThemGioHang
         [HttpPost]
-        public IActionResult AddToCart(int MaGiay, int Size, int SoLuong)
+        public IActionResult AddToCart(int MaGiay, int Size, int SoLuong) // AJAX
         {
             var product = _db.Sanphams.FirstOrDefault(p => p.MaGiay == MaGiay);
 
@@ -69,13 +69,11 @@ namespace web1.Controllers
 
             if (product != null)
             {
-                // Kiểm tra xem người dùng đã đăng nhập chưa
                 if (string.IsNullOrEmpty(currentUserName))
                 {
                     return Json(new { success = false, redirectUrl = Url.Action("DangNhap", "User") }); // Chuyển hướng đến trang đăng nhập
                 }
 
-                // Tìm người dùng dựa trên tên đăng nhập
                 var currentUser = _db.Khachhangs.FirstOrDefault(u => u.TaiKhoanKh == currentUserName);
 
                 if (currentUser == null)
@@ -137,23 +135,21 @@ namespace web1.Controllers
 
         #region XoaSpKhoiGio
         [HttpPost]
-        public IActionResult RemoveFromCart(int MaGiay)
+        public JsonResult RemoveFromCart(int maGiay) // AJAX
         {
             // Lấy tên đăng nhập từ Claims
             var currentUserName = User.Identity.Name;
 
-            // Nếu không có người dùng đăng nhập, chuyển hướng đến trang đăng nhập
             if (string.IsNullOrEmpty(currentUserName))
             {
-                return RedirectToAction("DangNhap", "User");
+                return Json(new { success = false, message = "Bạn cần đăng nhập." });
             }
 
-            // Tìm người dùng dựa trên tên đăng nhập
             var currentUser = _db.Khachhangs.FirstOrDefault(u => u.TaiKhoanKh == currentUserName);
 
             if (currentUser == null)
             {
-                return RedirectToAction("DangNhap", "User"); // Nếu không tìm thấy người dùng, chuyển hướng đến đăng nhập
+                return Json(new { success = false, message = "Không tìm thấy người dùng." });
             }
 
             // Tìm hóa đơn hiện tại của người dùng (chưa giao hàng)
@@ -161,41 +157,34 @@ namespace web1.Controllers
 
             if (currentOrder == null)
             {
-                return RedirectToAction("GioHang"); // Nếu không có hóa đơn, quay lại trang giỏ hàng
+                return Json(new { success = false, message = "Không có hóa đơn nào." });
             }
 
             // Tìm sản phẩm cần xóa trong chi tiết hóa đơn
-            var itemToRemove = _db.CtDonhangs.FirstOrDefault(item => item.MaGiay == MaGiay && item.MaDonHang == currentOrder.MaDonHang);
+            var itemToRemove = _db.CtDonhangs.FirstOrDefault(item => item.MaGiay == maGiay && item.MaDonHang == currentOrder.MaDonHang);
 
             if (itemToRemove != null)
             {
-                // Cập nhật tổng tiền cho hóa đơn
                 currentOrder.TongTien -= itemToRemove.ThanhTien ?? 0;
-
-                // Xóa sản phẩm khỏi chi tiết hóa đơn
                 _db.CtDonhangs.Remove(itemToRemove);
                 _db.SaveChanges();
-
-                Console.WriteLine("Sản phẩm đã được xóa khỏi giỏ hàng.");
+                return Json(new { success = true, message = "Sản phẩm đã được xóa khỏi giỏ hàng.", totalAmount = currentOrder.TongTien });
             }
             else
             {
-                Console.WriteLine("Không tìm thấy sản phẩm để xóa.");
+                return Json(new { success = false, message = "Không tìm thấy sản phẩm để xóa." });
             }
-
-            return RedirectToAction("GioHang");
         }
         #endregion
 
         #region ThemSlTrongGio
         [HttpPost]
-        public JsonResult UpdateQuantity(int MaGiay, int SoLuong)
+        public JsonResult UpdateQuantity(int maGiay, int soLuong)
         {
             try
             {
                 // Lấy tên đăng nhập từ Claims
                 var currentUserName = User.Identity.Name;
-
                 if (string.IsNullOrEmpty(currentUserName))
                 {
                     return Json(new { success = false, message = "Người dùng chưa đăng nhập." });
@@ -203,7 +192,6 @@ namespace web1.Controllers
 
                 // Tìm người dùng dựa trên tên đăng nhập
                 var currentUser = _db.Khachhangs.FirstOrDefault(u => u.TaiKhoanKh == currentUserName);
-
                 if (currentUser == null)
                 {
                     return Json(new { success = false, message = "Không tìm thấy người dùng." });
@@ -211,30 +199,22 @@ namespace web1.Controllers
 
                 // Tìm hóa đơn hiện tại (chưa giao hàng) của người dùng
                 var currentOrder = _db.Donhangs.FirstOrDefault(o => o.MaKh == currentUser.MaKh && o.TinhTrangGiaoHang == null);
-
                 if (currentOrder == null)
                 {
                     return Json(new { success = false, message = "Không tìm thấy hóa đơn hiện tại." });
                 }
 
                 // Tìm sản phẩm trong chi tiết hóa đơn
-                var cartItem = _db.CtDonhangs.FirstOrDefault(item => item.MaGiay == MaGiay && item.MaDonHang == currentOrder.MaDonHang);
-
+                var cartItem = _db.CtDonhangs.FirstOrDefault(item => item.MaGiay == maGiay && item.MaDonHang == currentOrder.MaDonHang);
                 if (cartItem != null)
                 {
-                    // Cập nhật số lượng và tính lại tổng tiền cho sản phẩm
-                    cartItem.SoLuong = SoLuong;
-                    cartItem.ThanhTien = cartItem.GiaLucBan * SoLuong;
-
-                    // Lưu các thay đổi vào cơ sở dữ liệu
+                    cartItem.SoLuong = soLuong;
+                    cartItem.ThanhTien = cartItem.GiaLucBan * soLuong;
                     _db.SaveChanges();
-
-                    // Cập nhật tổng tiền cho hóa đơn
                     currentOrder.TongTien = _db.CtDonhangs
                                             .Where(c => c.MaDonHang == currentOrder.MaDonHang)
                                             .Sum(c => c.ThanhTien);
                     _db.SaveChanges();
-
                     return Json(new { success = true, message = "Cập nhật số lượng thành công." });
                 }
                 else
@@ -249,6 +229,7 @@ namespace web1.Controllers
         }
         #endregion
 
+        #region Checkout
         [HttpPost]
         public IActionResult Checkout([FromBody] List<CtDonhang> cartItems)
         {
@@ -279,7 +260,7 @@ namespace web1.Controllers
 
             return Json(new { success = false, message = "Có lỗi xảy ra!" });
         }
-
+        #endregion
 
     }
 }

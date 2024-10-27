@@ -63,11 +63,10 @@
     function addToCart() {
         var maGiay = $('#maGiay').val();
         var soLuong = $('#soLuong').val();
-
             $.ajax({
-            url: '@Url.Action("AddToCart", "GioHang")',
+            url: '@Url.Action("AddToCart", "Cart")', // đường dẫn gửi request
             type: 'POST',
-            data: {
+            data: { // tham số gửi kèm request lên server
                 MaGiay: maGiay,
                 SoLuong: soLuong
             },
@@ -80,10 +79,10 @@
                     } else {
                         alert(response.message);
                     }
-                },
-                error: function () {
-                    alert('Có lỗi xảy ra. Vui lòng thử lại.');
-                }
-            });
-        }
+            },
+            error: function () {
+                alert('Có lỗi xảy ra. Vui lòng thử lại.');
+            }
+         });
+    }
 </script>
