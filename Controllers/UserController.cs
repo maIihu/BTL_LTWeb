@@ -1,12 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using web1.Models;
 using web1.Helpers;
-using System.Diagnostics;
-using Microsoft.AspNetCore.Http;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
+using web1.Enums;
 
 namespace web1.Controllers
 {
@@ -65,40 +64,39 @@ namespace web1.Controllers
         [HttpPost]
         public async Task<IActionResult> DangNhap(string taikhoan, string matkhau)
         {
-            if (taikhoan.Contains("admin"))
+            var adminAccount = _db.Quanlies.SingleOrDefault(a=>a.TaiKhoanQl == taikhoan && a.MatKhau == matkhau);
+            var userAccount = _db.Khachhangs.SingleOrDefault(a => a.TaiKhoanKh == taikhoan && a.MatKhau == matkhau);
+
+            if (adminAccount != null)
             {
                 var claims = new List<Claim>
                 {
-                    new Claim(ClaimTypes.Name, taikhoan),
-                    new Claim("IsAdmin", "true")
+                    new Claim(ClaimTypes.Name, adminAccount.TaiKhoanQl),
+                    new Claim("UserType", UserType.Admin.ToString())
                 };
-
                 var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
                 var principal = new ClaimsPrincipal(identity);
                 await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
                 return Json(new { success = true, redirectUrl = Url.Action("Index", "HomeAdmin", new { area = "Admin" }) });
             }
+            else if(userAccount != null)
+            {
+                var claims = new List<Claim>
+                {
+                    new Claim(ClaimTypes.Name, userAccount.TaiKhoanKh),
+                    new Claim("UserType", UserType.Customer.ToString())
+                };
+                var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+                var principal = new ClaimsPrincipal(identity);
+                await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
+                return Json(new { success = true, redirectUrl = Url.Action("Index", "Home") });
+                }
             else
             {
-                var user = _db.Khachhangs.FirstOrDefault(u => u.TaiKhoanKh == taikhoan && u.MatKhau == matkhau);
-
-                if (user != null)
-                {
-                    var claims = new List<Claim>
-                    {
-                        new Claim(ClaimTypes.Name, user.TaiKhoanKh)
-                    };
-
-                    var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
-                    var principal = new ClaimsPrincipal(identity);
-                    await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
-                    return Json(new { success = true, redirectUrl = Url.Action("Index", "Home") });
-                }
-                else
-                {
-                    return Json(new { success = false, message = "Tên đăng nhập hoặc mật khẩu không đúng." });
-                }
+                return Json(new { success = false, message = "Tên đăng nhập hoặc mật khẩu không đúng." });
             }
+
+
         }
 
 
@@ -322,8 +320,6 @@ namespace web1.Controllers
 
             return View(donHang);
         }
-
-
         #endregion
     }
 }

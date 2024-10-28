@@ -19,8 +19,8 @@
             if (currentOrder != null)
             {
                 totalQuantity = _db.CtDonhangs
-                                 .Where(c => c.MaDonHang == currentOrder.MaDonHang)
-                                 .Sum(c => c.SoLuong);
+                                 .Where(c => c.MaDonHang == currentOrder.MaDonHang).Count();
+                //.Sum(c => c.SoLuong);
             }
         }
     }
