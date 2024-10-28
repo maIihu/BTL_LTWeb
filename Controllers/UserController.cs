@@ -300,26 +300,34 @@ namespace web1.Controllers
                 string tk = User.Identity.Name;
                 var kh = _db.Khachhangs.FirstOrDefault(k => k.TaiKhoanKh == tk);
                 if (kh != null) { 
-                    var dsDonHang = _db.Donhangs.Where(dh => dh.MaKh == kh.MaKh).Include(dh => dh.CtDonhangs).ToList(); 
-                    return View(dsDonHang);                      
+                    var dsDonHang = _db.Donhangs.Where(dh => dh.MaKh == kh.MaKh).Include(dh => dh.CtDonhangs).ToList();
+                    if (Request.Headers["X-Requested-With"] == "XMLHttpRequest")
+                    {
+                        return PartialView("_DonHangPartial", dsDonHang);
+                    }
+                    return View(dsDonHang);
                 }
+                
             }
             return RedirectToAction("DangNhap");
         }
         public IActionResult ChiTietDonHang(int id)
         {
-            var donHang = _db.Donhangs
-                            .Include(dh => dh.CtDonhangs)
-                            .ThenInclude(ct => ct.MaGiayNavigation) // Bao gồm thông tin sản phẩm
-                            .FirstOrDefault(dh => dh.MaDonHang == id);
-
+            var donHang = _db.Donhangs.Include(dh => dh.CtDonhangs).ThenInclude(ct => ct.MaGiayNavigation)
+                             .FirstOrDefault(dh => dh.MaDonHang == id);
             if (donHang == null)
             {
                 return NotFound();
             }
 
+            if (Request.Headers["X-Requested-With"] == "XMLHttpRequest")
+            {
+                return PartialView("_ChiTietDonHangPartial", donHang);
+            }
+
             return View(donHang);
         }
+
         #endregion
     }
 }

@@ -3,12 +3,24 @@
   "WorkspaceRootPath": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{86C89F23-CB47-40C1-89F9-E30E2A4B82F8}|web1.csproj|d:\\utc_cntt_nam3_ky1\\btl\\web1\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{86C89F23-CB47-40C1-89F9-E30E2A4B82F8}|web1.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{86C89F23-CB47-40C1-89F9-E30E2A4B82F8}|web1.csproj|d:\\utc_cntt_nam3_ky1\\btl\\web1\\areas\\admin\\controllers\\quanlydonhangcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{86C89F23-CB47-40C1-89F9-E30E2A4B82F8}|web1.csproj|solutionrelative:areas\\admin\\controllers\\quanlydonhangcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{86C89F23-CB47-40C1-89F9-E30E2A4B82F8}|web1.csproj|d:\\utc_cntt_nam3_ky1\\btl\\web1\\views\\shared\\_layouthome.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{86C89F23-CB47-40C1-89F9-E30E2A4B82F8}|web1.csproj|solutionrelative:views\\shared\\_layouthome.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{86C89F23-CB47-40C1-89F9-E30E2A4B82F8}|web1.csproj|d:\\utc_cntt_nam3_ky1\\btl\\web1\\areas\\admin\\views\\quanlydonhang\\chitietdonhang.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{86C89F23-CB47-40C1-89F9-E30E2A4B82F8}|web1.csproj|solutionrelative:areas\\admin\\views\\quanlydonhang\\chitietdonhang.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{86C89F23-CB47-40C1-89F9-E30E2A4B82F8}|web1.csproj|d:\\utc_cntt_nam3_ky1\\btl\\web1\\areas\\admin\\views\\quanlydonhang\\donhang.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{86C89F23-CB47-40C1-89F9-E30E2A4B82F8}|web1.csproj|solutionrelative:areas\\admin\\views\\quanlydonhang\\donhang.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{86C89F23-CB47-40C1-89F9-E30E2A4B82F8}|web1.csproj|d:\\utc_cntt_nam3_ky1\\btl\\web1\\areas\\admin\\views\\shared\\_layoutadmin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{86C89F23-CB47-40C1-89F9-E30E2A4B82F8}|web1.csproj|solutionrelative:areas\\admin\\views\\shared\\_layoutadmin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{86C89F23-CB47-40C1-89F9-E30E2A4B82F8}|web1.csproj|d:\\utc_cntt_nam3_ky1\\btl\\web1\\areas\\admin\\views\\homeadmin\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{86C89F23-CB47-40C1-89F9-E30E2A4B82F8}|web1.csproj|solutionrelative:areas\\admin\\views\\homeadmin\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -31,27 +43,66 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "_LayoutHome.cshtml",
-              "DocumentMoniker": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\Views\\Shared\\_LayoutHome.cshtml",
-              "RelativeDocumentMoniker": "Views\\Shared\\_LayoutHome.cshtml",
-              "ToolTip": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\Views\\Shared\\_LayoutHome.cshtml",
-              "RelativeToolTip": "Views\\Shared\\_LayoutHome.cshtml",
-              "ViewState": "AgIAAHIAAAAAAAAAAAAAAIMAAAAAAAAAAAAAAA==",
+              "Title": "ChiTietDonHang.cshtml",
+              "DocumentMoniker": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\Areas\\Admin\\Views\\QuanLyDonHang\\ChiTietDonHang.cshtml",
+              "RelativeDocumentMoniker": "Areas\\Admin\\Views\\QuanLyDonHang\\ChiTietDonHang.cshtml",
+              "ToolTip": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\Areas\\Admin\\Views\\QuanLyDonHang\\ChiTietDonHang.cshtml",
+              "RelativeToolTip": "Areas\\Admin\\Views\\QuanLyDonHang\\ChiTietDonHang.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-28T16:00:51.087Z",
+              "WhenOpened": "2024-10-28T18:28:05.581Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\Areas\\Admin\\Views\\HomeAdmin\\Index.cshtml",
+              "RelativeDocumentMoniker": "Areas\\Admin\\Views\\HomeAdmin\\Index.cshtml",
+              "ToolTip": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\Areas\\Admin\\Views\\HomeAdmin\\Index.cshtml",
+              "RelativeToolTip": "Areas\\Admin\\Views\\HomeAdmin\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-28T18:23:22.979Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "_LayoutAdmin.cshtml",
+              "DocumentMoniker": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\Areas\\Admin\\Views\\Shared\\_LayoutAdmin.cshtml",
+              "RelativeDocumentMoniker": "Areas\\Admin\\Views\\Shared\\_LayoutAdmin.cshtml",
+              "ToolTip": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\Areas\\Admin\\Views\\Shared\\_LayoutAdmin.cshtml",
+              "RelativeToolTip": "Areas\\Admin\\Views\\Shared\\_LayoutAdmin.cshtml",
+              "ViewState": "AgIAAFAAAAAAAAAAAAAAwFoAAABgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-28T17:05:58.835Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DonHang.cshtml",
+              "DocumentMoniker": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\Areas\\Admin\\Views\\QuanLyDonHang\\DonHang.cshtml",
+              "RelativeDocumentMoniker": "Areas\\Admin\\Views\\QuanLyDonHang\\DonHang.cshtml",
+              "ToolTip": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\Areas\\Admin\\Views\\QuanLyDonHang\\DonHang.cshtml",
+              "RelativeToolTip": "Areas\\Admin\\Views\\QuanLyDonHang\\DonHang.cshtml",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAswBoAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-28T16:44:56.986Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
-              "ToolTip": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "Controllers\\HomeController.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAUwDQAAABCAAAAAAAAAA==",
+              "Title": "QuanLyDonHangController.cs",
+              "DocumentMoniker": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\Areas\\Admin\\Controllers\\QuanLyDonHangController.cs",
+              "RelativeDocumentMoniker": "Areas\\Admin\\Controllers\\QuanLyDonHangController.cs",
+              "ToolTip": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\Areas\\Admin\\Controllers\\QuanLyDonHangController.cs*",
+              "RelativeToolTip": "Areas\\Admin\\Controllers\\QuanLyDonHangController.cs*",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAowDQAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-28T13:40:15.039Z",
+              "WhenOpened": "2024-10-28T16:41:24.424Z",
               "EditorCaption": ""
             }
           ]
