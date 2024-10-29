@@ -23,18 +23,16 @@ namespace web1.Controllers
             // Lấy tên đăng nhập từ Claims
             var currentUserName = User.Identity.Name;
 
-            // Nếu không có người dùng đăng nhập, chuyển hướng đến trang đăng nhập
             if (string.IsNullOrEmpty(currentUserName))
             {
                 return RedirectToAction("DangNhap", "User");
             }
 
-            // Tìm người dùng dựa trên tên đăng nhập
             var currentUser = _db.Khachhangs.FirstOrDefault(u => u.TaiKhoanKh == currentUserName);
 
             if (currentUser == null)
             {
-                return RedirectToAction("DangNhap", "User"); // Nếu không tìm thấy người dùng, chuyển hướng đến đăng nhập
+                return RedirectToAction("DangNhap", "User"); 
             }
 
             // Tìm hóa đơn chưa giao hàng (giỏ hàng) của người dùng

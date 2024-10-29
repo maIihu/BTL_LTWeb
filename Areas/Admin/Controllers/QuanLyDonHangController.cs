@@ -1,18 +1,21 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using web1.Models;
 
 namespace web1.Areas.Admin.Controllers
 {
     [Area("admin")]
     [Route("admin")]
-    [Route("admin/quanlyadmin")]
-    public class QuanLyAdmin : Controller
+    [Route("admin/quanlydonhang")]
+    public class QuanLyDonHang : Controller
     {
         private readonly ShopGiayContext _db;
-        public QuanLyAdmin(ShopGiayContext db)
+        private readonly ILogger<QuanLyDonHang> _logger;
+        public QuanLyDonHang(ShopGiayContext db, ILogger<QuanLyDonHang> logger)
         {
             _db = db;
+            _logger = logger;
         }
 
         #region DonHang
@@ -25,6 +28,23 @@ namespace web1.Areas.Admin.Controllers
                 .ToList();
 
             return View(donHangs);
+        }
+
+        [HttpPost]
+        [Route("xoa-don-hang/{id}")]
+        public IActionResult XoaDonHang(int id)
+        {
+            var donHang = _db.Donhangs.Include(dh => dh.CtDonhangs)
+                                       .FirstOrDefault(dh => dh.MaDonHang == id);
+            if (donHang == null)
+            {
+                return NotFound();
+            }
+            _db.CtDonhangs.RemoveRange(donHang.CtDonhangs);
+            _db.Donhangs.Remove(donHang);
+            _db.SaveChanges();
+            TempData["SuccessMessage"] = "Đơn hàng đã được xóa thành công.";
+            return RedirectToAction("DonHang");
         }
         #endregion
 
@@ -46,23 +66,5 @@ namespace web1.Areas.Admin.Controllers
         }
         #endregion
 
-        #region XoaDonHang
-        [HttpPost]
-        [Route("xoa-don-hang/{id}")]
-        public IActionResult XoaDonHang(int id)
-        {
-            var donHang = _db.Donhangs.Include(dh => dh.CtDonhangs)
-                                       .FirstOrDefault(dh => dh.MaDonHang == id);
-            if (donHang == null)
-            {
-                return NotFound();
-            }
-            _db.CtDonhangs.RemoveRange(donHang.CtDonhangs);
-            _db.Donhangs.Remove(donHang);
-            _db.SaveChanges();
-            TempData["SuccessMessage"] = "Đơn hàng đã được xóa thành công.";
-            return RedirectToAction("DonHang");
-        }
-        #endregion
     }
 }

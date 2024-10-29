@@ -1,9 +1,7 @@
-﻿
-@{
+﻿@{
     ViewData["Title"] = "ChiTietDonHang";
     Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
 }
-
 
 @model web1.Models.Donhang
 
@@ -47,4 +45,9 @@
             }
         </tbody>
     </table>
+
+    <!-- Nút quay lại -->
+    <div class="text-center mt-4">
+        <a href="@Url.Action("DonHang", "QuanLyDonHang", new { area = "admin"})" class="btn btn-primary">Quay lại danh sách đơn hàng</a>
+    </div>
 </div>

@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     ViewData["Title"] = "DonHang";
     Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
 }
@@ -31,8 +30,8 @@
                     <td>@(dh.TinhTrangGiaoHang == true ? "Đã giao" : "Chưa giao")</td>
                     <td>@dh.MaKhNavigation?.HoTen</td>
                     <td>
-                        <a href="@Url.Action("ChiTietDonHang", "QuanLyAdmin", new { id = dh.MaDonHang, area = "admin" })" class="btn btn-info btn-sm">Xem chi tiết</a>
-                        <form action="@Url.Action("XoaDonHang", "QuanLyAdmin", new { id = dh.MaDonHang, area = "admin" })" method="post" style="display:inline;">
+                        <a href="@Url.Action("ChiTietDonHang", "QuanLyDonHang", new { id = dh.MaDonHang, area = "admin" })" class="btn btn-info btn-sm">Xem chi tiết</a>
+                        <form action="@Url.Action("XoaDonHang", "QuanLyDonHang", new { id = dh.MaDonHang, area = "admin" })" method="post" style="display:inline;">
                             <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Bạn có chắc chắn muốn xóa đơn hàng này?');">Xóa</button>
                         </form>
                     </td>

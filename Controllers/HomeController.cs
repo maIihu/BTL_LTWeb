@@ -18,15 +18,25 @@ namespace web1.Controllers
         {
             _logger = logger;
         }
-
-        public IActionResult Index(int? page) // phan trang
+        #region Index 
+        public IActionResult Index(int? page) // Partial View
         {
             int pageSize = 8;
             int pageNum = page == null || page < 0 ? 1 : page.Value;
-            var lstSanpham = db.Sanphams.AsNoTracking().OrderBy(X => X.TenGiay);
+            var lstSanpham = db.Sanphams.AsNoTracking().OrderBy(x => x.TenGiay);
             PagedList<Sanpham> lst = new PagedList<Sanpham>(lstSanpham, pageNum, pageSize);
+
+            // Kiểm tra nếu là yêu cầu AJAX, trả về Partial View
+            if (HttpContext.Request.Headers["X-Requested-With"] == "XMLHttpRequest")
+            {
+                return PartialView("_ProductListPartial", lst);
+            }
             return View(lst);
         }
+
+        #endregion
+
+        #region GiayTheoThuongHieu
         public IActionResult GiayTheoThuongHieu(int maThuongHieu, int? page)
         {
             int pageSize = 1;
@@ -36,8 +46,11 @@ namespace web1.Controllers
             ViewBag.MaThuongHieu = maThuongHieu;
             return View(lst);
         }
-        // Dùng ViewBag
-        public IActionResult ChiTietGiay(int maSp)
+        #endregion
+
+
+        #region ChiTietGiay
+        public IActionResult ChiTietGiay(int maSp) // Dùng ViewBag
         {
             var sanPham = db.Sanphams.SingleOrDefault(x => x.MaGiay == maSp);
             if (sanPham != null)
@@ -46,13 +59,9 @@ namespace web1.Controllers
             }
             return View(sanPham);
         }
+        #endregion
 
-
-        public IActionResult Privacy()
-        {
-            return View();
-        }
-
+        #region GiayTheoLoai
         public IActionResult GiayTheoLoai(int maLoai, int? page)
         {
             int pageSize = 8;
@@ -63,7 +72,7 @@ namespace web1.Controllers
             ViewBag.Title = maLoai == 1 ? "Giày Nam" : "Giày Nữ";  
             return View(lst);
         }
-
+        #endregion
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
@@ -71,11 +80,20 @@ namespace web1.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
+        #region DongGopYKien
         public IActionResult DongGopYKien() { 
             return View();
         }
+        #endregion
 
+        #region HeThongCuaHang
         public IActionResult HeThongCuaHang()
+        {
+            return View();
+        }
+        #endregion
+
+        public IActionResult Privacy()
         {
             return View();
         }
