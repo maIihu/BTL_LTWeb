@@ -41,6 +41,7 @@ namespace web1.Areas.Admin.Controllers
 
         [Route("Themsanphammoi")]
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public IActionResult ThemSanPhamMoi(Sanpham sanPham)
         {
             if (ModelState.IsValid)
@@ -48,6 +49,30 @@ namespace web1.Areas.Admin.Controllers
                 db.Sanphams.Add(sanPham);
                 db.SaveChanges();
                 return RedirectToAction("DanhMucSanPham");
+            }
+            return View(sanPham);
+        }
+        [Route("SuaSanPham")]
+        [HttpGet]
+        public IActionResult SuaSanPham(int maSanPham)
+        {
+            ViewBag.MaThuongHieu = new SelectList(db.Thuonghieus.ToList(), "MaThuongHieu", "TenThuongHieu");
+            ViewBag.MaNcc = new SelectList(db.Nhacungcaps.ToList(), "MaNcc", "TenNcc");
+            ViewBag.MaLoai = new SelectList(db.Loaigiays.ToList(), "MaLoai", "TenLoai");
+            var sanPham = db.Sanphams.Find(maSanPham);
+            return View(sanPham);
+        }
+
+        [Route("SuaSanPham")]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult SuaSanPham(Sanpham sanPham)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Entry(sanPham).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("DanhMucSanPham", "HomeAdmin");
             }
             return View(sanPham);
         }
