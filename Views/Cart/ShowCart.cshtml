@@ -110,62 +110,6 @@
                             <input type="text" class="form-control" id="diaChi" placeholder="Nhập địa chỉ">
                         </div>
                         <div class="form-group">
-                            <label for="tinhThanh">Tỉnh/Thành phố:</label>
-                            <select class="form-control" id="tinhThanh">
-                                <option value="">Chọn tỉnh/thành</option>
-                                <option value="Hà Nội">Hà Nội</option>
-                                <option value="Hồ Chí Minh">Hồ Chí Minh</option>
-                                <option value="Đà Nẵng">Đà Nẵng</option>
-                                <option value="Hải Phòng">Hải Phòng</option>
-                                <option value="Cần Thơ">Cần Thơ</option>
-                                <option value="Nghệ An">Nghệ An</option>
-                                <option value="Thanh Hóa">Thanh Hóa</option>
-                                <option value="Bình Dương">Bình Dương</option>
-                                <option value="Đồng Nai">Đồng Nai</option>
-                                <option value="Khánh Hòa">Khánh Hòa</option>
-                                <option value="Thừa Thiên Huế">Thừa Thiên Huế</option>
-                                <option value="An Giang">An Giang</option>
-                                <option value="Bà Rịa - Vũng Tàu">Bà Rịa - Vũng Tàu</option>
-                                <option value="Hà Giang">Hà Giang</option>
-                                <option value="Hòa Bình">Hòa Bình</option>
-                                <option value="Lào Cai">Lào Cai</option>
-                                <option value="Nam Định">Nam Định</option>
-                                <option value="Ninh Bình">Ninh Bình</option>
-                                <option value="Quảng Ninh">Quảng Ninh</option>
-                                <option value="Quảng Nam">Quảng Nam</option>
-                                <option value="Quảng Ngãi">Quảng Ngãi</option>
-                                <option value="Hậu Giang">Hậu Giang</option>
-                                <option value="Sóc Trăng">Sóc Trăng</option>
-                                <option value="Kiên Giang">Kiên Giang</option>
-                                <option value="Bến Tre">Bến Tre</option>
-                                <option value="Đồng Tháp">Đồng Tháp</option>
-                                <option value="Tiền Giang">Tiền Giang</option>
-                                <option value="Cà Mau">Cà Mau</option>
-                                <option value="Bắc Giang">Bắc Giang</option>
-                                <option value="Bắc Ninh">Bắc Ninh</option>
-                                <option value="Hải Dương">Hải Dương</option>
-                                <option value="Hưng Yên">Hưng Yên</option>
-                                <option value="Thái Bình">Thái Bình</option>
-                                <option value="Vĩnh Phúc">Vĩnh Phúc</option>
-                                <option value="Tuyên Quang">Tuyên Quang</option>
-                                <option value="Yên Bái">Yên Bái</option>
-                                <option value="Lạng Sơn">Lạng Sơn</option>
-                                <option value="Cao Bằng">Cao Bằng</option>
-                                <option value="Bắc Kạn">Bắc Kạn</option>
-                                <option value="Điện Biên">Điện Biên</option>
-                                <option value="Lai Châu">Lai Châu</option>
-                                <option value="Sơn La">Sơn La</option>
-                                <option value="Ninh Thuận">Ninh Thuận</option>
-                                <option value="Bình Thuận">Bình Thuận</option>
-                                <option value="Gia Lai">Gia Lai</option>
-                                <option value="Kon Tum">Kon Tum</option>
-                                <option value="Đắk Lắk">Đắk Lắk</option>
-                                <option value="Đắk Nông">Đắk Nông</option>
-                                <option value="Lâm Đồng">Lâm Đồng</option>
-                            </select>
-
-                        </div>
-                        <div class="form-group">
                             <label for="phuongThucVanChuyen">Phương thức vận chuyển:</label>
                             <select class="form-control" id="phuongThucVanChuyen">
                                 <option>Giao hàng nhanh</option>
@@ -274,65 +218,123 @@
                 return; // Nếu người dùng không xác nhận, không làm gì cả
             }
 
-            var productId = $(this).data('productid');
-            var maDonHang = $(this).data('ma-don-hang');
-            var button = $(this); // Lưu nút để sử dụng sau
+            var p<script src="https://code.jquery.com/jquery-3.6.0.min.js" ></script>
+<script>
+    $(document).ready(function () {
+        // Tăng giảm số lượng sản phẩm
+        $('.increaseQuantity').click(function () {
+            updateQuantity($(this), 1);
+        });
 
+        $('.decreaseQuantity').click(function () {
+            updateQuantity($(this), -1);
+        });
+
+        // Hiện modal thanh toán
+        $('#btnThanhToan').click(function () {
+            $('#checkoutModal').modal('show');
+            loadUserInfo();
+        });
+
+        // Xóa sản phẩm khỏi giỏ hàng
+        $('.remove-from-cart').click(function (e) {
+            e.preventDefault();
+            if (confirm("Bạn có chắc chắn muốn xóa sản phẩm này khỏi giỏ hàng?")) {
+                removeFromCart($(this));
+            }
+        });
+
+        // Hoàn tất thanh toán
+        $('#btnHoanTat').click(function () {
+            if (validateCheckoutForm()) {
+                var cartItems = getCartItems();
+                if (cartItems.length > 0) {
+                    checkout(cartItems);
+                } else {
+                    alert('Không có sản phẩm nào trong giỏ hàng!');
+                }
+            }
+        });
+
+        function updateQuantity(button, change) {
+            var maGiay = button.data('id');
+            var $quantityInput = $('input[data-id="' + maGiay + '"]');
+            var currentQuantity = parseInt($quantityInput.val());
+
+            if (currentQuantity + change > 0) {
+                $quantityInput.val(currentQuantity + change);
+                updateCart(maGiay, currentQuantity + change);
+            }
+        }
+
+        function updateCart(maGiay, soLuong) {
+            $.ajax({
+                url: '@Url.Action("UpdateQuantity", "Cart")',
+                type: 'POST',
+                data: { MaGiay: maGiay, SoLuong: soLuong },
+                success: function (response) {
+                    if (!response.success) {
+                        alert('Cập nhật số lượng thất bại. Vui lòng thử lại.');
+                    }
+                },
+                error: function () {
+                    alert('Có lỗi xảy ra. Vui lòng thử lại.');
+                }
+            });
+        }
+
+        function loadUserInfo() {
+            $.ajax({
+                url: '@Url.Action("GetUserInfo", "User")',
+                type: 'GET',
+                success: function (data) {
+                    if (data) {
+                        $('#hoTen').val(data.hoTen);
+                        $('#email').val(data.email);
+                        $('#soDienThoai').val(data.soDienThoai);
+                        $('#diaChi').val(data.diaChi);
+                    } else {
+                        alert('Không thể lấy thông tin người dùng.');
+                    }
+                },
+                error: function () {
+                    alert('Có lỗi xảy ra khi lấy thông tin người dùng.');
+                }
+            });
+        }
+
+        function removeFromCart(button) {
+            var productId = button.data('productid');
             $.ajax({
                 url: '/GioHang/RemoveFromCart',
                 type: 'POST',
                 data: { maGiay: productId },
                 success: function (response) {
                     if (response.success) {
-                        // Cập nhật danh sách sản phẩm
-                        button.closest('tr').remove(); // Xóa hàng trong bảng
-
-                        // Cập nhật tổng tiền
+                        button.closest('tr').remove();
                         $('table tbody tr:last td:last').text(response.totalAmount.toLocaleString() + ' đ');
-                        alert(response.message); // Hiển thị thông báo thành công
+                        alert(response.message);
                     } else {
-                        alert(response.message); // Hiển thị thông báo lỗi
+                        alert(response.message);
                     }
                 },
                 error: function () {
                     alert("Có lỗi xảy ra. Vui lòng thử lại.");
                 }
             });
-        });
-    });
-
-
-    $(document).ready(function () {
-        function isValidPhoneNumber(phone) {
-            var phonePattern = /^[0-9]{10,11}$/; // Định dạng số điện thoại Việt Nam
-            return phonePattern.test(phone);
         }
 
-
-        function isValidName(name) {
-            var namePattern = /^[\p{L} ]+$/u; // Chỉ cho phép chữ cái và khoảng trắng
-            return namePattern.test(name);
-        }
-
-
-
-        $('#btnHoanTat').click(function () {
-            var cartItems = [];
-            var isValid = true; // Biến kiểm tra tính hợp lệ của thông tin
-
-            // Kiểm tra từng trường thông tin giao hàng
+        function validateCheckoutForm() {
+            var isValid = true;
             var hoTen = $('#hoTen').val().trim();
             var email = $('#email').val().trim();
             var soDienThoai = $('#soDienThoai').val().trim();
             var diaChi = $('#diaChi').val().trim();
-            var tinhThanh = $('#tinhThanh').val();
-            var quanHuyen = $('#quanHuyen').val();
-            var phuongXa = $('#phuongXa').val();
 
             if (!isValidName(hoTen)) {
                 alert('Vui lòng nhập họ và tên hợp lệ.');
                 isValid = false;
-            } else if ($('#email').val().trim() === '') {
+            } else if (email === '') {
                 alert('Vui lòng nhập email.');
                 isValid = false;
             } else if (!isValidPhoneNumber(soDienThoai)) {
@@ -341,57 +343,53 @@
             } else if (diaChi === '') {
                 alert('Vui lòng nhập địa chỉ.');
                 isValid = false;
-            } else if (tinhThanh === '') {
-                alert('Vui lòng chọn tỉnh/thành phố.');
-                isValid = false;
-            } else if (quanHuyen === '') {
-                alert('Vui lòng chọn quận/huyện.');
-                isValid = false;
-            } else if (phuongXa === '') {
-                alert('Vui lòng chọn phường/xã.');
-                isValid = false;
             }
 
-            // Nếu thông tin hợp lệ, tiếp tục
-            if (isValid) {
-                $('tbody tr').each(function () {
-                    var maGiay = $(this).find('input[name="MaGiay"]').val();
-                    var soLuong = $(this).find('input[name="SoLuong"]').val();
+            return isValid;
+        }
 
-                    if (maGiay && soLuong) {
-                        cartItems.push({
-                            MaGiay: maGiay,
-                            SoLuong: soLuong
-                        });
-                    }
-                });
+        function getCartItems() {
+            var cartItems = [];
+            $('tbody tr').each(function () {
+                var maGiay = $(this).find('input[name="MaGiay"]').val();
+                var soLuong = $(this).find('input[name="SoLuong"]').val();
 
-                if (cartItems.length === 0) {
-                    alert('Không có sản phẩm nào trong giỏ hàng!');
-                    return;
+                if (maGiay && soLuong) {
+                    cartItems.push({ MaGiay: maGiay, SoLuong: soLuong });
                 }
+            });
+            return cartItems;
+        }
 
-                $.ajax({
-                    url: '@Url.Action("Checkout", "ShowCart")',
-                    type: 'POST',
-                    contentType: 'application/json',
-                    data: JSON.stringify(cartItems),
-                    success: function (response) {
-                        if (response.success) {
-                            alert(response.message);
-                            $('#checkoutModal').modal('hide');
-                            window.location.href = '/GioHang/GioHang';
-                        } else {
-                            alert('Thanh toán không thành công, vui lòng thử lại.');
-                        }
-                    },
-                    error: function (xhr, status, error) {
-                        alert('Có lỗi xảy ra trong quá trình thanh toán.');
+        function checkout(cartItems) {
+            $.ajax({
+                url: '@Url.Action("Checkout", "ShowCart")',
+                type: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify(cartItems),
+                success: function (response) {
+                    if (response.success) {
+                        alert(response.message);
+                        $('#checkoutModal').modal('hide');
+                        window.location.href = '/GioHang/GioHang';
+                    } else {
+                        alert('Thanh toán không thành công, vui lòng thử lại.');
                     }
-                });
-            }
-        });
+                },
+                error: function () {
+                    alert('Có lỗi xảy ra trong quá trình thanh toán.');
+                }
+            });
+        }
 
+        function isValidPhoneNumber(phone) {
+            var phonePattern = /^[0-9]{10,11}$/;
+            return phonePattern.test(phone);
+        }
+
+        function isValidName(name) {
+            var namePattern = /^[\p{L} ]+$/u;
+            return namePattern.test(name);
+        }
     });
-
 </script>
