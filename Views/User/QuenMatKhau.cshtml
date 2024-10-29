@@ -1,31 +1,35 @@
-﻿
-
-@{
+﻿@{
     ViewData["Title"] = "Quên Mật Khẩu";
+    Layout = "~/Views/Shared/_LayoutHome.cshtml";
 }
 
-<h2>Quên Mật Khẩu</h2>
+<h2 class="text-center">Quên Mật Khẩu</h2>
 
-<form asp-action="QuenMatKhau" method="post">
-    <div>
-        <label>Email:</label>
-        <input type="email" name="email" value="@ViewBag.Email" required />
-    </div>
-    <button type="submit" name="sendCode" value="true">Gửi mã xác nhận</button>
+<div class="container mt-4" style="max-width: 600px;">
+    <form asp-action="QuenMatKhau" method="post" class="border p-4 rounded bg-light">
+        <div class="mb-3">
+            <label class="form-label">Email:</label>
+            <input type="email" name="email" value="@ViewBag.Email" class="form-control" required />
+        </div>
 
-    @if (ViewBag.Message != null)
-    {
-        <div>@ViewBag.Message</div>
-    }
+        <button type="submit" name="sendCode" value="true" class="btn btn-primary">Gửi mã xác nhận</button>
 
-    <div>
-        <label>Mã xác nhận:</label>
-        <input type="text" name="verificationCode" />
-    </div>
-    <button type="submit">Xác nhận mã</button>
+        @if (ViewBag.Message != null)
+        {
+            <div class="mt-3 alert alert-success">@ViewBag.Message</div>
+        }
 
-    @if (ViewBag.ErrorMessage != null)
-    {
-        <div>@ViewBag.ErrorMessage</div>
-    }
-</form>
+        <div class="mb-3 mt-4">
+            <label class="form-label">Mã xác nhận:</label>
+            <input type="text" name="verificationCode" class="form-control" />
+        </div>
+
+        <button type="submit" class="btn btn-success">Xác nhận mã</button>
+
+        @if (ViewBag.ErrorMessage != null)
+        {
+            <div class="mt-3 alert alert-danger">@ViewBag.ErrorMessage</div>
+        }
+    </form>
+</div>
+

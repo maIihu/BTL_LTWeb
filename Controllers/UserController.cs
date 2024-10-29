@@ -135,7 +135,6 @@ namespace web1.Controllers
 
                 if (khachhang != null)
                 {
-                    // Update only the editable fields
                     khachhang.HoTen = updatedKhachhang.HoTen;
                     khachhang.DiaChiKh = updatedKhachhang.DiaChiKh;
                     khachhang.DienThoaiKh = updatedKhachhang.DienThoaiKh;
@@ -143,7 +142,6 @@ namespace web1.Controllers
 
                     _db.SaveChanges();
 
-                    // Return JSON success response
                     return Json(new { success = true });
                 }
             }
@@ -238,7 +236,7 @@ namespace web1.Controllers
                 }
 
                 var creationTime = DateTime.Parse(codeCreationTime);
-                if (DateTime.UtcNow > creationTime.AddMinutes(1)) 
+                if (DateTime.UtcNow > creationTime.AddMinutes(30)) 
                 {
                     ViewBag.Message = "Mã xác nhận đã hết hiệu lực.";
                     return View();
