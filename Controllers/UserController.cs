@@ -62,9 +62,9 @@ namespace web1.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> DangNhap(string taikhoan, string matkhau)
+        public async Task<IActionResult> DangNhap(string taikhoan, string matkhau, bool rememberMe)
         {
-            var adminAccount = _db.Quanlies.SingleOrDefault(a=>a.TaiKhoanQl == taikhoan && a.MatKhau == matkhau);
+            var adminAccount = _db.Quanlies.SingleOrDefault(a => a.TaiKhoanQl == taikhoan && a.MatKhau == matkhau);
             var userAccount = _db.Khachhangs.SingleOrDefault(a => a.TaiKhoanKh == taikhoan && a.MatKhau == matkhau);
 
             if (adminAccount != null)
@@ -79,7 +79,7 @@ namespace web1.Controllers
                 await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
                 return Json(new { success = true, redirectUrl = Url.Action("Index", "HomeAdmin", new { area = "Admin" }) });
             }
-            else if(userAccount != null)
+            else if (userAccount != null)
             {
                 var claims = new List<Claim>
                 {
@@ -88,16 +88,25 @@ namespace web1.Controllers
                 };
                 var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
                 var principal = new ClaimsPrincipal(identity);
-                await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
+
+                // Cấu hình thuộc tính authentication
+                var authProperties = new AuthenticationProperties
+                {
+                    IsPersistent = rememberMe,
+                    ExpiresUtc = rememberMe ? DateTimeOffset.UtcNow.AddDays(7) : (DateTimeOffset?)null
+                };
+
+                // Đăng nhập với cấu hình authProperties
+                await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal, authProperties);
                 return Json(new { success = true, redirectUrl = Url.Action("Index", "Home") });
-                }
+            }
             else
             {
                 return Json(new { success = false, message = "Tên đăng nhập hoặc mật khẩu không đúng." });
             }
-
-
         }
+
+
 
 
         #endregion
@@ -135,7 +144,6 @@ namespace web1.Controllers
 
                 if (khachhang != null)
                 {
-                    // Update only the editable fields
                     khachhang.HoTen = updatedKhachhang.HoTen;
                     khachhang.DiaChiKh = updatedKhachhang.DiaChiKh;
                     khachhang.DienThoaiKh = updatedKhachhang.DienThoaiKh;
@@ -143,7 +151,6 @@ namespace web1.Controllers
 
                     _db.SaveChanges();
 
-                    // Return JSON success response
                     return Json(new { success = true });
                 }
             }
@@ -238,7 +245,7 @@ namespace web1.Controllers
                 }
 
                 var creationTime = DateTime.Parse(codeCreationTime);
-                if (DateTime.UtcNow > creationTime.AddMinutes(1)) 
+                if (DateTime.UtcNow > creationTime.AddMinutes(30)) 
                 {
                     ViewBag.Message = "Mã xác nhận đã hết hiệu lực.";
                     return View();
