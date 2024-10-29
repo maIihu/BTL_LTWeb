@@ -13,6 +13,7 @@
 <p>
     <a asp-action="ThemSanPhamMoi">Create New</a>
 </p>
+<p>@TempData["Message"]</p>
 <table class="table">
     <thead>
         <tr>
@@ -75,7 +76,7 @@
             <td>
                 <a asp-action="SuaSanPham" asp-route-maSanPham="@item.MaGiay">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.MaGiay">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.MaGiay">Delete</a>
+                <a asp-action="XoaSanPham" asp-route-maSanPham="@item.MaGiay">Delete</a>
             </td>
         </tr>
 }

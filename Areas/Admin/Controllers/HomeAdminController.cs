@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.AspNetCore.Routing.Template;
 using Microsoft.EntityFrameworkCore;
 using web1.Models;
 using X.PagedList;
@@ -75,6 +76,23 @@ namespace web1.Areas.Admin.Controllers
                 return RedirectToAction("DanhMucSanPham", "HomeAdmin");
             }
             return View(sanPham);
+        }
+
+        [Route("XoaSanPham")]
+        [HttpGet]
+        public IActionResult XoaSanPham(int maSanPham)
+        {
+            TempData["Message"] = "";
+            var ctDonhangs = db.CtDonhangs.Where(x=>x.MaGiay ==  maSanPham).ToList();
+            if(ctDonhangs.Count > 0)
+            {
+                TempData["Message"] = "Không xóa được sản phẩm này";
+                return RedirectToAction("DanhMucSanPham", "HomeAdmin");
+            }
+            db.Remove(db.Sanphams.Find(maSanPham));
+            db.SaveChanges();
+            TempData["Message"] = "Sản phẩm đã được xóa";
+            return RedirectToAction("DanhMucSanPham", "HomeAdmin");
         }
     }
 }
