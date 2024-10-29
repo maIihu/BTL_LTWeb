@@ -21,6 +21,11 @@
                             <label for="matkhau" class="control-label">Mật khẩu <span class="text-danger">*</span></label>
                             <input type="password" name="matkhau" class="form-control" placeholder="Nhập mật khẩu" required />
                         </div>
+                        <div class="form-group">
+                            <label>
+                                <input type="checkbox" name="rememberMe" /> Ghi nhớ đăng nhập
+                            </label>
+                        </div>
                         <p id="login-form-remember" class="text-center">
                             <a href="@Url.Action("QuenMatKhau", "User")">Quên mật khẩu?</a>
                         </p>
@@ -30,6 +35,7 @@
                     </div>
                 </div>
             }
+
 
             <div class="clear mb-4"></div>
 
@@ -47,22 +53,22 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
-    $(document).ready(function() {
-        $('#loginForm').on('submit', function(e) {
+    $(document).ready(function () {
+        $('#loginForm').on('submit', function (e) {
             e.preventDefault(); // Ngăn chặn hành vi mặc định của form
 
             $.ajax({
                 url: '@Url.Action("DangNhap", "User")', // URL của action
                 type: 'POST',
-                data: $(this).serialize(), // Gửi dữ liệu form
-                success: function(response) {
+                data: $(this).serialize(), // Gửi dữ liệu form bao gồm cả rememberMe
+                success: function (response) {
                     if (response.success) {
                         window.location.href = response.redirectUrl; // Điều hướng đến trang chính
                     } else {
                         alert(response.message); // Hiển thị thông báo lỗi
                     }
                 },
-                error: function() {
+                error: function () {
                     alert('Có lỗi xảy ra. Vui lòng thử lại.'); // Thông báo lỗi
                 }
             });
