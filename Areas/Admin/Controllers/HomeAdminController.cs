@@ -6,9 +6,6 @@ using Microsoft.EntityFrameworkCore;
 using web1.Models;
 using X.PagedList;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using web1.Models;
 
 
 namespace web1.Areas.Admin.Controllers
