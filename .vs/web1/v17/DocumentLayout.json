@@ -3,24 +3,12 @@
   "WorkspaceRootPath": "D:\\Code\\LapTrinhWeb\\web1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{86C89F23-CB47-40C1-89F9-E30E2A4B82F8}|web1.csproj|d:\\code\\laptrinhweb\\web1\\controllers\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{86C89F23-CB47-40C1-89F9-E30E2A4B82F8}|web1.csproj|solutionrelative:controllers\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{86C89F23-CB47-40C1-89F9-E30E2A4B82F8}|web1.csproj|d:\\code\\laptrinhweb\\web1\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{86C89F23-CB47-40C1-89F9-E30E2A4B82F8}|web1.csproj|d:\\utc_cntt_nam3_ky1\\btl\\web1\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{86C89F23-CB47-40C1-89F9-E30E2A4B82F8}|web1.csproj|solutionrelative:controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{86C89F23-CB47-40C1-89F9-E30E2A4B82F8}|web1.csproj|d:\\code\\laptrinhweb\\web1\\views\\cart\\showcart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{86C89F23-CB47-40C1-89F9-E30E2A4B82F8}|web1.csproj|solutionrelative:views\\cart\\showcart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{86C89F23-CB47-40C1-89F9-E30E2A4B82F8}|web1.csproj|d:\\code\\laptrinhweb\\web1\\models\\khachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{86C89F23-CB47-40C1-89F9-E30E2A4B82F8}|web1.csproj|solutionrelative:models\\khachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{86C89F23-CB47-40C1-89F9-E30E2A4B82F8}|web1.csproj|d:\\code\\laptrinhweb\\web1\\web1.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{86C89F23-CB47-40C1-89F9-E30E2A4B82F8}|web1.csproj|solutionrelative:web1.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{86C89F23-CB47-40C1-89F9-E30E2A4B82F8}|web1.csproj|d:\\utc_cntt_nam3_ky1\\btl\\web1\\views\\user\\quenmatkhau.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{86C89F23-CB47-40C1-89F9-E30E2A4B82F8}|web1.csproj|solutionrelative:views\\user\\quenmatkhau.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,66 +30,29 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ShowCart.cshtml",
-              "DocumentMoniker": "D:\\Code\\LapTrinhWeb\\web1\\Views\\Cart\\ShowCart.cshtml",
-              "RelativeDocumentMoniker": "Views\\Cart\\ShowCart.cshtml",
-              "ToolTip": "D:\\Code\\LapTrinhWeb\\web1\\Views\\Cart\\ShowCart.cshtml",
-              "RelativeToolTip": "Views\\Cart\\ShowCart.cshtml",
-              "ViewState": "AQIAAHABAAAAAAAAAAAswIsBAAAAAAAA",
+              "DocumentIndex": 1,
+              "Title": "QuenMatKhau.cshtml",
+              "DocumentMoniker": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\Views\\User\\QuenMatKhau.cshtml",
+              "RelativeDocumentMoniker": "Views\\User\\QuenMatKhau.cshtml",
+              "ToolTip": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\Views\\User\\QuenMatKhau.cshtml",
+              "RelativeToolTip": "Views\\User\\QuenMatKhau.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-29T18:59:40.099Z",
+              "WhenOpened": "2024-10-30T15:08:19.784Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "CartController.cs",
-              "DocumentMoniker": "D:\\Code\\LapTrinhWeb\\web1\\Controllers\\CartController.cs",
-              "RelativeDocumentMoniker": "Controllers\\CartController.cs",
-              "ToolTip": "D:\\Code\\LapTrinhWeb\\web1\\Controllers\\CartController.cs",
-              "RelativeToolTip": "Controllers\\CartController.cs",
-              "ViewState": "AQIAAF8AAAAAAAAAAAAvwHsAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-29T18:59:29.31Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Khachhang.cs",
-              "DocumentMoniker": "D:\\Code\\LapTrinhWeb\\web1\\Models\\Khachhang.cs",
-              "RelativeDocumentMoniker": "Models\\Khachhang.cs",
-              "ToolTip": "D:\\Code\\LapTrinhWeb\\web1\\Models\\Khachhang.cs",
-              "RelativeToolTip": "Models\\Khachhang.cs",
-              "ViewState": "AQIAABQAAAAAAAAAAAAswBIAAAAtAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-29T18:37:37.626Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
               "Title": "UserController.cs",
-              "DocumentMoniker": "D:\\Code\\LapTrinhWeb\\web1\\Controllers\\UserController.cs",
+              "DocumentMoniker": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\Controllers\\UserController.cs",
               "RelativeDocumentMoniker": "Controllers\\UserController.cs",
-              "ToolTip": "D:\\Code\\LapTrinhWeb\\web1\\Controllers\\UserController.cs",
+              "ToolTip": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\Controllers\\UserController.cs",
               "RelativeToolTip": "Controllers\\UserController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAnwBAAAABBAAAA",
+              "ViewState": "AgIAACEBAAAAAAAAAAAQwCMBAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-29T18:28:07.099Z",
+              "WhenOpened": "2024-10-30T15:04:18.671Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "web1.csproj",
-              "DocumentMoniker": "D:\\Code\\LapTrinhWeb\\web1\\web1.csproj",
-              "RelativeDocumentMoniker": "web1.csproj",
-              "ToolTip": "D:\\Code\\LapTrinhWeb\\web1\\web1.csproj",
-              "RelativeToolTip": "web1.csproj",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-10-29T18:15:47.53Z"
             }
           ]
         }

@@ -214,7 +214,8 @@ namespace web1.Controllers
         [HttpPost]
         public async Task<IActionResult> QuenMatKhau(string email, string verificationCode, bool sendCode)
         {
-            if (sendCode) // Nếu người dùng nhấn nút "Gửi mã xác nhận"
+            // Kiểm tra nếu gửi mã
+            if (sendCode)
             {
                 if (string.IsNullOrEmpty(email))
                 {
@@ -222,14 +223,31 @@ namespace web1.Controllers
                     return View();
                 }
 
+                // Kiểm tra nếu mã đã được gửi trong vòng 30 phút
+                var savedCode = HttpContext.Session.GetString("VerificationCode");
+                var codeCreationTime = HttpContext.Session.GetString("CodeCreationTime");
+
+                if (savedCode != null && codeCreationTime != null)
+                {
+                    var creationTime = DateTime.Parse(codeCreationTime);
+                    if (DateTime.UtcNow <= creationTime.AddMinutes(30))
+                    {
+                        ViewBag.Message = "Mã xác nhận đã được gửi. Vui lòng kiểm tra email của bạn.";
+                        ViewBag.Email = email; // Giữ lại email đã nhập
+                        return View();
+                    }
+                }
+
+                // Tạo mã xác nhận mới
                 var generatedCode = new Random().Next(100000, 999999).ToString();
                 HttpContext.Session.SetString("VerificationCode", generatedCode);
                 HttpContext.Session.SetString("Email", email);
-                HttpContext.Session.SetString("CodeCreationTime", DateTime.UtcNow.ToString()); // Lưu thời gian tạo mã
+                HttpContext.Session.SetString("CodeCreationTime", DateTime.UtcNow.ToString());
 
                 var subject = "Mã xác nhận của bạn";
                 var message = $"Mã xác nhận của bạn là {generatedCode}";
 
+                // Gửi email bất đồng bộ
                 await _emailSender.SendEmailAsync(email, subject, message);
                 ViewBag.Message = "Mã xác nhận đã được gửi đến email.";
             }
@@ -245,7 +263,7 @@ namespace web1.Controllers
                 }
 
                 var creationTime = DateTime.Parse(codeCreationTime);
-                if (DateTime.UtcNow > creationTime.AddMinutes(30)) 
+                if (DateTime.UtcNow > creationTime.AddMinutes(30))
                 {
                     ViewBag.Message = "Mã xác nhận đã hết hiệu lực.";
                     return View();
@@ -300,7 +318,7 @@ namespace web1.Controllers
         #endregion
 
         #region DonHang
-        public IActionResult DonHang()
+        public IActionResult DanhSachDonHang()
         {
             if (User.Identity.IsAuthenticated)
             {

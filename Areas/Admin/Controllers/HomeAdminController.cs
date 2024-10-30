@@ -64,7 +64,7 @@ namespace web1.Areas.Admin.Controllers
 
             // Chuyển hướng về danh sách đơn hàng với thông báo
             TempData["SuccessMessage"] = "Đơn hàng đã được xóa thành công.";
-            return RedirectToAction("DonHang");
+            return RedirectToAction("DanhSachDonHang");
         }
 
     }

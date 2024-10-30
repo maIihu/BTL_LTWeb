@@ -14,7 +14,7 @@
 <script>
     function loadDonHang() {
         $.ajax({
-            url: '/User/DonHang',
+            url: '/User/DanhSachDonHang',
             type: 'GET',
             success: function (data) {
                 $('#content').html(data); // Đưa nội dung vào vùng #content
