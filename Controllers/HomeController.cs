@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using Azure;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using web1.Models;
@@ -17,15 +18,24 @@ namespace web1.Controllers
         {
             _logger = logger;
         }
-
-        public IActionResult Index(int? page) // phan trang
+        #region Index 
+        public IActionResult Index(int? page) // Partial View
         {
             int pageSize = 8;
             int pageNum = page == null || page < 0 ? 1 : page.Value;
-            var lstSanpham = db.Sanphams.AsNoTracking().OrderBy(X => X.TenGiay);
+            var lstSanpham = db.Sanphams.AsNoTracking().OrderBy(x => x.TenGiay);
             PagedList<Sanpham> lst = new PagedList<Sanpham>(lstSanpham, pageNum, pageSize);
+
+            if (HttpContext.Request.Headers["X-Requested-With"] == "XMLHttpRequest")
+            {
+                return PartialView("_ProductListPartial", lst);
+            }
             return View(lst);
         }
+
+        #endregion
+
+        #region GiayTheoThuongHieu
         public IActionResult GiayTheoThuongHieu(int maThuongHieu, int? page)
         {
             int pageSize = 1;
@@ -33,10 +43,16 @@ namespace web1.Controllers
             List<Sanpham> lstsanpham = db.Sanphams.Where(x => x.MaThuongHieu == maThuongHieu).OrderBy(X=>X.TenGiay).ToList();
             PagedList<Sanpham> lst = new PagedList<Sanpham>(lstsanpham, pageNum, pageSize);
             ViewBag.MaThuongHieu = maThuongHieu;
+            if (HttpContext.Request.Headers["X-Requested-With"] == "XMLHttpRequest")
+            {
+                return PartialView("_GiayTheoThuongHieuPartial", lst);
+            }
             return View(lst);
         }
-        // Dùng ViewBag
-        public IActionResult ChiTietGiay(int maSp)
+        #endregion
+
+        #region ChiTietGiay
+        public IActionResult ChiTietGiay(int maSp) // Dùng ViewBag
         {
             var sanPham = db.Sanphams.SingleOrDefault(x => x.MaGiay == maSp);
             if (sanPham != null)
@@ -45,16 +61,43 @@ namespace web1.Controllers
             }
             return View(sanPham);
         }
+        #endregion
 
+        #region GiayTheoLoai
+        public IActionResult GiayTheoLoai(int maLoai, int? page)
+        {
+            int pageSize = 8;
+            int pageNum = page == null || page < 0 ? 1 : page.Value;
+            List<Sanpham> lstsanpham = db.Sanphams.Where(x => x.MaLoai == maLoai).OrderBy(X => X.TenGiay).ToList();
+            PagedList<Sanpham> lst = new PagedList<Sanpham>(lstsanpham, pageNum, pageSize);
+            ViewBag.MaLoai = maLoai;
+            ViewBag.Title = maLoai == 1 ? "Giày Nam" : "Giày Nữ";
+            if (HttpContext.Request.Headers["X-Requested-With"] == "XMLHttpRequest")
+            {
+                return PartialView("_GiayTheoLoaiPartial", lst);
+            }
+            return View(lst);
+        }
+        #endregion
+
+        #region DongGopYKien
+        public IActionResult DongGopYKien() { 
+            return View();
+        }
+        #endregion
+
+        #region HeThongCuaHang
+        public IActionResult HeThongCuaHang()
+        {
+            return View();
+        }
+        #endregion
 
         public IActionResult Privacy()
         {
             return View();
         }
-        public IActionResult Shop()
-        {
-            return View();
-        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

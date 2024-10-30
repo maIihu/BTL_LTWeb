@@ -7,37 +7,41 @@
     <div class="wrap">
         <div class="col-md-3 offset-md-4">
 
-            @using (Html.BeginForm("DangNhap", "User", FormMethod.Post))
+            @using (Html.BeginForm("DangNhap", "User", FormMethod.Post, new { id = "loginForm" }))
             {
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                 <div class="login-title border rounded p-2">
-                    <!-- Giảm padding -->
                     <h4 class="title text-center font-weight-bold" style="font-size: 20px;">ĐĂNG NHẬP</h4>
                     <div class="comments-area">
                         <div class="form-group">
                             <label for="taikhoan" class="control-label">Tên đăng nhập <span class="text-danger">*</span></label>
-                            <input type="text" name="taikhoan" class="form-control" placeholder="Nhập tên đăng nhập" required /> 
+                            <input type="text" name="taikhoan" class="form-control" placeholder="Nhập tên đăng nhập" required />
                         </div>
                         <div class="form-group">
                             <label for="matkhau" class="control-label">Mật khẩu <span class="text-danger">*</span></label>
-                            <input type="password" name="matkhau" class="form-control" placeholder="Nhập mật khẩu" required /> 
+                            <input type="password" name="matkhau" class="form-control" placeholder="Nhập mật khẩu" required />
+                        </div>
+                        <div class="form-group">
+                            <label>
+                                <input type="checkbox" name="rememberMe" /> Ghi nhớ đăng nhập
+                            </label>
                         </div>
                         <p id="login-form-remember" class="text-center">
-                            <a href="#">Quên mật khẩu?</a>
+                            <a href="@Url.Action("QuenMatKhau", "User")">Quên mật khẩu?</a>
                         </p>
                         <div class="text-center">
-                            <input type="submit" value="Đăng nhập" class="btn btn-success btn-lg rounded-pill"> 
+                            <input type="submit" value="Đăng nhập" class="btn btn-success btn-lg rounded-pill">
                         </div>
                     </div>
                 </div>
             }
 
-            <div class="clear mb-4"></div> 
 
-            <h4 class="title text-center" style="font-size: 18px; margin-top: 30px;">BẠN CHƯA CÓ TÀI KHOẢN?</h4> 
+            <div class="clear mb-4"></div>
+
+            <h4 class="title text-center" style="font-size: 18px; margin-top: 30px;">BẠN CHƯA CÓ TÀI KHOẢN?</h4>
             <div class="text-center mb-3">
                 <a href="@Url.Action("DangKy", "User")">
-                    <!-- Nút lớn với viền tròn -->
                     Đăng ký ngay
                 </a>
             </div>
@@ -45,3 +49,29 @@
         </div>
     </div>
 </div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#loginForm').on('submit', function (e) {
+            e.preventDefault(); // Ngăn chặn hành vi mặc định của form
+
+            $.ajax({
+                url: '@Url.Action("DangNhap", "User")', // URL của action
+                type: 'POST',
+                data: $(this).serialize(), // Gửi dữ liệu form bao gồm cả rememberMe
+                success: function (response) {
+                    if (response.success) {
+                        window.location.href = response.redirectUrl; // Điều hướng đến trang chính
+                    } else {
+                        alert(response.message); // Hiển thị thông báo lỗi
+                    }
+                },
+                error: function () {
+                    alert('Có lỗi xảy ra. Vui lòng thử lại.'); // Thông báo lỗi
+                }
+            });
+        });
+    });
+</script>

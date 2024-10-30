@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
+using web1.Helpers;
 using web1.Models;
 using web1.Repository;
 
@@ -7,6 +8,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddTransient<IEmailSender, EmailSender>();
 
 builder.Logging.ClearProviders();
 builder.Logging.AddConsole(); // Hoặc thêm các logger khác theo nhu cầu
@@ -19,16 +22,22 @@ builder.Services.AddDistributedMemoryCache();
 // Session
 builder.Services.AddSession(options =>
 {
-    options.IdleTimeout = TimeSpan.FromSeconds(10);
-    options.Cookie.HttpOnly = true;
-    options.Cookie.IsEssential = true;
+    options.IdleTimeout = TimeSpan.FromMinutes(30);
+
+
 });
 // Cấu hình dịch vụ authentication với cookie
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
 .AddCookie(options =>
 {
     options.LoginPath = "/User/DangNhap";  // Đường dẫn đến trang đăng nhập
-    options.LogoutPath = "/User/Logout";   // Đường dẫn để đăng xuất
+    options.LogoutPath = "/User/DangXuat";   // Đường dẫn để đăng xuất
+    options.Cookie.SameSite = SameSiteMode.Lax; 
+    options.Cookie.SecurePolicy = CookieSecurePolicy.Always;
+    options.Cookie.HttpOnly = true;
+    options.Cookie.IsEssential = true;
+    options.ExpireTimeSpan = TimeSpan.FromMinutes(30);
+    options.SlidingExpiration = true;
 });
 
 var app = builder.Build();
@@ -41,20 +50,12 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
-
-
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-
 app.UseRouting();
-
 app.UseSession();
-
 app.UseAuthentication();
 app.UseAuthorization();
-
-
-
 
 app.MapControllerRoute(
     name: "default",

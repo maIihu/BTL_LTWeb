@@ -1,0 +1,53 @@
+﻿@{
+    ViewData["Title"] = "ChiTietDonHang";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@model web1.Models.Donhang
+
+<div class="container my-4" style="max-width: 70%; margin: auto;">
+    <h3 class="text-center mb-4">Chi tiết đơn hàng @Model.MaDonHang</h3>
+
+    <div class="mb-4">
+        <h5>Thông tin khách hàng</h5>
+        <p><strong>Tên:</strong> @Model.MaKhNavigation?.HoTen</p>
+        <p><strong>Địa chỉ:</strong> @Model.MaKhNavigation?.DiaChiKh</p>
+        <p><strong>Số điện thoại:</strong> @Model.MaKhNavigation?.DienThoaiKh</p>
+    </div>
+
+    <div class="mb-4">
+        <h5>Thông tin đơn hàng</h5>
+        <p><strong>Ngày đặt:</strong> @Model.NgayDat?.ToString("dd/MM/yyyy")</p>
+        <p><strong>Ngày giao:</strong> @Model.NgayGiao?.ToString("dd/MM/yyyy")</p>
+        <p><strong>Tình trạng giao hàng:</strong> @(Model.TinhTrangGiaoHang == true ? "Đã giao" : "Chưa giao")</p>
+        <p><strong>Tổng tiền:</strong> @Model.TongTien?.ToString("C")</p>
+    </div>
+
+    <h5>Danh sách sản phẩm</h5>
+    <table class="table table-bordered table-hover text-center">
+        <thead class="table-secondary">
+            <tr>
+                <th>Tên sản phẩm</th>
+                <th>Số lượng</th>
+                <th>Đơn giá</th>
+                <th>Thành tiền</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var ct in Model.CtDonhangs)
+            {
+                <tr>
+                    <td>@ct.MaGiayNavigation?.TenGiay</td>
+                    <td>@ct.SoLuong</td>
+                    <td>@ct.MaGiayNavigation?.GiaBan.ToString("C")</td>
+                    <td>@((ct.SoLuong * ct.MaGiayNavigation?.GiaBan)?.ToString("C"))</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <!-- Nút quay lại -->
+    <div class="text-center mt-4">
+        <a href="@Url.Action("DanhSachDonHang", "QuanLyDonHang", new { area = "admin"})" class="btn btn-primary">Quay lại danh sách đơn hàng</a>
+    </div>
+</div>

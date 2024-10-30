@@ -1,0 +1,28 @@
+﻿@{
+    ViewData["Title"] = "Đổi Mật Khẩu";
+    Layout = "~/Views/Shared/_LayoutHome.cshtml";
+}
+
+<h2 class="text-center">Xác Nhận Mật Khẩu Mới</h2>
+
+<div class="container mt-4" style="max-width: 600px;">
+    <form asp-action="XacNhanMatKhau" method="post" class="border p-4 rounded bg-light">
+        <div class="mb-3">
+            <label class="form-label">Mật khẩu mới:</label>
+            <input type="password" name="newPassword" class="form-control" required />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Xác nhận mật khẩu:</label>
+            <input type="password" name="confirmPassword" class="form-control" required />
+        </div>
+
+        <button type="submit" class="btn btn-primary">Đổi mật khẩu</button>
+
+        @if (ViewBag.SuccessMessage != null)
+        {
+            <div class="mt-3 alert alert-success">@ViewBag.SuccessMessage</div>
+        }
+    </form>
+</div>
+

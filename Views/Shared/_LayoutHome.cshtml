@@ -5,7 +5,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>MultiShop - Online Shop Website Template</title>
+    <title>MultiShop</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Free HTML Templates" name="keywords">
     <meta content="Free HTML Templates" name="description">
@@ -27,10 +27,19 @@
     <!-- Customized Bootstrap Stylesheet -->
     <link href="~/css/style.css" rel="stylesheet">
     <link href="~/css/button-choose-size.css" rel="stylesheet">
+
+    <style>
+        .carousel-item img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+
+    </style>
+
 </head>
 
 <body>
-    <!-- Topbar Start -->
     <div class="container-fluid">
         <div class="row bg-secondary py-1 px-xl-5">
             <div class="col-lg-6 d-none d-lg-block">
@@ -47,24 +56,23 @@
                         @if (User.Identity.IsAuthenticated)
                         {
                             <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">
-                                @User.Identity.Name <!-- Hiển thị tên người dùng -->
+                                @User.Identity.Name 
                             </button>
                             <div class="dropdown-menu dropdown-menu-right">
-                                <a href="@Url.Action("Logout", "User")" class="dropdown-item">Logout</a>
+                                <a href="@Url.Action("HoSo", "User")" class="dropdown-item">Hồ sơ</a>
+                                <a href="@Url.Action("DanhSachDonHang", "User")" class="dropdown-item">Đơn hàng</a>
+                                <a href="@Url.Action("DangXuat", "User")" class="dropdown-item">Đăng xuất</a>
                             </div>
                         }
                         else
                         {
-                            <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">My Account</button>
+                            <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">Tài khoản</button>
                             <div class="dropdown-menu dropdown-menu-right">
-                                <a href="@Url.Action("DangKy", "User")" class="dropdown-item">Sign up</a>
-                                <a href="@Url.Action("DangNhap", "User")" class="dropdown-item">Sign in</a>
+                                <a href="@Url.Action("DangKy", "User")" class="dropdown-item">Đăng ký</a>
+                                <a href="@Url.Action("DangNhap", "User")" class="dropdown-item">Đăng nhập</a>
                             </div>
                         }
                     </div>
-
-
-
                     <div class="btn-group mx-2">
                         <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">USD</button>
                         <div class="dropdown-menu dropdown-menu-right">
@@ -114,115 +122,23 @@
                 </form>
             </div>
             <div class="col-lg-4 col-6 text-right">
-                <p class="m-0">Customer Service</p>
+                <p class="m-0">Dịch vụ khách hàng</p>
                 <h5 class="m-0">+012 345 6789</h5>
             </div>
         </div>
     </div>
-    <!-- Topbar End -->
-    <!-- Navbar Start -->
-    <div class="container-fluid bg-dark mb-30">
-        <div class="row px-xl-5">
-            @await Component.InvokeAsync("ThuongHieuMenu")
-            <div class="col-lg-9">
-                <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 py-lg-0 px-0">
-                    <a href="" class="text-decoration-none d-block d-lg-none">
-                        <span class="h1 text-uppercase text-dark bg-light px-2">Multi</span>
-                        <span class="h1 text-uppercase text-light bg-primary px-2 ml-n1">Shop</span>
-                    </a>
-                    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
-                        <div class="navbar-nav mr-auto py-0">
-                            <a href="@Url.Action("Index", "Home")" class="nav-item nav-link active">Home</a>
-                            <a href="shop.html" class="nav-item nav-link">Shop</a>
-                            <a href="detail.html" class="nav-item nav-link">Shop Detail</a>
-                            <div class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages <i class="fa fa-angle-down mt-1"></i></a>
-                                <div class="dropdown-menu bg-primary rounded-0 border-0 m-0">
-                                    <a href="cart.html" class="dropdown-item">Shopping Cart</a>
-                                    <a href="checkout.html" class="dropdown-item">Checkout</a>
-                                </div>
-                            </div>
-                            <a href="contact.html" class="nav-item nav-link">Contact</a>
-                        </div>
-                        <div class="navbar-nav ml-auto py-0 d-none d-lg-block">
-                            <a href="" class="btn px-0">
-                                <i class="fas fa-heart text-primary"></i>
-                                <span class="badge text-secondary border border-secondary rounded-circle" style="padding-bottom: 2px;">0</span>
-                            </a>
 
-                            @{
-                                var cart = ViewContext.HttpContext.Session.Get<List<web1.Models.CtDonhang>>("Cart") ?? new List<web1.Models.CtDonhang>();
-                                var totalQuantity = cart.Sum(item => item.SoLuong); // Tính tổng số lượng
-                            }
+    <partial name="TopNav" />
 
-                            <a href="@Url.Action("GioHang", "GioHang")" class="btn px-0 ml-3">
-                                <i class="fas fa-shopping-cart text-primary"></i>
-                                <span class="badge text-secondary border border-secondary rounded-circle" style="padding-bottom: 2px;">
-                                    @totalQuantity
-                                </span>
-                            </a>
-
-
-                        </div>
-                    </div>
-                </nav>
-            </div>
-        </div>
-    </div>
-    <!-- Navbar End -->
-    <!-- Carousel Start -->
-    <!-- Carousel End -->
-
-    <!-- Categories Start -->
-    <!-- Categories End -->
-    <!-- Products Start -->
-    @RenderBody()
-    <!-- Products End -->
-    <!-- Offer Start -->
-    <!-- Offer End -->
-    <!-- Products Start -->
-    <!-- Products End -->
-    <!-- Vendor Start -->
-    <!-- Vendor End -->
-
-    <!-- Featured Start -->
-    @if (ViewContext.RouteData.Values["action"].ToString() == "Index" && ViewContext.RouteData.Values["controller"].ToString() == "Home") 
+    @if (ViewContext.RouteData.Values["action"].ToString() == "Index" && ViewContext.RouteData.Values["controller"].ToString() == "Home")
     {
-        <hr />
-        <div class="container-fluid pt-5">
-            <div class="row px-xl-5 pb-3">
-                <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
-                    <div class="d-flex align-items-center bg-light mb-4" style="padding: 30px;">
-                        <h1 class="fa fa-check text-primary m-0 mr-3"></h1>
-                        <h5 class="font-weight-semi-bold m-0">Quality Product</h5>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
-                    <div class="d-flex align-items-center bg-light mb-4" style="padding: 30px;">
-                        <h1 class="fa fa-shipping-fast text-primary m-0 mr-2"></h1>
-                        <h5 class="font-weight-semi-bold m-0">Free Shipping</h5>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
-                    <div class="d-flex align-items-center bg-light mb-4" style="padding: 30px;">
-                        <h1 class="fas fa-exchange-alt text-primary m-0 mr-3"></h1>
-                        <h5 class="font-weight-semi-bold m-0">14-Day Return</h5>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
-                    <div class="d-flex align-items-center bg-light mb-4" style="padding: 30px;">
-                        <h1 class="fa fa-phone-volume text-primary m-0 mr-3"></h1>
-                        <h5 class="font-weight-semi-bold m-0">24/7 Support</h5>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <partial name="Carousel" />
+        <partial name="Featured" />
+        <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">Sản phẩm</span></h2>
     }
-    <!-- Featured End -->
-    <!-- Footer Start -->
+
+    @RenderBody()
+
     <div class="container-fluid bg-dark text-secondary mt-5 pt-5">
         <div class="row px-xl-5 pt-5">
             <div class="col-lg-4 col-md-12 mb-5 pr-3 pr-xl-5">
@@ -292,8 +208,7 @@
             </div>
         </div>
     </div>
-    <!-- Footer End -->
-    <!-- Back to Top -->
+
     <a href="#" class="btn btn-primary back-to-top"><i class="fa fa-angle-double-up"></i></a>
 
 
@@ -309,6 +224,8 @@
 
     <!-- Template Javascript -->
     <script src="~/js/main.js"></script>
+
+
 </body>
 
 </html>

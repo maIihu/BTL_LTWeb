@@ -1,0 +1,36 @@
+﻿@using X.PagedList.Mvc.Core
+@model X.PagedList.IPagedList<Sanpham>
+
+@{
+    ViewData["Title"] = "GiayTheoLoai";
+    Layout = "~/Views/Shared/_LayoutHome.cshtml";
+}
+
+<div id="productList">
+    @await Html.PartialAsync("_GiayTheoLoaiPartial", Model)
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    // Xử lý AJAX cho phân trang
+    $(document).on("click", ".pagination a", function (e) {
+        e.preventDefault();
+        var url = $(this).attr("href");
+
+        $.get(url, function (data) {
+            $("#productList").html(data);
+        });
+    });
+
+    // Xử lý AJAX cho Giày Nam và Giày Nữ
+    // $("#giayNam, #giayNu").on("click", function (e) {
+    //     e.preventDefault();
+    //     var url = $(this).attr("href");
+
+    //     $.get(url, function (data) {
+    //         $("#productList").html(data);
+    //     });
+    // });
+</script>
+

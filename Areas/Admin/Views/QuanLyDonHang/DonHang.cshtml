@@ -1,0 +1,43 @@
+﻿@{
+    ViewData["Title"] = "DanhSachDonHang";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@model List<web1.Models.Donhang>
+
+<div class="container my-4" style="max-width: 80%; margin: auto;">
+    <h2 class="text-center mb-4">Danh sách đơn hàng</h2>
+    <table class="table table-bordered table-hover text-center">
+        <thead class="table-primary">
+            <tr>
+                <th>Mã đơn hàng</th>
+                <th>Ngày đặt</th>
+                <th>Ngày giao</th>
+                <th>Tổng tiền</th>
+                <th>Tình trạng giao hàng</th>
+                <th>Khách hàng</th>
+                <th>Chi tiết</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var dh in Model)
+            {
+                <tr>
+                    <td>@dh.MaDonHang</td>
+                    <td>@dh.NgayDat?.ToString("dd/MM/yyyy")</td>
+                    <td>@dh.NgayGiao?.ToString("dd/MM/yyyy")</td>
+                    <td>@dh.TongTien?.ToString("C")</td>
+                    <td>@(dh.TinhTrangGiaoHang == true ? "Đã giao" : "Chưa giao")</td>
+                    <td>@dh.MaKhNavigation?.HoTen</td>
+                    <td>
+                        <a href="@Url.Action("ChiTietDonHang", "QuanLyDonHang", new { id = dh.MaDonHang, area = "admin" })" class="btn btn-info btn-sm">Xem chi tiết</a>
+                        <form action="@Url.Action("XoaDonHang", "QuanLyDonHang", new { id = dh.MaDonHang, area = "admin" })" method="post" style="display:inline;">
+                            <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Bạn có chắc chắn muốn xóa đơn hàng này?');">Xóa</button>
+                        </form>
+                    </td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
