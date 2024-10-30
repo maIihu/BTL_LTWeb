@@ -12,8 +12,6 @@ public partial class Khachhang
     public string TaiKhoanKh { get; set; } = null!;
     [Required(ErrorMessage = "Mật khẩu không được để trống.")]
     public string MatKhau { get; set; } = null!;
-
-
     [NotMapped] // Thuộc tính này sẽ không được lưu vào cơ sở dữ liệu
     [Compare("MatKhau", ErrorMessage = "Mật khẩu nhập lại không khớp.")]
     [Required(ErrorMessage = "Bạn cần nhập lại mật khẩu.")]

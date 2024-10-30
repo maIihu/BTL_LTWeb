@@ -26,7 +26,6 @@ namespace web1.Controllers
             var lstSanpham = db.Sanphams.AsNoTracking().OrderBy(x => x.TenGiay);
             PagedList<Sanpham> lst = new PagedList<Sanpham>(lstSanpham, pageNum, pageSize);
 
-            // Kiểm tra nếu là yêu cầu AJAX, trả về Partial View
             if (HttpContext.Request.Headers["X-Requested-With"] == "XMLHttpRequest")
             {
                 return PartialView("_ProductListPartial", lst);
@@ -44,10 +43,13 @@ namespace web1.Controllers
             List<Sanpham> lstsanpham = db.Sanphams.Where(x => x.MaThuongHieu == maThuongHieu).OrderBy(X=>X.TenGiay).ToList();
             PagedList<Sanpham> lst = new PagedList<Sanpham>(lstsanpham, pageNum, pageSize);
             ViewBag.MaThuongHieu = maThuongHieu;
+            if (HttpContext.Request.Headers["X-Requested-With"] == "XMLHttpRequest")
+            {
+                return PartialView("_GiayTheoThuongHieuPartial", lst);
+            }
             return View(lst);
         }
         #endregion
-
 
         #region ChiTietGiay
         public IActionResult ChiTietGiay(int maSp) // Dùng ViewBag
@@ -69,16 +71,14 @@ namespace web1.Controllers
             List<Sanpham> lstsanpham = db.Sanphams.Where(x => x.MaLoai == maLoai).OrderBy(X => X.TenGiay).ToList();
             PagedList<Sanpham> lst = new PagedList<Sanpham>(lstsanpham, pageNum, pageSize);
             ViewBag.MaLoai = maLoai;
-            ViewBag.Title = maLoai == 1 ? "Giày Nam" : "Giày Nữ";  
+            ViewBag.Title = maLoai == 1 ? "Giày Nam" : "Giày Nữ";
+            if (HttpContext.Request.Headers["X-Requested-With"] == "XMLHttpRequest")
+            {
+                return PartialView("_GiayTheoLoaiPartial", lst);
+            }
             return View(lst);
         }
         #endregion
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
 
         #region DongGopYKien
         public IActionResult DongGopYKien() { 
@@ -96,6 +96,12 @@ namespace web1.Controllers
         public IActionResult Privacy()
         {
             return View();
+        }
+
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        public IActionResult Error()
+        {
+            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
 }

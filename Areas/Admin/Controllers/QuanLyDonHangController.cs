@@ -44,7 +44,7 @@ namespace web1.Areas.Admin.Controllers
             _db.Donhangs.Remove(donHang);
             _db.SaveChanges();
             TempData["SuccessMessage"] = "Đơn hàng đã được xóa thành công.";
-            return RedirectToAction("DonHang");
+            return RedirectToAction("DanhSachDonHang");
         }
         #endregion
 
