@@ -231,13 +231,36 @@ namespace web1.Controllers
         [HttpPost]
         public IActionResult Checkout([FromBody] List<CtDonhang> cartItems)
         {
+            var currentUserName = User.Identity.Name; // Đây là cách lấy tên đăng nhập từ Claims
+
+            var currentUser = _db.Khachhangs.FirstOrDefault(u => u.TaiKhoanKh == currentUserName);
+
+            var currentOrder = _db.Donhangs.FirstOrDefault(o => o.MaKh == currentUser.MaKh && o.TinhTrangGiaoHang == null);
+
+            if (currentOrder != null)
+            {
+                currentOrder.TinhTrangGiaoHang = false;
+                currentOrder.NgayGiao = DateTime.Now.AddDays(3);
+
+                // Lưu thay đổi vào cơ sở dữ liệu
+                _db.SaveChanges();
+            }
+
+            currentOrder = new Donhang
+            {
+                MaKh = currentUser.MaKh,
+                NgayDat = DateTime.Now,
+                TongTien = 0, // Sẽ cập nhật sau khi thêm sản phẩm
+                TinhTrangGiaoHang = null
+            };
+            _db.Donhangs.Add(currentOrder);
+            _db.SaveChanges(); // Lưu hóa đơn mới vào cơ sở dữ liệu
+
             if (cartItems != null && cartItems.Any())
             {
-                // Thực hiện logic thanh toán
-                // ...
 
                 // Sau khi thanh toán thành công, xóa hết sản phẩm trong giỏ hàng
-                var maDonHang = cartItems.FirstOrDefault()?.MaDonHang;
+                /*var maDonHang = cartItems.FirstOrDefault()?.MaDonHang;
                 if (maDonHang.HasValue)
                 {
                     // Xóa hết các sản phẩm của đơn hàng trong CSDL
@@ -247,10 +270,9 @@ namespace web1.Controllers
                         _db.CtDonhangs.RemoveRange(chiTietDonHangs);
                         _db.SaveChanges();
                     }
-                }
+                }*/
 
-                // Xóa giỏ hàng trong session
-                HttpContext.Session.Remove("Cart");
+
 
                 // Trả về kết quả thành công
                 return Json(new { success = true, message = "Thanh toán thành công!" });

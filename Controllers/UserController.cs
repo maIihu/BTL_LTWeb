@@ -354,5 +354,29 @@ namespace web1.Controllers
         }
 
         #endregion
+
+        [HttpGet]
+        public IActionResult GetUserInfo()
+        {
+            if (User.Identity.IsAuthenticated)
+            {
+                string taiKhoan = User.Identity.Name;
+                var khachhang = _db.Khachhangs.FirstOrDefault(k => k.TaiKhoanKh == taiKhoan);
+
+                if (khachhang != null)
+                {
+                    return Json(new
+                    {
+                        hoTen = khachhang.HoTen,
+                        email = khachhang.EmailKh, // Giả sử EmailKh là thuộc tính lưu email
+                        soDienThoai = khachhang.DienThoaiKh, // Giả sử DienThoaiKh là thuộc tính lưu số điện thoại
+                        diaChi = khachhang.DiaChiKh, // Giả sử DiaChiKh là thuộc tính lưu địa chỉ
+                    });
+                }
+            }
+
+            return NotFound(); // Trả về 404 nếu không tìm thấy thông tin người dùng
+        }
+
     }
 }
