@@ -363,7 +363,7 @@
 
         function checkout(cartItems) {
             $.ajax({
-                url: '@Url.Action("Checkout", "ShowCart")',
+                url: '@Url.Action("Checkout", "Cart")',
                 type: 'POST',
                 contentType: 'application/json',
                 data: JSON.stringify(cartItems),
@@ -371,7 +371,7 @@
                     if (response.success) {
                         alert(response.message);
                         $('#checkoutModal').modal('hide');
-                        window.location.href = '/GioHang/GioHang';
+                        window.location.href = '/Cart/ShowCart';
                     } else {
                         alert('Thanh toán không thành công, vui lòng thử lại.');
                     }
