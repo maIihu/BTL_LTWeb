@@ -259,21 +259,6 @@ namespace web1.Controllers
             if (cartItems != null && cartItems.Any())
             {
 
-                // Sau khi thanh toán thành công, xóa hết sản phẩm trong giỏ hàng
-                /*var maDonHang = cartItems.FirstOrDefault()?.MaDonHang;
-                if (maDonHang.HasValue)
-                {
-                    // Xóa hết các sản phẩm của đơn hàng trong CSDL
-                    var chiTietDonHangs = _db.CtDonhangs.Where(x => x.MaDonHang == maDonHang.Value).ToList();
-                    if (chiTietDonHangs.Any())
-                    {
-                        _db.CtDonhangs.RemoveRange(chiTietDonHangs);
-                        _db.SaveChanges();
-                    }
-                }*/
-
-
-
                 // Trả về kết quả thành công
                 return Json(new { success = true, message = "Thanh toán thành công!" });
             }
