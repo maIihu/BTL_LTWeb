@@ -19,11 +19,19 @@ namespace web1.Controllers
             _logger = logger;
         }
         #region Index 
-        public IActionResult Index(int? page) // Partial View
+        public IActionResult Index(string tenGiay, int? page) // Partial View
         {
             int pageSize = 8;
             int pageNum = page == null || page < 0 ? 1 : page.Value;
-            var lstSanpham = db.Sanphams.AsNoTracking().OrderBy(x => x.TenGiay);
+
+            var lstSanpham = db.Sanphams.AsNoTracking()
+                                 .Where(s => string.IsNullOrEmpty(tenGiay) || s.TenGiay.Contains(tenGiay))
+                                 .OrderBy(s => s.TenGiay);
+
+            // Lưu từ khóa tìm kiếm vào ViewData để giữ lại trên giao diện
+            ViewData["SearchTerm"] = tenGiay;
+
+            //var lstSanpham = db.Sanphams.AsNoTracking().OrderBy(x => x.TenGiay);
             PagedList<Sanpham> lst = new PagedList<Sanpham>(lstSanpham, pageNum, pageSize);
 
             if (HttpContext.Request.Headers["X-Requested-With"] == "XMLHttpRequest")

@@ -1,9 +1,9 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\",
+  "WorkspaceRootPath": "D:\\BTL-LTTQ\\web1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{86C89F23-CB47-40C1-89F9-E30E2A4B82F8}|web1.csproj|d:\\utc_cntt_nam3_ky1\\btl\\web1\\areas\\admin\\views\\shared\\_layoutadmin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{86C89F23-CB47-40C1-89F9-E30E2A4B82F8}|web1.csproj|d:\\btl-lttq\\web1\\areas\\admin\\views\\shared\\_layoutadmin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{86C89F23-CB47-40C1-89F9-E30E2A4B82F8}|web1.csproj|solutionrelative:areas\\admin\\views\\shared\\_layoutadmin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
@@ -28,11 +28,11 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "_LayoutAdmin.cshtml",
-              "DocumentMoniker": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\Areas\\Admin\\Views\\Shared\\_LayoutAdmin.cshtml",
+              "DocumentMoniker": "D:\\BTL-LTTQ\\web1\\Areas\\Admin\\Views\\Shared\\_LayoutAdmin.cshtml",
               "RelativeDocumentMoniker": "Areas\\Admin\\Views\\Shared\\_LayoutAdmin.cshtml",
-              "ToolTip": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\Areas\\Admin\\Views\\Shared\\_LayoutAdmin.cshtml",
+              "ToolTip": "D:\\BTL-LTTQ\\web1\\Areas\\Admin\\Views\\Shared\\_LayoutAdmin.cshtml",
               "RelativeToolTip": "Areas\\Admin\\Views\\Shared\\_LayoutAdmin.cshtml",
-              "ViewState": "AgIAAD8AAAAAAAAAAAAAAFsAAAA1AAAAAAAAAA==",
+              "ViewState": "AgIAAEsAAAAAMjMzMzPrv1sAAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-10-30T17:23:53.366Z",
               "EditorCaption": ""

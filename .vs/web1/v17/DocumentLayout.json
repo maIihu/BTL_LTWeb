@@ -1,10 +1,14 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\",
+  "WorkspaceRootPath": "D:\\BTL-LTTQ\\web1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{86C89F23-CB47-40C1-89F9-E30E2A4B82F8}|web1.csproj|d:\\utc_cntt_nam3_ky1\\btl\\web1\\areas\\admin\\views\\shared\\_layoutadmin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{86C89F23-CB47-40C1-89F9-E30E2A4B82F8}|web1.csproj|solutionrelative:areas\\admin\\views\\shared\\_layoutadmin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{86C89F23-CB47-40C1-89F9-E30E2A4B82F8}|web1.csproj|d:\\btl-lttq\\web1\\views\\shared\\_layouthome.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{86C89F23-CB47-40C1-89F9-E30E2A4B82F8}|web1.csproj|solutionrelative:views\\shared\\_layouthome.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{86C89F23-CB47-40C1-89F9-E30E2A4B82F8}|web1.csproj|d:\\btl-lttq\\web1\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{86C89F23-CB47-40C1-89F9-E30E2A4B82F8}|web1.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,8 +18,34 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "_LayoutHome.cshtml",
+              "DocumentMoniker": "D:\\BTL-LTTQ\\web1\\Views\\Shared\\_LayoutHome.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_LayoutHome.cshtml",
+              "ToolTip": "D:\\BTL-LTTQ\\web1\\Views\\Shared\\_LayoutHome.cshtml*",
+              "RelativeToolTip": "Views\\Shared\\_LayoutHome.cshtml*",
+              "ViewState": "AgIAAGYAAAAAx8zMzMwnwHgAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-30T18:15:20.594Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "D:\\BTL-LTTQ\\web1\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
+              "ToolTip": "D:\\BTL-LTTQ\\web1\\Controllers\\HomeController.cs*",
+              "RelativeToolTip": "Controllers\\HomeController.cs*",
+              "ViewState": "AgIAABMAAADAX2ZmZmYTwBUAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-30T18:13:34.745Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
@@ -23,19 +53,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "_LayoutAdmin.cshtml",
-              "DocumentMoniker": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\Areas\\Admin\\Views\\Shared\\_LayoutAdmin.cshtml",
-              "RelativeDocumentMoniker": "Areas\\Admin\\Views\\Shared\\_LayoutAdmin.cshtml",
-              "ToolTip": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\Areas\\Admin\\Views\\Shared\\_LayoutAdmin.cshtml",
-              "RelativeToolTip": "Areas\\Admin\\Views\\Shared\\_LayoutAdmin.cshtml",
-              "ViewState": "AgIAAEgAAAAAAAAAAAAAAFsAAAA1AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-30T17:23:53.366Z",
-              "EditorCaption": ""
             }
           ]
         }
