@@ -13,7 +13,6 @@ namespace web1.Controllers
     {
         ShopGiayContext db = new ShopGiayContext();
         private readonly ILogger<HomeController> _logger;
-        private readonly GiayDAO _giayDAO;
 
         public HomeController(ILogger<HomeController> logger)
         {
@@ -109,15 +108,15 @@ namespace web1.Controllers
         public IActionResult UpdateLike(int maGiay)
         {
             var sanPham = db.Sanphams.SingleOrDefault(x => x.MaGiay == maGiay);
-
             if (sanPham != null)
             {
-                sanPham.YeuThich = !sanPham.YeuThich;
+                sanPham.YeuThich = !sanPham.YeuThich; // Đổi trạng thái yêu thích
                 db.SaveChanges();
+                return Json(new { success = true });
             }
-
-            return Json(new { success = true });
+            return Json(new { success = false, message = "Sản phẩm không tồn tại." });
         }
+
 
     }
 }
