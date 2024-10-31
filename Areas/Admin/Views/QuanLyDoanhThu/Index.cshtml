@@ -1,0 +1,159 @@
+﻿@{
+	ViewBag.Title = "Thống kê doanh thu";
+	Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+<div class="container mt-4">
+	<!-- BIỂU ĐỒ -->
+	<div class="card card-success">
+		<div class="card-header">
+			<h3 class="card-title text-center mb-4">THỐNG KÊ DOANH THU</h3>
+		</div>
+		<div class="card-body">
+			<div class="chart">
+				<canvas id="barChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+			</div>
+		</div>
+	</div>
+	<hr>
+
+	<div class="row mb-4">
+		<div class="col-md-4">
+			<label for="ngay">Ngày:</label>
+			<input type="number" id="ngay" class="form-control" min="1" max="31" />
+		</div>
+		<div class="col-md-4">
+			<label for="thang">Tháng:</label>
+			<input type="number" id="thang" class="form-control" min="1" max="12" />
+		</div>
+		<div class="col-md-4">
+			<label for="nam">Năm:</label>
+			<input type="number" id="nam" class="form-control" min="2000" max="2100" />
+		</div>
+	</div>
+
+	<div class="mb-4">
+		<button class="btn btn-primary" id="btnThongKe">Xem Thống Kê</button>
+	</div>
+
+	<div class="mt-4">
+		<h4>Tổng Doanh Thu: <span id="doanhThu"></span> VNĐ</h4>
+	</div>
+	<hr>
+
+	<div id="chiTietDonHangContainer"></div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
+
+<script>
+	$(function () {
+		var barChartCanvas = $('#barChart').get(0).getContext('2d');
+		var barChartOptions = {
+			responsive: true,
+			maintainAspectRatio: false,
+		};
+
+		var barChart = new Chart(barChartCanvas, {
+			type: 'bar',
+			data: {
+				labels: [],
+				datasets: [{
+					label: 'Doanh Thu',
+					backgroundColor: 'rgba(60,141,188,0.9)',
+					borderColor: 'rgba(60,141,188,0.8)',
+					data: []
+				}]
+			},
+			options: barChartOptions
+		});
+
+		// Hàm để tải doanh thu hôm nay và chi tiết đơn hàng
+		function loadDoanhThuHomNay() {
+			var today = new Date();
+			var ngay = today.getDate();
+			var thang = today.getMonth() + 1; // Tháng bắt đầu từ 0
+			var nam = today.getFullYear();
+
+			// Tự động điền vào các input
+			$('#ngay').val(ngay);
+			$('#thang').val(thang);
+			$('#nam').val(nam);
+
+			// Lấy doanh thu và chi tiết đơn hàng
+			$.getJSON(`/Admin/QuanLyDoanhThu/DoanhThuTheoNgay/${ngay}/${thang}/${nam}`, function (data) {
+				$('#doanhThu').text(data.toLocaleString());
+
+				// Cập nhật dữ liệu biểu đồ
+				barChart.data.labels = [`${ngay}/${thang}/${nam}`];
+				barChart.data.datasets[0].data = [data];
+				barChart.update();
+			});
+
+			$.get(`/Admin/QuanLyDoanhThu/ChiTietDonHangNgay/${ngay}/${thang}/${nam}`, function (data) {
+				$('#chiTietDonHangContainer').html(data);
+			});
+		}
+
+		loadDoanhThuHomNay();
+
+		$('#btnThongKe').click(function () {
+			const ngay = $('#ngay').val();
+			const thang = $('#thang').val();
+			const nam = $('#nam').val();
+
+			// Kiểm tra các định dạng nhập liệu
+			if (ngay && thang && nam) {
+				// Định dạng: Ngày/Tháng/Năm
+				$.getJSON(`/Admin/QuanLyDoanhThu/DoanhThuTheoNgay/${ngay}/${thang}/${nam}`, function (data) {
+					$('#doanhThu').text(data.toLocaleString());
+
+					// Cập nhật dữ liệu biểu đồ
+					barChart.data.labels = [`${ngay}/${thang}/${nam}`];
+					barChart.data.datasets[0].data = [data];
+					barChart.update();
+				});
+
+				$.get(`/Admin/QuanLyDoanhThu/ChiTietDonHangNgay/${ngay}/${thang}/${nam}`, function (data) {
+					$('#chiTietDonHangContainer').html(data);
+				});
+			} else if (thang && nam) {
+				// Định dạng: Tháng/Năm
+				$.getJSON(`/Admin/QuanLyDoanhThu/DoanhThuTheoThang/${thang}/${nam}`, function (data) {
+					$('#doanhThu').text(data.reduce((a, b) => a + b, 0).toLocaleString());
+
+					// Cập nhật dữ liệu biểu đồ
+					var daysInMonth = new Date(nam, thang, 0).getDate();
+					barChart.data.labels = Array.from({ length: daysInMonth }, (_, i) => i + 1);
+					barChart.data.datasets[0].data = data;
+					barChart.update();
+				});
+
+				$.get(`/Admin/QuanLyDoanhThu/ChiTietDonHangThang/${thang}/${nam}`, function (data) {
+					$('#chiTietDonHangContainer').html(data);
+				});
+			} else if (nam) {
+				// Định dạng: Năm
+				$.getJSON(`/Admin/QuanLyDoanhThu/DoanhThuTheoNam/${nam}`, function (data) {
+					$('#doanhThu').text(data.reduce((a, b) => a + b, 0).toLocaleString());
+
+					// Cập nhật dữ liệu biểu đồ
+					barChart.data.labels = ['Tháng 1', 'Tháng 2', 'Tháng 3', 'Tháng 4', 'Tháng 5', 'Tháng 6', 'Tháng 7', 'Tháng 8', 'Tháng 9', 'Tháng 10', 'Tháng 11', 'Tháng 12'];
+					barChart.data.datasets[0].data = data;
+					barChart.update();
+				});
+
+				$.get(`/Admin/QuanLyDoanhThu/ChiTietDonHangNam/${nam}`, function (data) {
+					$('#chiTietDonHangContainer').html(data);
+				});
+			} else {
+				alert("Vui lòng nhập đầy đủ định dạng: Ngày/Tháng/Năm, Tháng/Năm hoặc Năm!");
+			}
+		});
+	});
+</script>
+
+
+

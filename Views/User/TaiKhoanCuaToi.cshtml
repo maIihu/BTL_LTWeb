@@ -1,0 +1,61 @@
+﻿@{
+    ViewData["Title"] = "Quản lý tài khoản";
+    Layout = "~/Views/Shared/_LayoutHome.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="list-group">
+                <a href="javascript:void(0);" class="list-group-item list-group-item-action active" id="hoSoLink">Hồ sơ</a>
+                <a href="javascript:void(0);" class="list-group-item list-group-item-action" id="doiMatKhauLink">Đổi mật khẩu</a>
+            </div>
+        </div>
+
+        <div class="col-md-9">
+            <div id="contentContainer">
+               
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        // Hàm tải partial view ban đầu (Hồ sơ của tôi)
+        loadPartialView('@Url.Action("LoadHoSo", "User")');
+
+        // Sự kiện khi nhấn vào nút "Hồ sơ của tôi"
+        $('#hoSoLink').click(function () {
+            loadPartialView('@Url.Action("LoadHoSo", "User")');
+            toggleActiveLink(this);
+        });
+
+        // Sự kiện khi nhấn vào nút "Đổi mật khẩu"
+        $('#doiMatKhauLink').click(function () {
+            loadPartialView('@Url.Action("LoadDoiMatKhau", "User")');
+            toggleActiveLink(this);
+        });
+
+        // Hàm để tải nội dung partial view vào `#contentContainer`
+        function loadPartialView(url) {
+            $.ajax({
+                url: url,
+                type: 'GET',
+                success: function (result) {
+                    $('#contentContainer').html(result);
+                },
+                error: function () {
+                    alert("Không thể tải nội dung. Vui lòng thử lại.");
+                }
+            });
+        }
+
+        // Hàm để đổi màu active cho liên kết
+        function toggleActiveLink(link) {
+            $('.list-group-item-action').removeClass('active');
+            $(link).addClass('active');
+        }
+    });
+</script>

@@ -1,13 +1,11 @@
 ﻿using System.Diagnostics;
 using Azure;
 using Humanizer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using web1.Models;
 using X.PagedList;
-
-
-
 namespace web1.Controllers
 {
     public class HomeController : Controller
@@ -114,8 +112,23 @@ namespace web1.Controllers
         #endregion
 
         #region DongGopYKien
-        public IActionResult DongGopYKien() { 
+        public IActionResult GopY() { 
             return View();
+        }
+        [Authorize]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> GopY(Ykienkhachhang ykienkhachhang)
+        {
+            if (!ModelState.IsValid)
+            {
+                return Json(new { success = false, errors = ModelState.Values.SelectMany(v => v.Errors).Select(e => e.ErrorMessage) });
+            }
+
+            await db.Ykienkhachhangs.AddAsync(ykienkhachhang);
+            await db.SaveChangesAsync();
+
+            return Json(new { success = true, message = "Gửi ý kiến thành công! Shop cám ơn bạn vì đã quan tâm ^^" });
         }
         #endregion
 
