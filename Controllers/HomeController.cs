@@ -5,8 +5,6 @@ using Microsoft.EntityFrameworkCore;
 using web1.Models;
 using X.PagedList;
 
-
-
 namespace web1.Controllers
 {
     public class HomeController : Controller
