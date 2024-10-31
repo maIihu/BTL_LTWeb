@@ -13,6 +13,7 @@ namespace web1.Controllers
     {
         ShopGiayContext db = new ShopGiayContext();
         private readonly ILogger<HomeController> _logger;
+        private readonly GiayDAO _giayDAO;
 
         public HomeController(ILogger<HomeController> logger)
         {
@@ -103,6 +104,20 @@ namespace web1.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
-        
+
+        [HttpPost]
+        public IActionResult UpdateLike(int maGiay)
+        {
+            var sanPham = db.Sanphams.SingleOrDefault(x => x.MaGiay == maGiay);
+
+            if (sanPham != null)
+            {
+                sanPham.YeuThich = !sanPham.YeuThich;
+                db.SaveChanges();
+            }
+
+            return Json(new { success = true });
+        }
+
     }
 }

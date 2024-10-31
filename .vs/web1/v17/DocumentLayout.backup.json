@@ -1,10 +1,38 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\",
+  "WorkspaceRootPath": "D:\\BTL-LTTQ\\web1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{86C89F23-CB47-40C1-89F9-E30E2A4B82F8}|web1.csproj|d:\\utc_cntt_nam3_ky1\\btl\\web1\\areas\\admin\\views\\shared\\_layoutadmin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{86C89F23-CB47-40C1-89F9-E30E2A4B82F8}|web1.csproj|solutionrelative:areas\\admin\\views\\shared\\_layoutadmin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{86C89F23-CB47-40C1-89F9-E30E2A4B82F8}|web1.csproj|d:\\btl-lttq\\web1\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{86C89F23-CB47-40C1-89F9-E30E2A4B82F8}|web1.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{86C89F23-CB47-40C1-89F9-E30E2A4B82F8}|web1.csproj|d:\\btl-lttq\\web1\\views\\home\\_productlistpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{86C89F23-CB47-40C1-89F9-E30E2A4B82F8}|web1.csproj|solutionrelative:views\\home\\_productlistpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{86C89F23-CB47-40C1-89F9-E30E2A4B82F8}|web1.csproj|d:\\btl-lttq\\web1\\models\\shopgiaycontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{86C89F23-CB47-40C1-89F9-E30E2A4B82F8}|web1.csproj|solutionrelative:models\\shopgiaycontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{86C89F23-CB47-40C1-89F9-E30E2A4B82F8}|web1.csproj|d:\\btl-lttq\\web1\\dao\\giaydao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{86C89F23-CB47-40C1-89F9-E30E2A4B82F8}|web1.csproj|solutionrelative:dao\\giaydao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{86C89F23-CB47-40C1-89F9-E30E2A4B82F8}|web1.csproj|d:\\btl-lttq\\web1\\models\\sanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{86C89F23-CB47-40C1-89F9-E30E2A4B82F8}|web1.csproj|solutionrelative:models\\sanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{86C89F23-CB47-40C1-89F9-E30E2A4B82F8}|web1.csproj|d:\\btl-lttq\\web1\\views\\shared\\_layouthome.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{86C89F23-CB47-40C1-89F9-E30E2A4B82F8}|web1.csproj|solutionrelative:views\\shared\\_layouthome.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{86C89F23-CB47-40C1-89F9-E30E2A4B82F8}|web1.csproj|d:\\btl-lttq\\web1\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{86C89F23-CB47-40C1-89F9-E30E2A4B82F8}|web1.csproj|solutionrelative:views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{86C89F23-CB47-40C1-89F9-E30E2A4B82F8}|web1.csproj|d:\\btl-lttq\\web1\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{86C89F23-CB47-40C1-89F9-E30E2A4B82F8}|web1.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,8 +42,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 9,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "_ProductListPartial.cshtml",
+              "DocumentMoniker": "D:\\BTL-LTTQ\\web1\\Views\\Home\\_ProductListPartial.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\_ProductListPartial.cshtml",
+              "ToolTip": "D:\\BTL-LTTQ\\web1\\Views\\Home\\_ProductListPartial.cshtml*",
+              "RelativeToolTip": "Views\\Home\\_ProductListPartial.cshtml*",
+              "ViewState": "AgIAACsAAACAyszMzAwswEoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-31T14:04:27.262Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
@@ -26,15 +67,93 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "_LayoutAdmin.cshtml",
-              "DocumentMoniker": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\Areas\\Admin\\Views\\Shared\\_LayoutAdmin.cshtml",
-              "RelativeDocumentMoniker": "Areas\\Admin\\Views\\Shared\\_LayoutAdmin.cshtml",
-              "ToolTip": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\Areas\\Admin\\Views\\Shared\\_LayoutAdmin.cshtml",
-              "RelativeToolTip": "Areas\\Admin\\Views\\Shared\\_LayoutAdmin.cshtml",
-              "ViewState": "AgIAAD8AAAAAAAAAAAAAAFsAAAA1AAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "ShopGiayContext.cs",
+              "DocumentMoniker": "D:\\BTL-LTTQ\\web1\\Models\\ShopGiayContext.cs",
+              "RelativeDocumentMoniker": "Models\\ShopGiayContext.cs",
+              "ToolTip": "D:\\BTL-LTTQ\\web1\\Models\\ShopGiayContext.cs",
+              "RelativeToolTip": "Models\\ShopGiayContext.cs",
+              "ViewState": "AgIAAOkAAAAAAAAAAAAiwPoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-31T12:22:03.441Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "GiayDAO.cs",
+              "DocumentMoniker": "D:\\BTL-LTTQ\\web1\\Dao\\GiayDAO.cs",
+              "RelativeDocumentMoniker": "Dao\\GiayDAO.cs",
+              "ToolTip": "D:\\BTL-LTTQ\\web1\\Dao\\GiayDAO.cs",
+              "RelativeToolTip": "Dao\\GiayDAO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-31T12:14:34.91Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Sanpham.cs",
+              "DocumentMoniker": "D:\\BTL-LTTQ\\web1\\Models\\Sanpham.cs",
+              "RelativeDocumentMoniker": "Models\\Sanpham.cs",
+              "ToolTip": "D:\\BTL-LTTQ\\web1\\Models\\Sanpham.cs",
+              "RelativeToolTip": "Models\\Sanpham.cs",
+              "ViewState": "AgIAAB8AAAAAaGZmZmb8vycAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-31T09:10:08.006Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\BTL-LTTQ\\web1\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
+              "ToolTip": "D:\\BTL-LTTQ\\web1\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAABAAAACAmZmZmRkmwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-30T17:23:53.366Z",
+              "WhenOpened": "2024-10-31T04:45:36.723Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "D:\\BTL-LTTQ\\web1\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\BTL-LTTQ\\web1\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAUAAABgmZmZmRkWwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-31T04:43:30.037Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "_LayoutHome.cshtml",
+              "DocumentMoniker": "D:\\BTL-LTTQ\\web1\\Views\\Shared\\_LayoutHome.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_LayoutHome.cshtml",
+              "ToolTip": "D:\\BTL-LTTQ\\web1\\Views\\Shared\\_LayoutHome.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_LayoutHome.cshtml",
+              "ViewState": "AgIAAFIAAADAlpmZmZkiwIkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-30T18:15:20.594Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "D:\\BTL-LTTQ\\web1\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
+              "ToolTip": "D:\\BTL-LTTQ\\web1\\Controllers\\HomeController.cs*",
+              "RelativeToolTip": "Controllers\\HomeController.cs*",
+              "ViewState": "AgIAAGMAAAAA8P/////vv3EAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-30T18:13:34.745Z",
               "EditorCaption": ""
             }
           ]

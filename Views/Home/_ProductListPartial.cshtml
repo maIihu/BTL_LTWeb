@@ -12,7 +12,9 @@
                     </div>
                     <div class="product-action">
                         <a class="btn btn-outline-dark btn-square" href="@Url.Action("ChiTietGiay", "Home", new { maSp = item.MaGiay })"><i class="fa fa-shopping-cart"></i></a>
-                        <a class="btn btn-outline-dark btn-square" href="#"><i class="far fa-heart"></i></a>
+                        <a class="btn btn-outline-dark btn-square like-btn" data-id="@item.MaGiay" onclick="toggleLike(this)">
+                            <i class="far fa-heart"></i>
+                        </a>
                         <a class="btn btn-outline-dark btn-square" href="#"><i class="fa fa-sync-alt"></i></a>
                         <a class="btn btn-outline-dark btn-square" href="#"><i class="fa fa-search"></i></a>
                     </div>
@@ -47,3 +49,26 @@
     NextElementClass = "page-item"
 })
 </div>
+
+<script>
+    function toggleLike(element) {
+        const maGiay = $(element).data('id');
+
+        $.ajax({
+            url: '@Url.Action("UpdateLike", "Home")',
+            type: 'POST',
+            data: { maGiay: maGiay },
+            success: function (response) {
+                // Đổi màu trái tim
+                if ($(element).find('i').hasClass('far')) {
+                    $(element).find('i').removeClass('far').addClass('fas text-danger'); // Chuyển sang icon trái tim đỏ
+                } else {
+                    $(element).find('i').removeClass('fas text-danger').addClass('far'); // Chuyển lại icon trái tim rỗng
+                }
+            },
+            error: function (error) {
+                console.error('Error:', error);
+            }
+        });
+    }
+</script>
