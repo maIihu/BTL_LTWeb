@@ -59,7 +59,7 @@
 								@User.Identity.Name
 							</button>
 							<div class="dropdown-menu dropdown-menu-right">
-								<a href="@Url.Action("TaiKhoanCuaToi", "User")" class="dropdown-item">Hồ sơ</a>
+								<a href="@Url.Action("HoSo", "User")" class="dropdown-item">Hồ sơ</a>
 								<a href="@Url.Action("DanhSachDonHang", "User")" class="dropdown-item">Đơn hàng</a>
 								<a href="@Url.Action("DangXuat", "User")" class="dropdown-item">Đăng xuất</a>
 							</div>
@@ -110,9 +110,10 @@
 				</a>
 			</div>
 			<div class="col-lg-4 col-6 text-left">
-				<form action="">
+				<form asp-action="Index" method="get">
 					<div class="input-group">
-						<input type="text" class="form-control" placeholder="Search for products">
+						<input type="text" class="form-control" name="tenGiay" placeholder="Nhập tên giày cần tìm" value="@ViewData["SearchTerm"]" />
+
 						<div class="input-group-append">
 							<span class="input-group-text bg-transparent text-primary">
 								<i class="fa fa-search"></i>
@@ -130,11 +131,36 @@
 
 	<partial name="TopNav" />
 
+
 	@if (ViewContext.RouteData.Values["action"].ToString() == "Index" && ViewContext.RouteData.Values["controller"].ToString() == "Home")
 	{
 		<partial name="Carousel" />
 		<partial name="Featured" />
 		<h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">Sản phẩm</span></h2>
+		<!-- Form lọc sản phẩm -->
+		<div class="col-lg-8 mx-xl-5 mb-4">
+			<form asp-action="Index" method="get" class="form-inline">
+				<label for="thuongHieu" class="mr-2">Thương hiệu:</label>
+				<select id="thuongHieu" name="thuongHieu" class="form-control mr-3" value="@ViewData["SelectedBrand"]">
+					<option value="">Chọn thương hiệu</option>
+					<option value="Nike">Nike</option>
+					<option value="Vans">Vans</option>
+					<option value="Adidas">Adidas</option>
+					<option value="Converse">Converse</option>
+					<option value="Puma">Puma</option>
+					<option value="Balenciaga">Balenciaga</option>
+					<option value="MLB">MLB</option>
+					<option value="Reebok">Reebok</option>
+				</select>
+
+				<label class="mr-2">Giá từ</label>
+				<input type="number" class="form-control mr-2" name="from" style="width: 140px;" value="@ViewData["FromPrice"]" />
+				<label class="mr-2">đến</label>
+				<input type="number" class="form-control mr-3" name="to" style="width: 140px;" value="@ViewData["ToPrice"]" />
+
+				<button type="submit" class="btn btn-primary">Lọc</button>
+			</form>
+		</div>
 	}
 
 	@RenderBody()

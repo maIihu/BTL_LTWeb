@@ -1,11 +1,11 @@
 ﻿using System.Diagnostics;
 using Azure;
+using Humanizer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using web1.Models;
 using X.PagedList;
-
 namespace web1.Controllers
 {
     public class HomeController : Controller
@@ -18,19 +18,51 @@ namespace web1.Controllers
             _logger = logger;
         }
         #region Index 
-        public IActionResult Index(int? page) // Partial View
+        public IActionResult Index(string tenGiay, int? page, string? thuongHieu, decimal? from, decimal? to)
         {
             int pageSize = 8;
             int pageNum = page == null || page < 0 ? 1 : page.Value;
-            var lstSanpham = db.Sanphams.AsNoTracking().OrderBy(x => x.TenGiay);
+
+            ViewData["SearchTerm"] = tenGiay;
+            ViewData["SelectedBrand"] = thuongHieu;
+            ViewData["FromPrice"] = from;
+            ViewData["ToPrice"] = to;
+
+            var sanPhams = from s in db.Sanphams
+                           join th in db.Thuonghieus on s.MaThuongHieu equals th.MaThuongHieu
+                           where (string.IsNullOrEmpty(tenGiay) || s.TenGiay.Contains(tenGiay)) // Lọc theo tên giày
+                           && (string.IsNullOrEmpty(thuongHieu) || th.TenThuongHieu.Contains(thuongHieu)) // Lọc theo tên thương hiệu
+                           select new
+                           {
+                               s, 
+                               TenThuongHieu = th.TenThuongHieu 
+                           };
+
+            // Lọc theo khoảng giá
+            if (from.HasValue)
+            {
+                sanPhams = sanPhams.Where(p => p.s.GiaBan >= from.Value);
+            }
+
+            if (to.HasValue)
+            {
+                sanPhams = sanPhams.Where(p => p.s.GiaBan <= to.Value);
+            }
+
+
+            // Phân trang và chuyển danh sách vào dạng PagedList
+            var lstSanpham = sanPhams.Select(p => p.s).AsNoTracking().OrderBy(x => x.TenGiay);
             PagedList<Sanpham> lst = new PagedList<Sanpham>(lstSanpham, pageNum, pageSize);
 
+            // Kiểm tra xem có phải là yêu cầu Ajax không và trả về PartialView nếu có
             if (HttpContext.Request.Headers["X-Requested-With"] == "XMLHttpRequest")
             {
                 return PartialView("_ProductListPartial", lst);
             }
+
             return View(lst);
         }
+
 
         #endregion
 
