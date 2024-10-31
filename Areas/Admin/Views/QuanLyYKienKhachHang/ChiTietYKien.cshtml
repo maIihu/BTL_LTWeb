@@ -1,0 +1,95 @@
+﻿@model web1.Models.Ykienkhachhang
+
+@{
+    ViewBag.Title = "Chi tiết ý kiến khách hàng";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="container mt-4" >
+    <h2 class="text-center mb-4">CHI TIẾT Ý KIẾN KHÁCH HÀNG</h2>
+    <div class="d-flex justify-content-center align-items-center">
+        <div class="mb-3">
+            <div class="row">
+                <dt class="col-sm-3">
+                    @Html.DisplayNameFor(model => model.Maykien)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.Maykien)
+                </dd>
+            </div>
+
+            <div class="row">
+                <dt class="col-sm-3">
+                    @Html.DisplayNameFor(model => model.Email)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.Email)
+                </dd>
+            </div>
+
+            <div class="row">
+                <dt class="col-sm-3">
+                    @Html.DisplayNameFor(model => model.HoTen)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.HoTen)
+                </dd>
+            </div>
+
+            <div class="row">
+                <dt class="col-sm-3">
+                    @Html.DisplayNameFor(model => model.NgayGui)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.NgayGui)
+                </dd>
+            </div>
+
+            <div class="row">
+                <dt class="col-sm-3">
+                    @Html.DisplayNameFor(model => model.NoiDung)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.NoiDung)
+                </dd>
+            </div>
+        </div>
+    </div>
+    <div class=" d-flex justify-content-center align-items-center">
+        <form asp-action="XacNhanXoa" asp-route-id="@Model.Maykien" method="post">
+            @Html.AntiForgeryToken()
+            <button type="button" onclick="confirmDelete(@Model.Maykien)" class="btn btn-danger">Xóa</button>
+            <a href="@Url.Action("DanhSachYKien")" class="btn btn-secondary">Trở về danh sách</a>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        // Định nghĩa hàm confirmDelete để gọi từ nút "Xóa"
+        function confirmDelete(id) {
+            // Xác nhận trước khi thực hiện xóa
+            if (confirm("Bạn có chắc chắn muốn xóa ý kiến này?")) {
+                $.ajax({
+                    url: '/Admin/QuanLyYKienKhachHang/XacNhanXoa/' + id, // Đường dẫn tới action XacNhanXoa
+                    type: 'POST',
+                    success: function (response) {
+                        if (response.success) {
+                            alert(response.message);
+                            // Chuyển hướng về trang danh sách sau khi xóa thành công
+                            window.location.href = '@Url.Action("DanhSachYKien", "QuanLyYKienKhachHang", new { area = "Admin" })';
+                        } else {
+                            alert(response.message);
+                        }
+                    },
+                    error: function () {
+                        alert("Đã xảy ra lỗi khi xóa ý kiến.");
+                    }
+                });
+            }
+        }
+    </script>
+}
+
+
+

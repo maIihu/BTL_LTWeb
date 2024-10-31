@@ -1,0 +1,41 @@
+﻿@model IEnumerable<web1.Models.Donhang>
+
+<div class="table-responsive">
+    <table class="table table-bordered table-striped table-hover">
+        <thead class="thead-light">
+            <tr>
+                <th scope="col">Mã Đơn Hàng</th>
+                <th scope="col">Ngày Đặt</th>
+                <th scope="col">Tổng Tiền</th>
+                <th scope="col">Sản phẩm</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model != null && Model.Any())
+            {
+                foreach (var donHang in Model)
+                {
+                    <tr>
+                        <td>@donHang.MaDonHang</td>
+                        <td>@donHang.NgayDat.Value.ToString("dd/MM/yyyy")</td>
+                        <td>@donHang.TongTien.Value.ToString("N0") VNĐ</td>
+                        <td>
+                            <ul>
+                                @foreach (var ct in donHang.CtDonhangs)
+                                {
+                                    <li>@ct.MaGiay - Số Lượng: @ct.SoLuong</li>
+                                }
+                            </ul>
+                        </td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr>
+                    <td colspan="4" class="text-center">Không có dữ liệu.</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
