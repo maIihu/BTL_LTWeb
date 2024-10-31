@@ -11,7 +11,7 @@
 <h1>Danh mục sản phẩm</h1>
 
 <p>
-    <a asp-action="ThemSanPhamMoi">Create New</a>
+    <button class="btn btn-primary"><a asp-action="ThemSanPhamMoi" class="text-white">Thêm sản phẩm mới</a></button>
 </p>
 <p>@TempData["Message"]</p>
 <table class="table">
@@ -74,15 +74,22 @@
             </td>
             
             <td>
-                <a asp-action="SuaSanPham" asp-route-maSanPham="@item.MaGiay">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.MaGiay">Details</a> |
-                <a asp-action="XoaSanPham" asp-route-maSanPham="@item.MaGiay">Delete</a>
+                    <button class="btn btn-primary"><a asp-action="SuaSanPham" asp-route-maSanPham="@item.MaGiay" class="text-white">Edit</a> </button>
+                    <button class="btn btn-primary"><a asp-action="XoaSanPham" asp-route-maSanPham="@item.MaGiay" class="text-white">Delete</a></button>
             </td>
         </tr>
 }
     </tbody>
 </table>
 <div class="product__pagination">
-    @Html.PagedListPager(Model, page=>Url.Action("DanhMucSanPham", new{page=page}))
+    @Html.PagedListPager(Model, page => Url.Action("DanhMucSanPham", new { page = page }), new PagedListRenderOptions
+{
+    UlElementClasses = new[] { "pagination justify-content-center" },
+    LiElementClasses = new[] { "page-item" },
+    PageClasses = new[] { "page-link" },
+    ActiveLiElementClass = "active",
+    PreviousElementClass = "page-item",
+    NextElementClass = "page-item",
+    EllipsesElementClass = "page-item"
+})
 </div>
-<!--Đổi cái đánh số trang khác-->
