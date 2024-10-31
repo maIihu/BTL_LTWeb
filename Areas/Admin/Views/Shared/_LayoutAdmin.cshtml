@@ -110,9 +110,21 @@
                 <a href="#" class="sidebar-toggler flex-shrink-0">
                     <i class="fa fa-bars"></i>
                 </a>
-                <form class="d-none d-md-flex ms-4">
-                    <input class="form-control border-0" type="search" placeholder="Search">
+                
+                <form asp-controller="Admin" asp-action="DanhMucSanPham" method="get">
+                    <div class="input-group">
+                        <!-- Thanh nhập tên giày -->
+                        <input type="text" name="tenGiay" class="form-control" placeholder="Tìm tên giày" value="@ViewData["SearchTerm"]" />
+
+                        <!-- Lọc theo giá -->
+                        <input type="number" name="from" class="form-control" placeholder="Giá tối thiểu" value="@ViewData["FromPrice"]" />
+                        <input type="number" name="to" class="form-control" placeholder="Giá tối đa" value="@ViewData["ToPrice"]" />
+
+                        <!-- Nút lọc -->
+                        <button type="submit" class="btn btn-primary">Tìm</button>
+                    </div>
                 </form>
+
                 <div class="navbar-nav align-items-center ms-auto">
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">

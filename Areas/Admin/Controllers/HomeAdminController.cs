@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using web1.Models;
 using X.PagedList;
 using Microsoft.AspNetCore.Authorization;
+using Humanizer;
 
 
 namespace web1.Areas.Admin.Controllers
@@ -30,15 +31,26 @@ namespace web1.Areas.Admin.Controllers
             return View();
         }
         [Route("danhmucsanpham")]
-        public IActionResult DanhMucSanPham(int? page) // phan trang
+        public IActionResult DanhMucSanPham(int? page, string tenGiay, decimal? from, decimal? to) // phan trang
         {
             int pageSize = 8;
             int pageNum = page == null || page < 0 ? 1 : page.Value;
-            var lstSanpham = db.Sanphams.AsNoTracking().OrderBy(X => X.TenGiay);
-            PagedList<Sanpham> lst = new PagedList<Sanpham>(lstSanpham, pageNum, pageSize);
+            ViewData["SearchTerm"] = tenGiay;
+            ViewData["FromPrice"] = from;
+            ViewData["ToPrice"] = to;
+
+            // Truy vấn sản phẩm theo tên và giá
+            var sanPhams = db.Sanphams
+                             .AsNoTracking()
+                             .Where(s => (string.IsNullOrEmpty(tenGiay) || s.TenGiay.Contains(tenGiay)) &&
+                                          (!from.HasValue || s.GiaBan >= from.Value) &&
+                             (!to.HasValue || s.GiaBan <= to.Value))
+                             .OrderBy(s => s.TenGiay);
+            PagedList<Sanpham> lst = new PagedList<Sanpham>(sanPhams, pageNum, pageSize);
             return View(lst);
         
        }
+
         [Route("Themsanphammoi")]
         [HttpGet]
         public IActionResult ThemSanPhamMoi()
