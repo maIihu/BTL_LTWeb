@@ -1,0 +1,54 @@
+﻿@model web1.Models.Quanly
+
+@{
+    ViewData["Title"] = "Hồ sơ";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@if (Model == null)
+{
+    <h2>Không tìm thấy thông tin quản lý.</h2>
+}
+else
+{
+    <h2 class="text-center">Hồ sơ của @Model.HoTen</h2>
+
+    <div class="container">
+        <div class="card mx-auto my-4" style="max-width: 600px;">
+            <div class="card-header text-center">
+                <strong>Thông tin cá nhân</strong>
+            </div>
+            <div class="card-body">
+                <div class="mb-3">
+                    <label class="form-label">Tài khoản:</label>
+                    <p class="form-control-plaintext">@Model.TaiKhoanQl</p>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Họ tên:</label>
+                    <p class="form-control-plaintext">@Model.HoTen</p>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Email:</label>
+                    <p class="form-control-plaintext">@Model.EmailQl</p>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Điện thoại:</label>
+                    <p class="form-control-plaintext">@Model.DienThoaiQl</p>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Ảnh đại diện:</label>
+                    <div class="text-center">
+                        @if (!string.IsNullOrEmpty(Model.Avatar))
+                        {
+                            <img src="@Url.Content(Model.Avatar)" alt="Avatar" class="img-thumbnail" style="width:150px;height:150px;" />
+                        }
+                        else
+                        {
+                            <p>Không có ảnh đại diện.</p>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}

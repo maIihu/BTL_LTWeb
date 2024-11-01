@@ -37,5 +37,6 @@ namespace web1.Areas.Admin.Controllers
             ViewBag.ErrorMessage = "Không tìm thấy thông tin admin.";
             return View(null);
         }
+
     }
 }

@@ -72,8 +72,9 @@ namespace web1.Controllers
 				var claims = new List<Claim>
 				{
 					new Claim(ClaimTypes.Name, adminAccount.TaiKhoanQl),
-					new Claim("UserType", UserType.Admin.ToString())
-				};
+					new Claim("UserType", UserType.Admin.ToString()),
+                     new Claim("IsAdmin", "true")
+                };
 				var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
 				var principal = new ClaimsPrincipal(identity);
 				await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
