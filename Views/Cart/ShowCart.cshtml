@@ -1,395 +1,395 @@
 ﻿@{
-	ViewData["Title"] = "Giỏ Hàng";
-	Layout = "~/Views/Shared/_LayoutHome.cshtml";
+    ViewData["Title"] = "Giỏ Hàng";
+    Layout = "~/Views/Shared/_LayoutHome.cshtml";
 }
 
 @model List<web1.Models.CtDonhang>
 
 <div class="container mt-5">
-	<h2 class="text-center">Giỏ Hàng</h2>
-	@if (Model != null && Model.Any())
-	{
-		int maDonHang = Model.First().MaDonHang; // Lấy mã đơn hàng từ sản phẩm đầu tiên
-		<h3>Mã Đơn Hàng: @maDonHang</h3>
+    <h2 class="text-center">Giỏ Hàng</h2>
+    @if (Model != null && Model.Any())
+    {
+        int maDonHang = Model.First().MaDonHang; // Lấy mã đơn hàng từ sản phẩm đầu tiên
+        <h3>Mã Đơn Hàng: @maDonHang</h3> 
 
-		<div class="table-responsive">
-			<table class="table table-striped table-bordered">
-				<thead>
-					<tr>
-						<th>Chọn</th>
-						<th>Sản phẩm</th>
-						<th>Số lượng</th>
-						<th>Giá</th>
-						<th>Thành tiền</th>
-						<th>Xóa</th>
-					</tr>
-				</thead>
-				<tbody>
-					@foreach (var item in Model)
-					{
-						<tr>
-							<td>
-								<input type="checkbox" name="selectedItems" value="@item.MaGiay" />
-							</td>
-							<td>
-								@item.MaGiay
-								<input type="hidden" name="MaGiay" value="@item.MaGiay" />
-							</td>
-							<td>
-								<div class="d-flex align-items-center">
-									<div class="input-group-prepend">
-										<button type="button" id="decreaseQuantity" data-id="@item.MaGiay" class="btn btn-outline-primary decreaseQuantity" style="width: 40px;">-</button>
-									</div>
-									<input type="text" class="form-control text-center quantity" name="SoLuong" value="@item.SoLuong" data-id="@item.MaGiay" style="width: 60px;" readonly />
-									<div class="input-group-prepend">
-										<button type="button" id="increaseQuantity" class="btn btn-outline-primary increaseQuantity" data-id="@item.MaGiay" style="width: 40px;">+</button>
-									</div>
+        <div class="table-responsive">
+            <table class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>Chọn</th>
+                        <th>Sản phẩm</th>
+                        <th>Số lượng</th>
+                        <th>Giá</th>
+                        <th>Thành tiền</th>
+                        <th>Xóa</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                <input type="checkbox" name="selectedItems" value="@item.MaGiay" />
+                            </td>
+                            <td>
+                                @item.MaGiay
+                                <input type="hidden" name="MaGiay" value="@item.MaGiay" />
+                            </td>
+                            <td>
+                                <div class="d-flex align-items-center">
+                                    <div class="input-group-prepend">
+                                        <button type="button" id="decreaseQuantity" data-id="@item.MaGiay" class="btn btn-outline-primary decreaseQuantity" style="width: 40px;">-</button>
+                                    </div>
+                                    <input type="text" class="form-control text-center quantity" name="SoLuong" value="@item.SoLuong" data-id="@item.MaGiay" style="width: 60px;" readonly />
+                                    <div class="input-group-prepend">
+                                        <button type="button" id="increaseQuantity" class="btn btn-outline-primary increaseQuantity" data-id="@item.MaGiay" style="width: 40px;">+</button>
+                                    </div>
 
-								</div>
-							</td>
-							<td>@String.Format("{0:0,0}", item.GiaLucBan) đ</td>
-							<td>@String.Format("{0:0,0}", item.GiaLucBan * item.SoLuong) đ</td>
-							<td>
-								<form asp-action="RemoveFromCart" asp-controller="GioHang" method="post" style="display:inline;">
-									<input type="hidden" name="MaGiay" value="@item.MaGiay" />
-									<input type="hidden" name="MaDonHang" value="@maDonHang" />
-									<button class="remove-from-cart" data-productid="@item.MaGiay">Xóa</button>
-								</form>
-							</td>
-						</tr>
-					}
-					<tr>
-						<td colspan="4"><strong>Tổng cộng:</strong></td>
-						<td colspan="2">@String.Format("{0:0,0}", Model.Sum(i => i.GiaLucBan * i.SoLuong)) đ</td>
-					</tr>
-				</tbody>
-			</table>
-		</div>
+                                </div>
+                            </td>
+                            <td>@String.Format("{0:0,0}", item.GiaLucBan) đ</td>
+                            <td>@String.Format("{0:0,0}", item.GiaLucBan * item.SoLuong) đ</td>
+                            <td>
+                                <form asp-action="RemoveFromCart" asp-controller="GioHang" method="post" style="display:inline;">
+                                    <input type="hidden" name="MaGiay" value="@item.MaGiay" />
+                                    <input type="hidden" name="MaDonHang" value="@maDonHang" />
+                                    <button class="remove-from-cart" data-productid="@item.MaGiay">Xóa</button>
+                                </form>
+                            </td>
+                        </tr>
+                    }
+                    <tr>
+                        <td colspan="4"><strong>Tổng cộng:</strong></td>
+                        <td colspan="2">@String.Format("{0:0,0}", Model.Sum(i => i.GiaLucBan * i.SoLuong)) đ</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
-		<div class="text-right mt-4">
-			<button id="btnThanhToan" class="btn btn-primary">Thanh toán</button>
-		</div>
+        <div class="text-right mt-4">
+            <button id="btnThanhToan" class="btn btn-primary">Thanh toán</button>
+        </div>
 
-	}
-	else
-	{
-		<div class="alert alert-warning text-center" role="alert">
-			Giỏ hàng của bạn đang trống.
-		</div>
-	}
+    }
+    else
+    {
+        <div class="alert alert-warning text-center" role="alert">
+            Giỏ hàng của bạn đang trống.
+        </div>
+    }
 </div>
 
 <!-- Popup Modal for Checkout -->
 <div class="modal fade" id="checkoutModal" tabindex="-1" role="dialog" aria-labelledby="checkoutModalLabel" aria-hidden="true">
-	<div class="modal-dialog modal-lg" role="document">
-		<div class="modal-content">
-			<div class="modal-header">
-				<h5 class="modal-title" id="checkoutModalLabel">Thông tin thanh toán</h5>
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-					<span aria-hidden="true">&times;</span>
-				</button>
-			</div>
-			<div class="modal-body">
-				<div class="row">
-					<div class="col-md-6">
-						<h5>Thông tin giao hàng</h5>
-						<div class="form-group">
-							<label for="hoTen">Họ và tên:</label>
-							<input type="text" class="form-control" id="hoTen" placeholder="Nhập họ và tên">
-						</div>
-						<div class="form-group">
-							<label for="email">Email:</label>
-							<input type="email" class="form-control" id="email" placeholder="Nhập email">
-						</div>
-						<div class="form-group">
-							<label for="soDienThoai">Số điện thoại:</label>
-							<input type="text" class="form-control" id="soDienThoai" placeholder="Nhập số điện thoại">
-						</div>
-						<div class="form-group">
-							<label for="diaChi">Địa chỉ:</label>
-							<input type="text" class="form-control" id="diaChi" placeholder="Nhập địa chỉ">
-						</div>
-						<div class="form-group">
-							<label for="phuongThucVanChuyen">Phương thức vận chuyển:</label>
-							<select class="form-control" id="phuongThucVanChuyen">
-								<option>Giao hàng nhanh</option>
-								<option>Giao hàng tiêu chuẩn</option>
-							</select>
-						</div>
-						<div class="form-group">
-							<label for="phuongThucThanhToan">Phương thức thanh toán:</label>
-							<select class="form-control" id="phuongThucThanhToan">
-								<option>Thanh toán khi nhận hàng</option>
-								<option>Chuyển khoản</option>
-							</select>
-						</div>
-					</div>
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="checkoutModalLabel">Thông tin thanh toán</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h5>Thông tin giao hàng</h5>
+                        <div class="form-group">
+                            <label for="hoTen">Họ và tên:</label>
+                            <input type="text" class="form-control" id="hoTen" placeholder="Nhập họ và tên">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" class="form-control" id="email" placeholder="Nhập email">
+                        </div>
+                        <div class="form-group">
+                            <label for="soDienThoai">Số điện thoại:</label>
+                            <input type="text" class="form-control" id="soDienThoai" placeholder="Nhập số điện thoại">
+                        </div>
+                        <div class="form-group">
+                            <label for="diaChi">Địa chỉ:</label>
+                            <input type="text" class="form-control" id="diaChi" placeholder="Nhập địa chỉ">
+                        </div>
+                        <div class="form-group">
+                            <label for="phuongThucVanChuyen">Phương thức vận chuyển:</label>
+                            <select class="form-control" id="phuongThucVanChuyen">
+                                <option>Giao hàng nhanh</option>
+                                <option>Giao hàng tiêu chuẩn</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="phuongThucThanhToan">Phương thức thanh toán:</label>
+                            <select class="form-control" id="phuongThucThanhToan">
+                                <option>Thanh toán khi nhận hàng</option>
+                                <option>Chuyển khoản</option>
+                            </select>
+                        </div>
+                    </div>
 
-					<div class="col-md-6">
-						<h5>Hóa đơn của bạn</h5>
-						<ul>
-							@foreach (var item in Model)
-							{
-								<li>@item.MaGiay - Số lượng: @item.SoLuong - Tổng: @String.Format("{0:0,0}", item.GiaLucBan * item.SoLuong) đ</li>
-							}
-						</ul>
-						<hr />
-						<div class="form-group">
-							<label for="maGiamGia">Mã giảm giá:</label>
-							<input type="text" class="form-control" id="maGiamGia" placeholder="Nhập mã giảm giá (nếu có)">
-						</div>
-						<div class="text-right">
-							<strong>Tổng cộng: @String.Format("{0:0,0}", Model.Sum(i => i.GiaLucBan * i.SoLuong)) đ</strong>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="modal-footer">
-				<button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
-				<button type="button" class="btn btn-primary" id="btnHoanTat">Hoàn tất thanh toán</button>
-			</div>
-		</div>
-	</div>
+                    <div class="col-md-6">
+                        <h5>Hóa đơn của bạn</h5>
+                        <ul>
+                            @foreach (var item in Model)
+                            {
+                                <li>@item.MaGiay - Số lượng: @item.SoLuong - Tổng: @String.Format("{0:0,0}", item.GiaLucBan * item.SoLuong) đ</li>
+                            }
+                        </ul>
+                        <hr />
+                        <div class="form-group">
+                            <label for="maGiamGia">Mã giảm giá:</label>
+                            <input type="text" class="form-control" id="maGiamGia" placeholder="Nhập mã giảm giá (nếu có)">
+                        </div>
+                        <div class="text-right">
+                            <strong>Tổng cộng: @String.Format("{0:0,0}", Model.Sum(i => i.GiaLucBan * i.SoLuong)) đ</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                <button type="button" class="btn btn-primary" id="btnHoanTat">Hoàn tất thanh toán</button>
+            </div>
+        </div>
+    </div>
 </div>
 
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
-	// Tăng giảm số lượng
-	$(document).ready(function () {
-		// Tăng số lượng sản phẩm
-		$('.increaseQuantity').click(function () {
-			var maGiay = $(this).data('id');
-			var $quantityInput = $('input[data-id="' + maGiay + '"]');
-			var currentQuantity = parseInt($quantityInput.val());
-			$quantityInput.val(currentQuantity + 1);
-			updateCart(maGiay, currentQuantity + 1);
-		});
+    // Tăng giảm số lượng
+    $(document).ready(function () {
+        // Tăng số lượng sản phẩm
+        $('.increaseQuantity').click(function () {
+            var maGiay = $(this).data('id');
+            var $quantityInput = $('input[data-id="' + maGiay + '"]');
+            var currentQuantity = parseInt($quantityInput.val());
+            $quantityInput.val(currentQuantity + 1);
+            updateCart(maGiay, currentQuantity + 1);
+        });
 
-		$(document).ready(function () {
-			$('#btnThanhToan').click(function () {
-				$('#checkoutModal').modal('show');
-			});
+        $(document).ready(function () {
+            $('#btnThanhToan').click(function () {
+                $('#checkoutModal').modal('show');
+            });
 
-		});
+        });
 
-		// Giảm số lượng sản phẩm
-		$('.decreaseQuantity').click(function () {
-			var maGiay = $(this).data('id');
-			var $quantityInput = $('input[data-id="' + maGiay + '"]');
-			var currentQuantity = parseInt($quantityInput.val());
+        // Giảm số lượng sản phẩm
+        $('.decreaseQuantity').click(function () {
+            var maGiay = $(this).data('id');
+            var $quantityInput = $('input[data-id="' + maGiay + '"]');
+            var currentQuantity = parseInt($quantityInput.val());
 
-			if (currentQuantity > 1) {
-				$quantityInput.val(currentQuantity - 1);
-				updateCart(maGiay, currentQuantity - 1);
-			}
-		});
+            if (currentQuantity > 1) {
+                $quantityInput.val(currentQuantity - 1);
+                updateCart(maGiay, currentQuantity - 1);
+            }
+        });
 
-		// Cập nhật số lượng sản phẩm trong giỏ hàng
-		function updateCart(maGiay, soLuong) {
-			$.ajax({
-				url: '@Url.Action("UpdateQuantity", "Cart")',
-				type: 'POST',
-				data: {
-					MaGiay: maGiay,
-					SoLuong: soLuong
-				},
-				success: function (response) {
-					if (response.success) {
-						// window.location.reload();
-					} else {
-						alert('Cập nhật số lượng thất bại. Vui lòng thử lại.');
-					}
-				},
-				error: function () {
-					alert('Có lỗi xảy ra. Vui lòng thử lại.');
-				}
-			});
-		}
-	});
+        // Cập nhật số lượng sản phẩm trong giỏ hàng
+        function updateCart(maGiay, soLuong) {
+            $.ajax({
+                url: '@Url.Action("UpdateQuantity", "Cart")',
+                type: 'POST',
+                data: {
+                    MaGiay: maGiay,
+                    SoLuong: soLuong
+                },
+                success: function (response) {
+                    if (response.success) {
+                        // window.location.reload();
+                    } else {
+                        alert('Cập nhật số lượng thất bại. Vui lòng thử lại.');
+                    }
+                },
+                error: function () {
+                    alert('Có lỗi xảy ra. Vui lòng thử lại.');
+                }
+            });
+        }
+    });
 
-	// Xóa đơn hàng
-	$(document).ready(function () {
-		$('.remove-from-cart').click(function (e) {
-			e.preventDefault(); // Ngăn chặn hành động mặc định của nút
+    // Xóa đơn hàng
+    $(document).ready(function () {
+        $('.remove-from-cart').click(function (e) {
+            e.preventDefault(); // Ngăn chặn hành động mặc định của nút
 
-			// Xác nhận người dùng có muốn xóa không
-			if (!confirm("Bạn có chắc chắn muốn xóa sản phẩm này khỏi giỏ hàng?")) {
-				return;
-			}
+            // Xác nhận người dùng có muốn xóa không
+            if (!confirm("Bạn có chắc chắn muốn xóa sản phẩm này khỏi giỏ hàng?")) {
+                return; // Nếu người dùng không xác nhận, không làm gì cả
+            }
 
-			var p<script src="https://code.jquery.com/jquery-3.6.0.min.js" ></script>
+            var p<script src="https://code.jquery.com/jquery-3.6.0.min.js" ></script>
 <script>
-			$(document).ready(function () {
-				// Tăng giảm số lượng sản phẩm
-				$('.increaseQuantity').click(function () {
-					updateQuantity($(this), 1);
-				});
+    $(document).ready(function () {
+        // Tăng giảm số lượng sản phẩm
+        $('.increaseQuantity').click(function () {
+            updateQuantity($(this), 1);
+        });
 
-			$('.decreaseQuantity').click(function () {
-				updateQuantity($(this), -1);
-		});
+        $('.decreaseQuantity').click(function () {
+            updateQuantity($(this), -1);
+        });
 
-			// Hiện modal thanh toán
-			$('#btnThanhToan').click(function () {
-				$('#checkoutModal').modal('show');
-			loadUserInfo();
-		});
+        // Hiện modal thanh toán
+        $('#btnThanhToan').click(function () {
+            $('#checkoutModal').modal('show');
+            loadUserInfo();
+        });
 
-			// Xóa sản phẩm khỏi giỏ hàng
-			$('.remove-from-cart').click(function (e) {
-				e.preventDefault();
-			if (confirm("Bạn có chắc chắn muốn xóa sản phẩm này khỏi giỏ hàng?")) {
-				removeFromCart($(this));
-			}
-		});
+        // Xóa sản phẩm khỏi giỏ hàng
+        $('.remove-from-cart').click(function (e) {
+            e.preventDefault();
+            if (confirm("Bạn có chắc chắn muốn xóa sản phẩm này khỏi giỏ hàng?")) {
+                removeFromCart($(this));
+            }
+        });
 
-			// Hoàn tất thanh toán
-			$('#btnHoanTat').click(function () {
-			if (validateCheckoutForm()) {
-				var cartItems = getCartItems();
-				if (cartItems.length > 0) {
-				checkout(cartItems);
-				} else {
-				alert('Không có sản phẩm nào trong giỏ hàng!');
-				}
-			}
-		});
+        // Hoàn tất thanh toán
+        $('#btnHoanTat').click(function () {
+            if (validateCheckoutForm()) {
+                var cartItems = getCartItems();
+                if (cartItems.length > 0) {
+                    checkout(cartItems);
+                } else {
+                    alert('Không có sản phẩm nào trong giỏ hàng!');
+                }
+            }
+        });
 
-			function updateQuantity(button, change) {
-			var maGiay = button.data('id');
-			var $quantityInput = $('input[data-id="' + maGiay + '"]');
-			var currentQuantity = parseInt($quantityInput.val());
+        function updateQuantity(button, change) {
+            var maGiay = button.data('id');
+            var $quantityInput = $('input[data-id="' + maGiay + '"]');
+            var currentQuantity = parseInt($quantityInput.val());
 
-			if (currentQuantity + change > 0) {
-				$quantityInput.val(currentQuantity + change);
-			updateCart(maGiay, currentQuantity + change);
-			}
-		}
+            if (currentQuantity + change > 0) {
+                $quantityInput.val(currentQuantity + change);
+                updateCart(maGiay, currentQuantity + change);
+            }
+        }
 
-			function updateCart(maGiay, soLuong) {
-				$.ajax({
-					url: '@Url.Action("UpdateQuantity", "Cart")',
-					type: 'POST',
-					data: { MaGiay: maGiay, SoLuong: soLuong },
-					success: function (response) {
-						if (!response.success) {
-							alert('Cập nhật số lượng thất bại. Vui lòng thử lại.');
-						}
-					},
-					error: function () {
-						alert('Có lỗi xảy ra. Vui lòng thử lại.');
-					}
-				});
-		}
+        function updateCart(maGiay, soLuong) {
+            $.ajax({
+                url: '@Url.Action("UpdateQuantity", "Cart")',
+                type: 'POST',
+                data: { MaGiay: maGiay, SoLuong: soLuong },
+                success: function (response) {
+                    if (!response.success) {
+                        alert('Cập nhật số lượng thất bại. Vui lòng thử lại.');
+                    }
+                },
+                error: function () {
+                    alert('Có lỗi xảy ra. Vui lòng thử lại.');
+                }
+            });
+        }
 
-			function loadUserInfo() {
-				$.ajax({
-					url: '@Url.Action("GetUserInfo", "User")',
-					type: 'GET',
-					success: function (data) {
-						if (data) {
-							$('#hoTen').val(data.hoTen);
-							$('#email').val(data.email);
-							$('#soDienThoai').val(data.soDienThoai);
-							$('#diaChi').val(data.diaChi);
-						} else {
-							alert('Không thể lấy thông tin người dùng.');
-						}
-					},
-					error: function () {
-						alert('Có lỗi xảy ra khi lấy thông tin người dùng.');
-					}
-				});
-		}
+        function loadUserInfo() {
+            $.ajax({
+                url: '@Url.Action("GetUserInfo", "User")',
+                type: 'GET',
+                success: function (data) {
+                    if (data) {
+                        $('#hoTen').val(data.hoTen);
+                        $('#email').val(data.email);
+                        $('#soDienThoai').val(data.soDienThoai);
+                        $('#diaChi').val(data.diaChi);
+                    } else {
+                        alert('Không thể lấy thông tin người dùng.');
+                    }
+                },
+                error: function () {
+                    alert('Có lỗi xảy ra khi lấy thông tin người dùng.');
+                }
+            });
+        }
 
-			function removeFromCart(button) {
-			var productId = button.data('productid');
-			$.ajax({
-				url: '@Url.Action("RemoveFromCart", "Cart")',
-			type: 'POST',
-			data: {maGiay: productId },
-			success: function (response) {
-					if (response.success) {
-				button.closest('tr').remove();
-			$('table tbody tr:last td:last').text(response.totalAmount.toLocaleString() + ' đ');
-			alert(response.message);
-					} else {
-				alert(response.message);
-					}
-				},
-			error: function () {
-				alert("Có lỗi xảy ra. Vui lòng thử lại.");
-				}
-			});
-		}
+        function removeFromCart(button) {
+            var productId = button.data('productid');
+            $.ajax({
+                url: '/GioHang/RemoveFromCart',
+                type: 'POST',
+                data: { maGiay: productId },
+                success: function (response) {
+                    if (response.success) {
+                        button.closest('tr').remove();
+                        $('table tbody tr:last td:last').text(response.totalAmount.toLocaleString() + ' đ');
+                        alert(response.message);
+                    } else {
+                        alert(response.message);
+                    }
+                },
+                error: function () {
+                    alert("Có lỗi xảy ra. Vui lòng thử lại.");
+                }
+            });
+        }
 
-			function validateCheckoutForm() {
-			var isValid = true;
-			var hoTen = $('#hoTen').val().trim();
-			var email = $('#email').val().trim();
-			var soDienThoai = $('#soDienThoai').val().trim();
-			var diaChi = $('#diaChi').val().trim();
+        function validateCheckoutForm() {
+            var isValid = true;
+            var hoTen = $('#hoTen').val().trim();
+            var email = $('#email').val().trim();
+            var soDienThoai = $('#soDienThoai').val().trim();
+            var diaChi = $('#diaChi').val().trim();
 
-			if (!isValidName(hoTen)) {
-				alert('Vui lòng nhập họ và tên hợp lệ.');
-			isValid = false;
-			} else if (email === '') {
-				alert('Vui lòng nhập email.');
-			isValid = false;
-			} else if (!isValidPhoneNumber(soDienThoai)) {
-				alert('Vui lòng nhập số điện thoại hợp lệ (10-11 chữ số).');
-			isValid = false;
-			} else if (diaChi === '') {
-				alert('Vui lòng nhập địa chỉ.');
-			isValid = false;
-			}
+            if (!isValidName(hoTen)) {
+                alert('Vui lòng nhập họ và tên hợp lệ.');
+                isValid = false;
+            } else if (email === '') {
+                alert('Vui lòng nhập email.');
+                isValid = false;
+            } else if (!isValidPhoneNumber(soDienThoai)) {
+                alert('Vui lòng nhập số điện thoại hợp lệ (10-11 chữ số).');
+                isValid = false;
+            } else if (diaChi === '') {
+                alert('Vui lòng nhập địa chỉ.');
+                isValid = false;
+            }
 
-			return isValid;
-		}
+            return isValid;
+        }
 
-			function getCartItems() {
-			var cartItems = [];
-			$('tbody tr').each(function () {
-				var maGiay = $(this).find('input[name="MaGiay"]').val();
-			var soLuong = $(this).find('input[name="SoLuong"]').val();
+        function getCartItems() {
+            var cartItems = [];
+            $('tbody tr').each(function () {
+                var maGiay = $(this).find('input[name="MaGiay"]').val();
+                var soLuong = $(this).find('input[name="SoLuong"]').val();
 
-			if (maGiay && soLuong) {
-				cartItems.push({ MaGiay: maGiay, SoLuong: soLuong });
-				}
-			});
-			return cartItems;
-		}
+                if (maGiay && soLuong) {
+                    cartItems.push({ MaGiay: maGiay, SoLuong: soLuong });
+                }
+            });
+            return cartItems;
+        }
 
-			function checkout(cartItems) {
-				$.ajax({
-					url: '@Url.Action("Checkout", "Cart")',
-					type: 'POST',
-					contentType: 'application/json',
-					data: JSON.stringify(cartItems),
-					success: function (response) {
-						if (response.success) {
-							alert(response.message);
-							$('#checkoutModal').modal('hide');
-							window.location.href = '/Cart/ShowCart';
-						} else {
-							alert('Thanh toán không thành công, vui lòng thử lại.');
-						}
-					},
-					error: function () {
-						alert('Có lỗi xảy ra trong quá trình thanh toán.');
-					}
-				});
-		}
+        function checkout(cartItems) {
+            $.ajax({
+                url: '@Url.Action("Checkout", "Cart")',
+                type: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify(cartItems),
+                success: function (response) {
+                    if (response.success) {
+                        alert(response.message);
+                        $('#checkoutModal').modal('hide');
+                        window.location.href = '/Cart/ShowCart';
+                    } else {
+                        alert('Thanh toán không thành công, vui lòng thử lại.');
+                    }
+                },
+                error: function () {
+                    alert('Có lỗi xảy ra trong quá trình thanh toán.');
+                }
+            });
+        }
 
-			function isValidPhoneNumber(phone) {
-			var phonePattern = /^[0-9]{10,11}$/;
-			return phonePattern.test(phone);
-		}
+        function isValidPhoneNumber(phone) {
+            var phonePattern = /^[0-9]{10,11}$/;
+            return phonePattern.test(phone);
+        }
 
-			function isValidName(name) {
-			var namePattern = /^[\p{L} ]+$/u;
-			return namePattern.test(name);
-		}
-	});
+        function isValidName(name) {
+            var namePattern = /^[\p{L} ]+$/u;
+            return namePattern.test(name);
+        }
+    });
 </script>

@@ -231,15 +231,18 @@ namespace web1.Controllers
         [HttpPost]
         public IActionResult Checkout([FromBody] List<CtDonhang> cartItems)
         {
-            var currentUserName = User.Identity.Name;
+            var currentUserName = User.Identity.Name; // Đây là cách lấy tên đăng nhập từ Claims
+
             var currentUser = _db.Khachhangs.FirstOrDefault(u => u.TaiKhoanKh == currentUserName);
 
-            // Tạo hoặc cập nhật hóa đơn hiện tại của người dùng
             var currentOrder = _db.Donhangs.FirstOrDefault(o => o.MaKh == currentUser.MaKh && o.TinhTrangGiaoHang == null);
+
             if (currentOrder != null)
             {
                 currentOrder.TinhTrangGiaoHang = false;
                 currentOrder.NgayGiao = DateTime.Now.AddDays(3);
+
+                // Lưu thay đổi vào cơ sở dữ liệu
                 _db.SaveChanges();
             }
 
@@ -251,33 +254,33 @@ namespace web1.Controllers
                 TinhTrangGiaoHang = null
             };
             _db.Donhangs.Add(currentOrder);
-            _db.SaveChanges();
+            _db.SaveChanges(); // Lưu hóa đơn mới vào cơ sở dữ liệu
 
             if (cartItems != null && cartItems.Any())
             {
-                foreach (var item in cartItems)
-                {
-                    // Lấy thông tin sản phẩm từ bảng Sanphams
-                    var product = _db.Sanphams.FirstOrDefault(p => p.MaGiay == item.MaGiay);
-                    if (product != null)
-                    {
-                        // Giảm số lượng sản phẩm trong kho
-                        product.SoLuongTon -= item.SoLuong;
-                    }
-                }
 
-                // Lưu các thay đổi vào database
-                _db.SaveChanges();
+                // Sau khi thanh toán thành công, xóa hết sản phẩm trong giỏ hàng
+                /*var maDonHang = cartItems.FirstOrDefault()?.MaDonHang;
+                if (maDonHang.HasValue)
+                {
+                    // Xóa hết các sản phẩm của đơn hàng trong CSDL
+                    var chiTietDonHangs = _db.CtDonhangs.Where(x => x.MaDonHang == maDonHang.Value).ToList();
+                    if (chiTietDonHangs.Any())
+                    {
+                        _db.CtDonhangs.RemoveRange(chiTietDonHangs);
+                        _db.SaveChanges();
+                    }
+                }*/
+
+
 
                 // Trả về kết quả thành công
                 return Json(new { success = true, message = "Thanh toán thành công!" });
             }
 
-
             return Json(new { success = false, message = "Có lỗi xảy ra!" });
         }
         #endregion
-
 
     }
 }

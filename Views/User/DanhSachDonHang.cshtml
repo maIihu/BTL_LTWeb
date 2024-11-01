@@ -1,42 +1,42 @@
 ﻿@model IEnumerable<web1.Models.Donhang>
 @{
-	ViewData["Title"] = "Danh sách Đơn hàng";
-	Layout = "~/Views/Shared/_LayoutHome.cshtml";
+    ViewData["Title"] = "Danh sách Đơn hàng";
+    Layout = "~/Views/Shared/_LayoutHome.cshtml";
 }
 
 <div class="container mt-4" id="content">
-	<h2 class="text-center">Danh sách đơn hàng của bạn</h2>
-	<div id="donHangContent">
-		@Html.Partial("_DonHangPartial", Model)
-	</div>
+    <h2 class="text-center">Danh sách đơn hàng của bạn</h2>
+    <div id="donHangContent">
+        @Html.Partial("_DonHangPartial", Model)
+    </div>
 </div>
 
 <script>
-	function loadDonHang() {
-		$.ajax({
-			url: '/User/DanhSachDonHang',
-			type: 'GET',
-			success: function (data) {
-				$('#content').html(data); // Đưa nội dung vào vùng #content
-			},
-			error: function (xhr) {
-				console.log("Lỗi khi tải DonHang:", xhr);
-			}
-		});
-	}
+    function loadDonHang() {
+        $.ajax({
+            url: '/User/DanhSachDonHang',
+            type: 'GET',
+            success: function (data) {
+                $('#content').html(data); // Đưa nội dung vào vùng #content
+            },
+            error: function (xhr) {
+                console.log("Lỗi khi tải DonHang:", xhr);
+            }
+        });
+    }
 
-	function loadChiTietDonHang(orderId) {
-		$.ajax({
-			url: '/User/ChiTietDonHang',
-			type: 'GET',
-			data: { id: orderId },
-			success: function (data) {
-				$('#content').html(data); // Đưa nội dung vào vùng #content
-			},
-			error: function (xhr) {
-				console.log("Lỗi khi tải ChiTietDonHang:", xhr);
-			}
-		});
-	}
+    function loadChiTietDonHang(orderId) {
+        $.ajax({
+            url: '/User/ChiTietDonHang',
+            type: 'GET',
+            data: { id: orderId },
+            success: function (data) {
+                $('#content').html(data); // Đưa nội dung vào vùng #content
+            },
+            error: function (xhr) {
+                console.log("Lỗi khi tải ChiTietDonHang:", xhr);
+            }
+        });
+    }
 
 </script>
