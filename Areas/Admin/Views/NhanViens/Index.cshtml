@@ -1,0 +1,97 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@model IEnumerable<web1.Models.NhanVien>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+<h1 class="h3 mb-2 text-gray-800">Danh Sách Nhân Viên</h1>
+<p>
+    <a class="btn btn-outline-success" asp-action="Create">Create New</a>
+    
+</p>
+<!-- DataTales -->
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">DataTables</h6>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>
+                            Họ Tên
+                        </th>
+                        <th>
+                            Tài Khoản
+                        </th>
+                        <th>
+                            Mật Khẩu
+                        </th>
+                        <th>
+                            Email
+                        </th>
+                        <th>
+                            Giới Tính 
+                        </th>
+                        <th>
+                            Ảnh
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.HoTen)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.TaiKhoan)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.MatKhau)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Email)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.GioiTinh)
+                            </td>
+                            <td>
+                                <img src="@Url.Content("~/img/" + item.EmpFileName)" height="120px" width="150px">
+                            </td>
+                            <td>
+                                <a class="btn btn-info" style="margin-bottom: 5px;" asp-action="Edit" asp-route-id="@item.CusID">Edit</a><br>
+                                <a class="btn btn-success" style="margin-bottom: 5px;" asp-action="Details" asp-route-id="@item.CusID">Details</a><br>
+                                <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.CusID">Delete</a><br>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<!-- /.container-fluid -->
+<style>
+    .wrapper {
+        padding: 20px;
+        max-width: 400px;
+        margin: 50px auto;
+    }
+
+    .limitword-1 {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+    }
+
+    .table img {
+        object-fit: cover;
+    }
+</style>

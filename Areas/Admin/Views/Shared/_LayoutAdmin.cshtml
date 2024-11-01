@@ -88,10 +88,10 @@
                         <a href="@Url.Action("DonHang", "QuanLyDonHang", new { area = "admin"})" class="nav-item nav-link">
                             <i class="fa fa-shopping-cart me-2"></i>Quản lý đơn hàng
                         </a>
-                        <a href="form.html" class="nav-item nav-link">
+                        <a href="@Url.Action("Index", "KhachHangs", new { area = "Admin"})" class="nav-item nav-link">
                             <i class="fa fa-users me-2"></i>Quản lý khách hàng
                         </a>
-                        <a href="table.html" class="nav-item nav-link">
+                        <a href="@Url.Action("Index", "NhanViens", new { area = "Admin"})" class="nav-item nav-link">
                             <i class="fa fa-user-friends me-2"></i>Quản lý nhân viên
                         </a>
                         <a href="@Url.Action("DanhSachYKien", "QuanLyYKienKhachHang", new {area ="Admin"})" class="nav-item nav-link">

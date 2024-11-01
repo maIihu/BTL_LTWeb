@@ -26,7 +26,7 @@ public partial class ShopGiayContext : DbContext
     public virtual DbSet<Nhacungcap> Nhacungcaps { get; set; }
 
     public virtual DbSet<Phanquyen> Phanquyens { get; set; }
-
+    public virtual DbSet<NhanVien> NhanViens { get; set; }
     public virtual DbSet<Quanly> Quanlies { get; set; }
 
     public virtual DbSet<Sanpham> Sanphams { get; set; }
@@ -36,7 +36,7 @@ public partial class ShopGiayContext : DbContext
     public virtual DbSet<Ykienkhachhang> Ykienkhachhangs { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseSqlServer("Data Source=.\\SQLEXPRESS;Initial Catalog=ShopGiay;Integrated Security=True;Connect Timeout=30;Encrypt=True;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+           => optionsBuilder.UseSqlServer("Data Source=.\\SQLEXPRESS;Initial Catalog=ShopGiay;Integrated Security=True;Connect Timeout=30;Encrypt=True;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -59,6 +59,41 @@ public partial class ShopGiayContext : DbContext
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_SANPHAM_2");
         });
+        modelBuilder.Entity<NhanVien>(entity =>
+        {
+            entity.HasKey(e => e.CusID);
+
+            entity.ToTable("NHANVIEN");
+
+            entity.HasIndex(e => e.Email, "UQ__QUANLY__7ED955FC28028B93").IsUnique();
+            entity.HasIndex(e => e.TaiKhoan, "UQ__QUANLY__9A120A661952C614").IsUnique();
+
+            entity.Property(e => e.CusID).HasColumnName("CusID");
+
+            // Cấu hình cho Imgpath
+            entity.Property(e => e.Imgpath).HasMaxLength(255);
+
+            // Cấu hình cho EmpFileName
+            entity.Property(e => e.EmpFileName).HasMaxLength(255);
+
+            entity.Property(e => e.Email)
+                .HasMaxLength(50)
+                .IsUnicode(false)
+                .HasColumnName("Email");
+
+            entity.Property(e => e.HoTen).HasMaxLength(50);
+
+            entity.Property(e => e.MatKhau)
+                .HasMaxLength(50)
+                .IsUnicode(false);
+
+            entity.Property(e => e.TaiKhoan)
+                .HasMaxLength(50)
+                .IsUnicode(false)
+                .HasColumnName("TaiKhoan");
+        });
+
+
 
         modelBuilder.Entity<Donhang>(entity =>
         {
