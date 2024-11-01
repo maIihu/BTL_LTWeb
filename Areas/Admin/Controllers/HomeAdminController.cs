@@ -30,12 +30,22 @@ namespace web1.Areas.Admin.Controllers
 			return View();
 		}
 		[Route("danhmucsanpham")]
-		public IActionResult DanhMucSanPham(int? page) // phan trang
+		public IActionResult DanhMucSanPham(int? page, string tenGiay, decimal? from, decimal? to) // phan trang
 		{
 			int pageSize = 8;
 			int pageNum = page == null || page < 0 ? 1 : page.Value;
-			var lstSanpham = db.Sanphams.AsNoTracking().OrderBy(X => X.TenGiay);
-			PagedList<Sanpham> lst = new PagedList<Sanpham>(lstSanpham, pageNum, pageSize);
+			ViewData["SearchTerm"] = tenGiay;
+			ViewData["FromPrice"] = from;
+			ViewData["ToPrice"] = to;
+
+			// Truy vấn sản phẩm theo tên và giá
+			var sanPhams = db.Sanphams
+							 .AsNoTracking()
+							 .Where(s => (string.IsNullOrEmpty(tenGiay) || s.TenGiay.Contains(tenGiay)) &&
+										  (!from.HasValue || s.GiaBan >= from.Value) &&
+							 (!to.HasValue || s.GiaBan <= to.Value))
+							 .OrderBy(s => s.TenGiay);
+			PagedList<Sanpham> lst = new PagedList<Sanpham>(sanPhams, pageNum, pageSize);
 			return View(lst);
 
 		}
@@ -52,10 +62,26 @@ namespace web1.Areas.Admin.Controllers
 		[Route("Themsanphammoi")]
 		[HttpPost]
 		[ValidateAntiForgeryToken]
-		public IActionResult ThemSanPhamMoi(Sanpham sanPham)
+		public async Task<IActionResult> ThemSanPhamMoiAsync(Sanpham sanPham, IFormFile AnhBia)
 		{
 			if (ModelState.IsValid)
 			{
+				if (AnhBia != null && AnhBia.Length > 0)
+				{
+					var filePath = Path.Combine("wwwroot/img/AnhGiay", AnhBia.FileName);
+
+					Console.WriteLine(filePath.ToString());
+					using (var stream = new FileStream(filePath, FileMode.Create))
+					{
+						await AnhBia.CopyToAsync(stream);
+					}
+					sanPham.AnhBia = AnhBia.FileName;
+				}
+				else
+				{
+					ModelState.AddModelError("AnhBia", "Bạn cần chọn một ảnh.");
+					return View(sanPham);
+				}
 				db.Sanphams.Add(sanPham);
 				db.SaveChanges();
 				return RedirectToAction("DanhMucSanPham");
