@@ -48,12 +48,13 @@
         if (confirm('Bạn có chắc chắn muốn xóa đơn hàng này?')) {
             const form = document.createElement('form');
             form.method = 'post';
-            form.action = `@Url.Action("XoaDonHang", "QuanLyDonHang", new { area = "admin" })?id=${orderId}`;
+            form.action = `@Url.Action("XoaDonHang", "QuanLyDonHang", new { area = "admin" })/${orderId}`;
             document.body.appendChild(form);
             form.submit();
         }
     }
 </script>
+
 
 <style>
     .badge-success, .badge-warning {

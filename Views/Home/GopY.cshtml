@@ -26,12 +26,14 @@
         </div>
         <div class="form-group">
             <h5>Nội dung</h5>
-            @Html.TextAreaFor(model => model.NoiDung, new { @class = "form-control", placeholder = "Nhập nội dung ý kiến của bạn" })
+            @Html.TextAreaFor(model => model.NoiDung, new { @class = "form-control", placeholder = "Nhập nội dung ý kiến của bạn", style = "resize: none;" })
             @Html.ValidationMessageFor(model => model.NoiDung, "", new { @class = "text-danger" })
         </div>
 
         <button type="submit" class="btn btn-primary">Gửi</button>
     }
+    <!-- Thêm thông báo loading -->
+    <div id="loadingMessage" style="display:none;">Đang gửi dữ liệu, vui lòng chờ...</div>
 </div>
 @section Scripts {
     <script>
@@ -39,21 +41,27 @@
             $('#gopYForm').on('submit', function (e) {
                 e.preventDefault(); // Ngăn form không tải lại trang
 
+                // Hiển thị thông báo loading
+                $('#loadingMessage').show(); // Thêm dòng này để hiển thị thông báo loading
+
                 $.ajax({
                     type: 'POST',
                     url: '@Url.Action("GopY", "Home")',
                     data: $(this).serialize(), // Gửi dữ liệu form
                     success: function (response) {
+                        $('#loadingMessage').hide(); // Ẩn thông báo loading
+
                         if (response.success) {
                             alert(response.message); // Hiển thị thông báo thành công
                             $('#gopYForm')[0].reset(); // Reset form
-                            // Điều hướng sau khi thành công:
+                            // Điều hướng sau khi thành công
                             window.location.href = '@Url.Action("Index", "Home")'; // Chuyển hướng về trang chủ
                         } else {
                             alert("Có lỗi xảy ra: " + response.errors.join(', ')); // Hiển thị lỗi nếu có
                         }
                     },
                     error: function () {
+                        $('#loadingMessage').hide(); // Ẩn thông báo loading
                         alert("Có lỗi xảy ra. Vui lòng thử lại.");
                     }
                 });
@@ -62,4 +70,3 @@
 
     </script>
 }
-

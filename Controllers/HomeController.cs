@@ -112,7 +112,11 @@ namespace web1.Controllers
         #endregion
 
         #region DongGopYKien
-        public IActionResult GopY() { 
+        [Authorize]
+        [HttpGet]
+        public IActionResult GopY()
+        {
+
             return View();
         }
         [Authorize]
