@@ -9,6 +9,8 @@ namespace web1.Models
         public string HoTen { get; set; }
         public string TaiKhoan { get; set; }
         public string MatKhau { get; set; }
+        [Required(ErrorMessage = "Email is required.")]
+        [RegularExpression(@"^[a-zA-Z0-9._%+-]+@gmail\.com$", ErrorMessage = "Please enter a valid Gmail address.")]
         public string Email { get; set; }
         public string GioiTinh { get; set; }
         public string? Imgpath { get; set; }
