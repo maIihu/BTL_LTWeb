@@ -5,7 +5,9 @@
 
 @model web1.Models.Khachhang
 
-<div class="login">
+
+
+<div class="register">
     <div class="wrap">
         <div class="col-md-6 offset-md-3">
             <!-- Trung tâm trang -->
@@ -45,6 +47,7 @@
                             @Html.ValidationMessage("EmailKh", "", new { @class = "text-danger" })
                         </div>
 
+
                         <div class="form-group">
                             <label for="DiaChiKh" class="control-label">Địa chỉ <span class="text-danger">*</span></label>
                             @Html.TextBoxFor(m => m.DiaChiKh, new { @class = "form-control", @placeholder = "Nhập địa chỉ", autocomplete = "off" })
@@ -64,7 +67,7 @@
                         </div>
 
                         <div class="form-group text-center">
-                            <input type="submit" value="Đăng ký" class="btn btn-primary btn-lg rounded-pill" />
+                            <input type="submit" value="Đăng ký" class="btn btn-success btn-lg rounded-pill" />
                         </div>
                     </div>
                 </div>
@@ -78,3 +81,50 @@
         </div>
     </div>
 </div>
+
+
+
+<style>
+
+    body {
+        background-color: #f0f2f5; /* Màu nền nhẹ cho trang */
+    }
+
+    .register {
+        padding: 50px 0;
+    }
+
+    .wrap {
+        background: white; /* Nền trắng cho form */
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Đổ bóng cho form */
+        padding: 30px;
+    }
+
+    .login-title {
+        margin-bottom: 20px;
+    }
+
+    .form-control {
+        border-radius: 5px; /* Bo góc cho các input */
+        border: 1px solid #ced4da; /* Đường viền nhẹ */
+    }
+
+    .btn-success {
+        width: 100%; /* Đặt chiều rộng nút 100% */
+        border-radius: 5px; /* Bo góc cho nút */
+    }
+
+        .btn-success:hover {
+            background-color: #0056b3; /* Đổi màu khi hover */
+        }
+
+    .text-center a {
+        color: #007bff; /* Màu link */
+    }
+
+        .text-center a:hover {
+            text-decoration: underline; /* Gạch chân link khi hover */
+        }
+
+</style>

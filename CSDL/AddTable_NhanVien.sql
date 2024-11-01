@@ -10,3 +10,6 @@ create table NHANVIEN(
 		EmpFileName varchar(255)
 
 );
+
+ALTER TABLE KHACHHANG
+ALTER COLUMN MatKhau NVARCHAR(MAX);

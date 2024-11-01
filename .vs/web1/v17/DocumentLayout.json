@@ -3,36 +3,16 @@
   "WorkspaceRootPath": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{86C89F23-CB47-40C1-89F9-E30E2A4B82F8}|web1.csproj|d:\\utc_cntt_nam3_ky1\\btl\\web1\\areas\\admin\\controllers\\nhanvienscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{86C89F23-CB47-40C1-89F9-E30E2A4B82F8}|web1.csproj|solutionrelative:areas\\admin\\controllers\\nhanvienscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{86C89F23-CB47-40C1-89F9-E30E2A4B82F8}|web1.csproj|d:\\utc_cntt_nam3_ky1\\btl\\web1\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{86C89F23-CB47-40C1-89F9-E30E2A4B82F8}|web1.csproj|solutionrelative:controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{86C89F23-CB47-40C1-89F9-E30E2A4B82F8}|web1.csproj|d:\\utc_cntt_nam3_ky1\\btl\\web1\\areas\\admin\\controllers\\quanlydoanhthucontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{86C89F23-CB47-40C1-89F9-E30E2A4B82F8}|web1.csproj|solutionrelative:areas\\admin\\controllers\\quanlydoanhthucontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{86C89F23-CB47-40C1-89F9-E30E2A4B82F8}|web1.csproj|d:\\utc_cntt_nam3_ky1\\btl\\web1\\views\\user\\dangky.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{86C89F23-CB47-40C1-89F9-E30E2A4B82F8}|web1.csproj|solutionrelative:views\\user\\dangky.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{86C89F23-CB47-40C1-89F9-E30E2A4B82F8}|web1.csproj|d:\\utc_cntt_nam3_ky1\\btl\\web1\\areas\\admin\\controllers\\quanlydonhangcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{86C89F23-CB47-40C1-89F9-E30E2A4B82F8}|web1.csproj|solutionrelative:areas\\admin\\controllers\\quanlydonhangcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{86C89F23-CB47-40C1-89F9-E30E2A4B82F8}|web1.csproj|d:\\utc_cntt_nam3_ky1\\btl\\web1\\areas\\admin\\views\\quanlys\\_createquanly.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{86C89F23-CB47-40C1-89F9-E30E2A4B82F8}|web1.csproj|solutionrelative:areas\\admin\\views\\quanlys\\_createquanly.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{86C89F23-CB47-40C1-89F9-E30E2A4B82F8}|web1.csproj|d:\\utc_cntt_nam3_ky1\\btl\\web1\\areas\\admin\\views\\quanlys\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{86C89F23-CB47-40C1-89F9-E30E2A4B82F8}|web1.csproj|solutionrelative:areas\\admin\\views\\quanlys\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{86C89F23-CB47-40C1-89F9-E30E2A4B82F8}|web1.csproj|d:\\utc_cntt_nam3_ky1\\btl\\web1\\models\\phanquyen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{86C89F23-CB47-40C1-89F9-E30E2A4B82F8}|web1.csproj|solutionrelative:models\\phanquyen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{86C89F23-CB47-40C1-89F9-E30E2A4B82F8}|web1.csproj|d:\\utc_cntt_nam3_ky1\\btl\\web1\\areas\\admin\\controllers\\homeadmincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{86C89F23-CB47-40C1-89F9-E30E2A4B82F8}|web1.csproj|solutionrelative:areas\\admin\\controllers\\homeadmincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{86C89F23-CB47-40C1-89F9-E30E2A4B82F8}|web1.csproj|d:\\utc_cntt_nam3_ky1\\btl\\web1\\areas\\admin\\controllers\\quanlyscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{86C89F23-CB47-40C1-89F9-E30E2A4B82F8}|web1.csproj|solutionrelative:areas\\admin\\controllers\\quanlyscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{86C89F23-CB47-40C1-89F9-E30E2A4B82F8}|web1.csproj|d:\\utc_cntt_nam3_ky1\\btl\\web1\\views\\user\\dangnhap.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{86C89F23-CB47-40C1-89F9-E30E2A4B82F8}|web1.csproj|solutionrelative:views\\user\\dangnhap.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -54,106 +34,41 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "QuanLyDonHangController.cs",
-              "DocumentMoniker": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\Areas\\Admin\\Controllers\\QuanLyDonHangController.cs",
-              "RelativeDocumentMoniker": "Areas\\Admin\\Controllers\\QuanLyDonHangController.cs",
-              "ToolTip": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\Areas\\Admin\\Controllers\\QuanLyDonHangController.cs",
-              "RelativeToolTip": "Areas\\Admin\\Controllers\\QuanLyDonHangController.cs",
-              "ViewState": "AgIAACAAAAAAAAAAAAAiwEYAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "Controllers\\UserController.cs",
+              "ToolTip": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\Controllers\\UserController.cs",
+              "RelativeToolTip": "Controllers\\UserController.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAQwGwAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-01T21:02:35.601Z",
+              "WhenOpened": "2024-11-01T22:19:02.077Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "QuanLyDoanhThuController.cs",
-              "DocumentMoniker": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\Areas\\Admin\\Controllers\\QuanLyDoanhThuController.cs",
-              "RelativeDocumentMoniker": "Areas\\Admin\\Controllers\\QuanLyDoanhThuController.cs",
-              "ToolTip": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\Areas\\Admin\\Controllers\\QuanLyDoanhThuController.cs",
-              "RelativeToolTip": "Areas\\Admin\\Controllers\\QuanLyDoanhThuController.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-01T21:02:02.025Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "NhanViensController.cs",
-              "DocumentMoniker": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\Areas\\Admin\\Controllers\\NhanViensController.cs",
-              "RelativeDocumentMoniker": "Areas\\Admin\\Controllers\\NhanViensController.cs",
-              "ToolTip": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\Areas\\Admin\\Controllers\\NhanViensController.cs",
-              "RelativeToolTip": "Areas\\Admin\\Controllers\\NhanViensController.cs",
-              "ViewState": "AgIAACQAAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-01T20:35:30.937Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "HomeAdminController.cs",
-              "DocumentMoniker": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\Areas\\Admin\\Controllers\\HomeAdminController.cs",
-              "RelativeDocumentMoniker": "Areas\\Admin\\Controllers\\HomeAdminController.cs",
-              "ToolTip": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\Areas\\Admin\\Controllers\\HomeAdminController.cs",
-              "RelativeToolTip": "Areas\\Admin\\Controllers\\HomeAdminController.cs",
-              "ViewState": "AgIAAFcAAAAAAAAAAAAuwH0AAAADAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-01T20:28:53.725Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "_CreateQuanLy.cshtml",
-              "DocumentMoniker": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\Areas\\Admin\\Views\\QuanLys\\_CreateQuanLy.cshtml",
-              "RelativeDocumentMoniker": "Areas\\Admin\\Views\\QuanLys\\_CreateQuanLy.cshtml",
-              "ToolTip": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\Areas\\Admin\\Views\\QuanLys\\_CreateQuanLy.cshtml",
-              "RelativeToolTip": "Areas\\Admin\\Views\\QuanLys\\_CreateQuanLy.cshtml",
-              "ViewState": "AgIAAEYAAAAAAAAAAAAswCkAAAAAAAAAAAAAAA==",
+              "Title": "DangKy.cshtml",
+              "DocumentMoniker": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\Views\\User\\DangKy.cshtml",
+              "RelativeDocumentMoniker": "Views\\User\\DangKy.cshtml",
+              "ToolTip": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\Views\\User\\DangKy.cshtml",
+              "RelativeToolTip": "Views\\User\\DangKy.cshtml",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAwDAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-01T20:21:50.882Z",
+              "WhenOpened": "2024-11-01T22:07:06.945Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Phanquyen.cs",
-              "DocumentMoniker": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\Models\\Phanquyen.cs",
-              "RelativeDocumentMoniker": "Models\\Phanquyen.cs",
-              "ToolTip": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\Models\\Phanquyen.cs",
-              "RelativeToolTip": "Models\\Phanquyen.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-01T20:19:31.282Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\Areas\\Admin\\Views\\QuanLys\\Index.cshtml",
-              "RelativeDocumentMoniker": "Areas\\Admin\\Views\\QuanLys\\Index.cshtml",
-              "ToolTip": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\Areas\\Admin\\Views\\QuanLys\\Index.cshtml",
-              "RelativeToolTip": "Areas\\Admin\\Views\\QuanLys\\Index.cshtml",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAAwCcAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "DangNhap.cshtml",
+              "DocumentMoniker": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\Views\\User\\DangNhap.cshtml",
+              "RelativeDocumentMoniker": "Views\\User\\DangNhap.cshtml",
+              "ToolTip": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\Views\\User\\DangNhap.cshtml",
+              "RelativeToolTip": "Views\\User\\DangNhap.cshtml",
+              "ViewState": "AgIAABoAAAAAAAAAAAAswCEAAABZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-01T20:14:52.829Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "QuanLysController.cs",
-              "DocumentMoniker": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\Areas\\Admin\\Controllers\\QuanLysController.cs",
-              "RelativeDocumentMoniker": "Areas\\Admin\\Controllers\\QuanLysController.cs",
-              "ToolTip": "D:\\UTC_CNTT_Nam3_Ky1\\BTL\\web1\\Areas\\Admin\\Controllers\\QuanLysController.cs",
-              "RelativeToolTip": "Areas\\Admin\\Controllers\\QuanLysController.cs",
-              "ViewState": "AgIAACQAAAAAAAAAAAAowEwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-01T20:11:26.992Z",
+              "WhenOpened": "2024-11-01T22:03:18.728Z",
               "EditorCaption": ""
             }
           ]

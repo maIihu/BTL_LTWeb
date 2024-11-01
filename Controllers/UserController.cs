@@ -6,386 +6,466 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 using web1.Enums;
+using Microsoft.AspNetCore.Identity;
 
 namespace web1.Controllers
 {
-	public class UserController : Controller
-	{
-		private readonly ShopGiayContext _db;
-		private readonly ILogger<UserController> _logger;
-		private readonly IEmailSender _emailSender;
-		public UserController(ShopGiayContext db, ILogger<UserController> logger, IEmailSender emailSender)
-		{
-			_db = db;
-			_logger = logger;
-			_emailSender = emailSender;
-		}
-		#region DangKy
-		[HttpGet]
-		public IActionResult DangKy()
-		{
-			return View();
-		}
-		[HttpPost]
-		public IActionResult DangKy(Khachhang khachhang)
-		{
-			if (!ModelState.IsValid)
-			{
-				return View(khachhang);
-			}
+    public class UserController : Controller
+    {
+        private readonly ShopGiayContext _db;
+        private readonly ILogger<UserController> _logger;
+        private readonly IEmailSender _emailSender;
+        public UserController(ShopGiayContext db, ILogger<UserController> logger, IEmailSender emailSender)
+        {
+            _db = db;
+            _logger = logger;
+            _emailSender = emailSender;
+        }
+        private string BuildEmailContent(string verificationCode)
+        {
+            return $@"
+    <!DOCTYPE html>
+    <html lang='vi'>
+    <head>
+        <meta charset='UTF-8'>
+        <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+        <title>Mã xác nhận</title>
+        <style>
+            body {{
+                font-family: Arial, sans-serif;
+                background-color: #f7f7f7;
+                padding: 20px;
+            }}
+            .container {{
+                background-color: #ffffff;
+                border-radius: 8px;
+                padding: 20px;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            }}
+            h1 {{
+                color: #333;
+            }}
+            p {{
+                font-size: 16px;
+                line-height: 1.5;
+                color: #555;
+            }}
+            .code {{
+                font-size: 24px;
+                font-weight: bold;
+                color: #007bff;
+                border: 2px solid #007bff;
+                padding: 10px;
+                display: inline-block;
+                margin-top: 10px;
+            }}
+            .footer {{
+                margin-top: 20px;
+                font-size: 14px;
+                color: #777;
+            }}
+        </style>
+    </head>
+    <body>
+        <div class='container'>
+            <h1>Xin chào!</h1>
+            <p>Chúng tôi đã nhận được yêu cầu đặt lại mật khẩu cho tài khoản của bạn. Mã xác nhận của bạn là:</p>
+            <div class='code'>{verificationCode}</div>
+            <p>Vui lòng nhập mã này để tiếp tục. Nếu bạn không yêu cầu đặt lại mật khẩu, hãy bỏ qua email này.</p>
+            <div class='footer'>
+                <p>Cảm ơn bạn!</p>
+                <p>Đội ngũ hỗ trợ của chúng tôi.</p>
+            </div>
+        </div>
+    </body>
+    </html>
+    ";
+        }
 
-			var existingUser = _db.Khachhangs.FirstOrDefault(u => u.TaiKhoanKh == khachhang.TaiKhoanKh);
-			if (existingUser != null)
-			{
-				ModelState.AddModelError("TaiKhoanKh", "Tên đăng nhập đã tồn tại.");
-				return View(khachhang);
-			}
+        #region DangKy
+        [HttpGet]
+        public IActionResult DangKy()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult DangKy(Khachhang khachhang)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(khachhang);
+            }
 
-			_db.Khachhangs.Add(khachhang);
-			_db.SaveChanges();
+            var existingUser = _db.Khachhangs.FirstOrDefault(u => u.TaiKhoanKh == khachhang.TaiKhoanKh);
+            if (existingUser != null)
+            {
+                ModelState.AddModelError("TaiKhoanKh", "Tên đăng nhập đã tồn tại.");
+                return View(khachhang);
+            }
 
-			return RedirectToAction("DangNhap", "User");
-		}
-		#endregion
+            var existingEmail = _db.Khachhangs.FirstOrDefault(u => u.EmailKh == khachhang.EmailKh);
+            if (existingEmail != null)
+            {
+                ModelState.AddModelError("EmailKh", "Địa chỉ email đã tồn tại.");
+                return View(khachhang);
+            }
 
-		#region DangNhap
-		public IActionResult DangNhap()
-		{
-			if (HttpContext.Session.GetString("Username") == null)
-			{
-				return View();
-			}
-			else
-			{
-				return RedirectToAction("Index", "Home");
-			}
-		}
+            var passwordHasher = new PasswordHasher<Khachhang>();
+            khachhang.MatKhau = passwordHasher.HashPassword(khachhang, khachhang.MatKhau); 
 
-		[HttpPost]
-		public async Task<IActionResult> DangNhap(string taikhoan, string matkhau, bool rememberMe)
-		{
-			var adminAccount = _db.Quanlies.SingleOrDefault(a => a.TaiKhoanQl == taikhoan && a.MatKhau == matkhau);
-			var userAccount = _db.Khachhangs.SingleOrDefault(a => a.TaiKhoanKh == taikhoan && a.MatKhau == matkhau);
+            _db.Khachhangs.Add(khachhang);
+            _db.SaveChanges();
 
-			if (adminAccount != null)
-			{
-				var claims = new List<Claim>
-				{
-					new Claim(ClaimTypes.Name, adminAccount.TaiKhoanQl),
-					new Claim("UserType", UserType.Admin.ToString()),
-                     new Claim("IsAdmin", "true")
+            return RedirectToAction("DangNhap", "User");
+        }
+        #endregion
+
+        #region DangNhap
+        public IActionResult DangNhap()
+        {
+            if (HttpContext.Session.GetString("Username") == null)
+            {
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Index", "Home");
+            }
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> DangNhap(string taikhoan, string matkhau, bool rememberMe)
+        {
+            var adminAccount = _db.Quanlies.SingleOrDefault(a => a.TaiKhoanQl == taikhoan);
+            var userAccount = _db.Khachhangs.SingleOrDefault(a => a.TaiKhoanKh == taikhoan);
+
+            // Kiểm tra tài khoản quản lý (admin)
+            if (adminAccount != null && adminAccount.MatKhau == matkhau) // Nếu bạn vẫn muốn dùng mật khẩu không hash cho admin
+            {
+                var claims = new List<Claim>
+                {
+                    new Claim(ClaimTypes.Name, adminAccount.TaiKhoanQl),
+                    new Claim("UserType", UserType.Admin.ToString()),
+                    new Claim("IsAdmin", "true")
                 };
-				var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
-				var principal = new ClaimsPrincipal(identity);
-				await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
-				return Json(new { success = true, redirectUrl = Url.Action("TrangChu", "HomeAdmin", new { area = "Admin" }) });
-			}
-			else if (userAccount != null)
-			{
-				var claims = new List<Claim>
-				{
-					new Claim(ClaimTypes.Name, userAccount.TaiKhoanKh),
-					new Claim("UserType", UserType.Customer.ToString())
-				};
-				var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
-				var principal = new ClaimsPrincipal(identity);
+                var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+                var principal = new ClaimsPrincipal(identity);
+                await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
+                return Json(new { success = true, redirectUrl = Url.Action("TrangChu", "HomeAdmin", new { area = "Admin" }) });
+            }
+            else if (userAccount != null)
+            {
+                var passwordHasher = new PasswordHasher<Khachhang>();
+                var result = passwordHasher.VerifyHashedPassword(userAccount, userAccount.MatKhau, matkhau);
 
-				// Cấu hình thuộc tính authentication
-				var authProperties = new AuthenticationProperties
-				{
-					IsPersistent = rememberMe,
-					ExpiresUtc = rememberMe ? DateTimeOffset.UtcNow.AddDays(7) : (DateTimeOffset?)null
-				};
+                if (result == PasswordVerificationResult.Success)
+                {
+                    var claims = new List<Claim>
+                    {
+                        new Claim(ClaimTypes.Name, userAccount.TaiKhoanKh),
+                        new Claim("UserType", UserType.Customer.ToString())
+                    };
+                    var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+                    var principal = new ClaimsPrincipal(identity);
 
-				// Đăng nhập với cấu hình authProperties
-				await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal, authProperties);
-				return Json(new { success = true, redirectUrl = Url.Action("Index", "Home") });
-			}
-			else
-			{
-				return Json(new { success = false, message = "Tên đăng nhập hoặc mật khẩu không đúng." });
-			}
-		}
+                    var authProperties = new AuthenticationProperties
+                    {
+                        IsPersistent = rememberMe,
+                        ExpiresUtc = rememberMe ? DateTimeOffset.UtcNow.AddDays(7) : (DateTimeOffset?)null
+                    };
+
+                    await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal, authProperties);
+                    return Json(new { success = true, redirectUrl = Url.Action("Index", "Home") });
+                }
+            }
+
+            return Json(new { success = false, message = "Tên đăng nhập hoặc mật khẩu không đúng." });
+        }
+
+        #endregion
+
+        #region DangXuat
+        public async Task<IActionResult> DangXuat()
+        {
+            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            return RedirectToAction("DangNhap", "User");
+        }
+        #endregion
+
+        #region TaiKhoanCuaToi
+        public IActionResult TaiKhoanCuaToi()
+        {
+            return View();
+        }
+
+        [HttpGet]
+        public IActionResult LoadDoiMatKhau()
+        {
+            return PartialView("_DoiMatKhau");
+        }
+
+        [HttpGet]
+        public IActionResult LoadHoSo()
+        {
+            if (User.Identity.IsAuthenticated)
+            {
+                string taiKhoan = User.Identity.Name;
+                var khachhang = _db.Khachhangs.FirstOrDefault(k => k.TaiKhoanKh == taiKhoan);
+
+                if (khachhang != null)
+                {
+                    if (Request.Headers["X-Requested-With"] == "XMLHttpRequest")
+                    {
+                        return PartialView("_HoSo", khachhang);
+                    }
+                    return View(khachhang);
+                }
+            }
+            return View(null);
+        }
+        [HttpPost]
+        public IActionResult HoSo(Khachhang updatedKhachhang)
+        {
+            if (User.Identity.IsAuthenticated)
+            {
+                string taiKhoan = User.Identity.Name;
+                var khachhang = _db.Khachhangs.FirstOrDefault(k => k.TaiKhoanKh == taiKhoan);
+
+                if (khachhang != null)
+                {
+                    khachhang.HoTen = updatedKhachhang.HoTen;
+                    khachhang.DiaChiKh = updatedKhachhang.DiaChiKh;
+                    khachhang.DienThoaiKh = updatedKhachhang.DienThoaiKh;
+                    khachhang.NgaySinh = updatedKhachhang.NgaySinh;
+
+                    _db.SaveChanges();
+
+                    return Json(new { success = true });
+                }
+            }
+
+            return Json(new { success = false });
+        }
+
+        [HttpPost]
+        public JsonResult DoiMatKhau(string matKhauCu, string matKhauMoi)
+        {
+            try
+            {
+                if (User.Identity.IsAuthenticated)
+                {
+                    string taiKhoan = User.Identity.Name;
+                    var khachhang = _db.Khachhangs.FirstOrDefault(k => k.TaiKhoanKh == taiKhoan);
+
+                    if (khachhang != null)
+                    {
+                   
+                        var passwordHasher = new PasswordHasher<Khachhang>();
+                        var result = passwordHasher.VerifyHashedPassword(khachhang, khachhang.MatKhau, matKhauCu);
+
+                        if (result == PasswordVerificationResult.Success)
+                        {
+                       
+                            khachhang.MatKhau = passwordHasher.HashPassword(khachhang, matKhauMoi);
+                            _db.SaveChanges();
+                            return Json(new { success = true, message = "Đổi mật khẩu thành công!" });
+                        }
+                        else
+                        {
+                            return Json(new { success = false, message = "Mật khẩu cũ không chính xác." });
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            return Json(new { success = false, message = "Đã xảy ra lỗi khi đổi mật khẩu." });
+        }
 
 
+    #endregion
 
+        #region QuenMatKhau
+    [HttpGet]
+        public IActionResult QuenMatKhau()
+        {
+            // Lấy email từ session nếu có
+            var email = HttpContext.Session.GetString("Email");
+            ViewBag.Email = email; // Truyền email vào ViewBag
 
-		#endregion
+            return View();
+        }
 
-		#region DangXuat
-		public async Task<IActionResult> DangXuat()
-		{
-			await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
-			return RedirectToAction("DangNhap", "User");
-		}
-		#endregion
+        [HttpPost]
+        public async Task<IActionResult> QuenMatKhau(string email, string verificationCode, bool sendCode)
+        {
+            if (sendCode)
+            {
+                if (string.IsNullOrEmpty(email))
+                {
+                    ModelState.AddModelError("", "Email không được để trống.");
+                    return View();
+                }
 
-		#region TaiKhoanCuaToi
-		public IActionResult TaiKhoanCuaToi()
-		{
-			return View();
-		}
-		
-		[HttpGet]
-		public IActionResult LoadDoiMatKhau()
-		{
-			return PartialView("_DoiMatKhau");
-		}
+                // Kiểm tra nếu mã đã được gửi trong vòng 30 phút
+                var savedCode = HttpContext.Session.GetString("VerificationCode");
+                var codeCreationTime = HttpContext.Session.GetString("CodeCreationTime");
 
-		[HttpGet]
-		public IActionResult LoadHoSo()
-		{
-			if (User.Identity.IsAuthenticated)
-			{
-				string taiKhoan = User.Identity.Name;
-				var khachhang = _db.Khachhangs.FirstOrDefault(k => k.TaiKhoanKh == taiKhoan);
+                if (savedCode != null && codeCreationTime != null)
+                {
+                    var creationTime = DateTime.Parse(codeCreationTime);
+                    if (DateTime.UtcNow <= creationTime.AddMinutes(30))
+                    {
+                        ViewBag.Message = "Mã xác nhận đã được gửi. Vui lòng kiểm tra email của bạn.";
+                        ViewBag.Email = email; // Giữ lại email đã nhập
+                        return View();
+                    }
+                }
 
-				if (khachhang != null)
-				{
-					if (Request.Headers["X-Requested-With"] == "XMLHttpRequest")
-					{
-						return PartialView("_HoSo", khachhang);
-					}
-					return View(khachhang);
-				}
-			}
-			return View(null);
-		}
-		[HttpPost]
-		public IActionResult HoSo(Khachhang updatedKhachhang)
-		{
-			if (User.Identity.IsAuthenticated)
-			{
-				string taiKhoan = User.Identity.Name;
-				var khachhang = _db.Khachhangs.FirstOrDefault(k => k.TaiKhoanKh == taiKhoan);
+                var generatedCode = new Random().Next(100000, 999999).ToString();
+                HttpContext.Session.SetString("VerificationCode", generatedCode);
+                HttpContext.Session.SetString("Email", email);
+                HttpContext.Session.SetString("CodeCreationTime", DateTime.UtcNow.ToString());
 
-				if (khachhang != null)
-				{
-					khachhang.HoTen = updatedKhachhang.HoTen;
-					khachhang.DiaChiKh = updatedKhachhang.DiaChiKh;
-					khachhang.DienThoaiKh = updatedKhachhang.DienThoaiKh;
-					khachhang.NgaySinh = updatedKhachhang.NgaySinh;
+                var subject = "Mã xác nhận của bạn";
+                var message = BuildEmailContent(generatedCode);
 
-					_db.SaveChanges();
+                // Gửi email bất đồng bộ
+                await _emailSender.SendEmailAsync(email, subject, message);
+                ViewBag.Message = "Mã xác nhận đã được gửi đến email.";
+            }
+            else
+            {
+                var savedCode = HttpContext.Session.GetString("VerificationCode");
+                var codeCreationTime = HttpContext.Session.GetString("CodeCreationTime");
 
-					return Json(new { success = true });
-				}
-			}
+                if (savedCode == null || codeCreationTime == null)
+                {
+                    ViewBag.Message = "Mã xác nhận đã hết hiệu lực.";
+                    return View();
+                }
 
-			return Json(new { success = false });
-		}
+                var creationTime = DateTime.Parse(codeCreationTime);
+                if (DateTime.UtcNow > creationTime.AddMinutes(30))
+                {
+                    ViewBag.Message = "Mã xác nhận đã hết hiệu lực.";
+                    return View();
+                }
 
+                if (savedCode == verificationCode)
+                {
+                    return RedirectToAction("XacNhanMatKhau"); // Điều hướng tới trang nhập mật khẩu mới
+                }
+                else
+                {
+                    ViewBag.Message = "Mã xác nhận không đúng.";
+                }
+            }
 
-		[HttpPost]
-		public JsonResult DoiMatKhau(string matKhauCu, string matKhauMoi)
-		{
-			try
-			{
-				if (User.Identity.IsAuthenticated)
-				{
-					string taiKhoan = User.Identity.Name;
-					var khachhang = _db.Khachhangs.FirstOrDefault(k => k.TaiKhoanKh == taiKhoan);
+            ViewBag.Email = email;
+            return View();
+        }
 
-					if (khachhang != null && khachhang.MatKhau == matKhauCu) // So sánh mật khẩu cũ
-					{
-						khachhang.MatKhau = matKhauMoi; // Cập nhật mật khẩu mới
-						_db.SaveChanges();
-						return Json(new { success = true, message = "Đổi mật khẩu thành công!" });
-					}
-					else
-					{
-						return Json(new { success = false, message = "Mật khẩu cũ không chính xác." });
-					}
-				}
-			}
-			catch (Exception ex)
-			{
-				Console.WriteLine(ex.Message);
-			}
-			return Json(new { success = false, message = "Đã xảy ra lỗi khi đổi mật khẩu." });
-		}
+        [HttpGet]
+        public IActionResult XacNhanMatKhau()
+        {
+            return View();
+        }
 
-		#endregion
+        [HttpPost]
+        public async Task<IActionResult> XacNhanMatKhau(string newPassword, string confirmPassword)
+        {
+            if (newPassword != confirmPassword)
+            {
+                ModelState.AddModelError("", "Mật khẩu mới và xác nhận mật khẩu không khớp.");
+                return View();
+            }
 
-		#region QuenMatKhau
-		[HttpGet]
-		public IActionResult QuenMatKhau()
-		{
-			// Lấy email từ session nếu có
-			var email = HttpContext.Session.GetString("Email");
-			ViewBag.Email = email; // Truyền email vào ViewBag
+            var email = HttpContext.Session.GetString("Email");
+            if (email == null)
+            {
+                return RedirectToAction("QuenMatKhau"); 
+            }
 
-			return View();
-		}
+            var user = await _db.Khachhangs.FirstOrDefaultAsync(u => u.EmailKh == email);
+            if (user != null)
+            {
+                var passwordHasher = new PasswordHasher<Khachhang>();
+                user.MatKhau = passwordHasher.HashPassword(user, newPassword);
+                await _db.SaveChangesAsync();
+                return RedirectToAction("DangNhap", "User");
+            }
 
-		[HttpPost]
-		public async Task<IActionResult> QuenMatKhau(string email, string verificationCode, bool sendCode)
-		{
-			// Kiểm tra nếu gửi mã
-			if (sendCode)
-			{
-				if (string.IsNullOrEmpty(email))
-				{
-					ModelState.AddModelError("", "Email không được để trống.");
-					return View();
-				}
+            ModelState.AddModelError("", "Không thể đổi mật khẩu.");
+            return View();
+        }
 
-				// Kiểm tra nếu mã đã được gửi trong vòng 30 phút
-				var savedCode = HttpContext.Session.GetString("VerificationCode");
-				var codeCreationTime = HttpContext.Session.GetString("CodeCreationTime");
+        #endregion
 
-				if (savedCode != null && codeCreationTime != null)
-				{
-					var creationTime = DateTime.Parse(codeCreationTime);
-					if (DateTime.UtcNow <= creationTime.AddMinutes(30))
-					{
-						ViewBag.Message = "Mã xác nhận đã được gửi. Vui lòng kiểm tra email của bạn.";
-						ViewBag.Email = email; // Giữ lại email đã nhập
-						return View();
-					}
-				}
+        #region DonHang
+        public IActionResult DanhSachDonHang()
+        {
+            if (User.Identity.IsAuthenticated)
+            {
+                string tk = User.Identity.Name;
+                var kh = _db.Khachhangs.FirstOrDefault(k => k.TaiKhoanKh == tk);
+                if (kh != null)
+                {
+                    var dsDonHang = _db.Donhangs.Where(dh => dh.MaKh == kh.MaKh).Include(dh => dh.CtDonhangs).ToList();
+                    if (Request.Headers["X-Requested-With"] == "XMLHttpRequest")
+                    {
+                        return PartialView("_DonHangPartial", dsDonHang);
+                    }
+                    return View(dsDonHang);
+                }
 
-				// Tạo mã xác nhận mới
-				var generatedCode = new Random().Next(100000, 999999).ToString();
-				HttpContext.Session.SetString("VerificationCode", generatedCode);
-				HttpContext.Session.SetString("Email", email);
-				HttpContext.Session.SetString("CodeCreationTime", DateTime.UtcNow.ToString());
+            }
+            return RedirectToAction("DangNhap");
+        }
+        public IActionResult ChiTietDonHang(int id)
+        {
+            var donHang = _db.Donhangs.Include(dh => dh.CtDonhangs).ThenInclude(ct => ct.MaGiayNavigation)
+                             .FirstOrDefault(dh => dh.MaDonHang == id);
+            if (donHang == null)
+            {
+                return NotFound();
+            }
 
-				var subject = "Mã xác nhận của bạn";
-				var message = $"Mã xác nhận của bạn là {generatedCode}";
+            if (Request.Headers["X-Requested-With"] == "XMLHttpRequest")
+            {
+                return PartialView("_ChiTietDonHangPartial", donHang);
+            }
 
-				// Gửi email bất đồng bộ
-				await _emailSender.SendEmailAsync(email, subject, message);
-				ViewBag.Message = "Mã xác nhận đã được gửi đến email.";
-			}
-			else // Nếu người dùng nhấn nút "Xác nhận mã"
-			{
-				var savedCode = HttpContext.Session.GetString("VerificationCode");
-				var codeCreationTime = HttpContext.Session.GetString("CodeCreationTime");
+            return View(donHang);
+        }
 
-				if (savedCode == null || codeCreationTime == null)
-				{
-					ViewBag.Message = "Mã xác nhận đã hết hiệu lực.";
-					return View();
-				}
+        #endregion
 
-				var creationTime = DateTime.Parse(codeCreationTime);
-				if (DateTime.UtcNow > creationTime.AddMinutes(30))
-				{
-					ViewBag.Message = "Mã xác nhận đã hết hiệu lực.";
-					return View();
-				}
+        #region GetUserInfo
+        [HttpGet]
+        public IActionResult GetUserInfo()
+        {
+            if (User.Identity.IsAuthenticated)
+            {
+                string taiKhoan = User.Identity.Name;
+                var khachhang = _db.Khachhangs.FirstOrDefault(k => k.TaiKhoanKh == taiKhoan);
 
-				if (savedCode == verificationCode)
-				{
-					return RedirectToAction("XacNhanMatKhau"); // Điều hướng tới trang nhập mật khẩu mới
-				}
-				else
-				{
-					ViewBag.Message = "Mã xác nhận không đúng.";
-				}
-			}
+                if (khachhang != null)
+                {
+                    return Json(new
+                    {
+                        hoTen = khachhang.HoTen,
+                        email = khachhang.EmailKh, // Giả sử EmailKh là thuộc tính lưu email
+                        soDienThoai = khachhang.DienThoaiKh, // Giả sử DienThoaiKh là thuộc tính lưu số điện thoại
+                        diaChi = khachhang.DiaChiKh, // Giả sử DiaChiKh là thuộc tính lưu địa chỉ
+                    });
+                }
+            }
 
-			ViewBag.Email = email; // Đảm bảo truyền lại email vào ViewBag khi post dữ liệu
-			return View();
-		}
-
-		[HttpGet]
-		public IActionResult XacNhanMatKhau()
-		{
-			return View();
-		}
-
-		[HttpPost]
-		public async Task<IActionResult> XacNhanMatKhau(string newPassword, string confirmPassword)
-		{
-			if (newPassword != confirmPassword)
-			{
-				ModelState.AddModelError("", "Mật khẩu mới và xác nhận mật khẩu không khớp.");
-				return View();
-			}
-
-			var email = HttpContext.Session.GetString("Email");
-			if (email == null)
-			{
-				return RedirectToAction("QuenMatKhau"); // Điều hướng lại nếu không có email trong session
-			}
-
-			var user = await _db.Khachhangs.FirstOrDefaultAsync(u => u.EmailKh == email);
-			if (user != null)
-			{
-				user.MatKhau = newPassword;
-				await _db.SaveChangesAsync();
-				return RedirectToAction("DangNhap", "User");
-			}
-
-			ModelState.AddModelError("", "Không thể đổi mật khẩu.");
-			return View();
-		}
-		#endregion
-
-		#region DonHang
-		public IActionResult DanhSachDonHang()
-		{
-			if (User.Identity.IsAuthenticated)
-			{
-				string tk = User.Identity.Name;
-				var kh = _db.Khachhangs.FirstOrDefault(k => k.TaiKhoanKh == tk);
-				if (kh != null)
-				{
-					var dsDonHang = _db.Donhangs.Where(dh => dh.MaKh == kh.MaKh).Include(dh => dh.CtDonhangs).ToList();
-					if (Request.Headers["X-Requested-With"] == "XMLHttpRequest")
-					{
-						return PartialView("_DonHangPartial", dsDonHang);
-					}
-					return View(dsDonHang);
-				}
-
-			}
-			return RedirectToAction("DangNhap");
-		}
-		public IActionResult ChiTietDonHang(int id)
-		{
-			var donHang = _db.Donhangs.Include(dh => dh.CtDonhangs).ThenInclude(ct => ct.MaGiayNavigation)
-							 .FirstOrDefault(dh => dh.MaDonHang == id);
-			if (donHang == null)
-			{
-				return NotFound();
-			}
-
-			if (Request.Headers["X-Requested-With"] == "XMLHttpRequest")
-			{
-				return PartialView("_ChiTietDonHangPartial", donHang);
-			}
-
-			return View(donHang);
-		}
-
-		#endregion
-
-		#region GetUserInfo
-		[HttpGet]
-		public IActionResult GetUserInfo()
-		{
-			if (User.Identity.IsAuthenticated)
-			{
-				string taiKhoan = User.Identity.Name;
-				var khachhang = _db.Khachhangs.FirstOrDefault(k => k.TaiKhoanKh == taiKhoan);
-
-				if (khachhang != null)
-				{
-					return Json(new
-					{
-						hoTen = khachhang.HoTen,
-						email = khachhang.EmailKh, // Giả sử EmailKh là thuộc tính lưu email
-						soDienThoai = khachhang.DienThoaiKh, // Giả sử DienThoaiKh là thuộc tính lưu số điện thoại
-						diaChi = khachhang.DiaChiKh, // Giả sử DiaChiKh là thuộc tính lưu địa chỉ
-					});
-				}
-			}
-
-			return NotFound(); // Trả về 404 nếu không tìm thấy thông tin người dùng
-		}
-		#endregion
-	}
+            return NotFound(); // Trả về 404 nếu không tìm thấy thông tin người dùng
+        }
+        #endregion
+    }
 }
