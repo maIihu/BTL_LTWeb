@@ -36,4 +36,5 @@ public partial class Sanpham
     public virtual Nhacungcap? MaNccNavigation { get; set; }
 
     public virtual Thuonghieu? MaThuongHieuNavigation { get; set; }
+    public Boolean YeuThich { get; set; }
 }

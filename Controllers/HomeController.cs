@@ -34,8 +34,8 @@ namespace web1.Controllers
                            && (string.IsNullOrEmpty(thuongHieu) || th.TenThuongHieu.Contains(thuongHieu)) // Lọc theo tên thương hiệu
                            select new
                            {
-                               s, 
-                               TenThuongHieu = th.TenThuongHieu 
+                               s,
+                               TenThuongHieu = th.TenThuongHieu
                            };
 
             // Lọc theo khoảng giá
@@ -71,7 +71,7 @@ namespace web1.Controllers
         {
             int pageSize = 1;
             int pageNum = page == null || page < 0 ? 1 : page.Value;
-            List<Sanpham> lstsanpham = db.Sanphams.Where(x => x.MaThuongHieu == maThuongHieu).OrderBy(X=>X.TenGiay).ToList();
+            List<Sanpham> lstsanpham = db.Sanphams.Where(x => x.MaThuongHieu == maThuongHieu).OrderBy(X => X.TenGiay).ToList();
             PagedList<Sanpham> lst = new PagedList<Sanpham>(lstsanpham, pageNum, pageSize);
             ViewBag.MaThuongHieu = maThuongHieu;
             if (HttpContext.Request.Headers["X-Requested-With"] == "XMLHttpRequest")
@@ -153,6 +153,21 @@ namespace web1.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
-        
+        [HttpPost]
+        public IActionResult UpdateLike(int maGiay)
+        {
+            var sanPham = db.Sanphams.SingleOrDefault(x => x.MaGiay == maGiay);
+            if (sanPham != null)
+            {
+                sanPham.YeuThich = !sanPham.YeuThich; // Đổi trạng thái yêu thích
+                db.SaveChanges();
+
+
+                return Json(new { success = true });
+            }
+            return Json(new { success = false, message = "Sản phẩm không tồn tại." });
+        }
+
+
     }
 }
