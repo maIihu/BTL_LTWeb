@@ -27,17 +27,46 @@
                     <td>@dh.NgayDat?.ToString("dd/MM/yyyy")</td>
                     <td>@dh.NgayGiao?.ToString("dd/MM/yyyy")</td>
                     <td>@dh.TongTien?.ToString("C")</td>
-                    <td>@(dh.TinhTrangGiaoHang == true ? "Đã giao" : "Chưa giao")</td>
+                    <td>
+                        <span class="badge @(dh.TinhTrangGiaoHang == true ? "badge-success" : "badge-warning")">
+                            @(dh.TinhTrangGiaoHang == true ? "Đã giao" : "Chưa giao")
+                        </span>
+                    </td>
                     <td>@dh.MaKhNavigation?.HoTen</td>
                     <td>
                         <a href="@Url.Action("ChiTietDonHang", "QuanLyDonHang", new { id = dh.MaDonHang, area = "admin" })" class="btn btn-info btn-sm">Xem chi tiết</a>
-                        <form action="@Url.Action("XoaDonHang", "QuanLyDonHang", new { id = dh.MaDonHang, area = "admin" })" method="post" style="display:inline;">
-                            <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Bạn có chắc chắn muốn xóa đơn hàng này?');">Xóa</button>
-                        </form>
+                        <button type="button" class="btn btn-danger btn-sm" onclick="confirmDelete('@dh.MaDonHang')">Xóa</button>
                     </td>
-
                 </tr>
             }
         </tbody>
     </table>
 </div>
+
+<script>
+    function confirmDelete(orderId) {
+        if (confirm('Bạn có chắc chắn muốn xóa đơn hàng này?')) {
+            const form = document.createElement('form');
+            form.method = 'post';
+            form.action = `@Url.Action("XoaDonHang", "QuanLyDonHang", new { area = "admin" })?id=${orderId}`;
+            document.body.appendChild(form);
+            form.submit();
+        }
+    }
+</script>
+
+<style>
+    .badge-success, .badge-warning {
+        background-color: #28a745; 
+        color: white;
+        padding: 5px 10px;
+        border-radius: 4px;
+        font-size: 1.1em;
+        font-weight: bold;
+    }
+
+    .badge-warning {
+        background-color: #ffc107;
+        color: black;
+    }
+</style>
