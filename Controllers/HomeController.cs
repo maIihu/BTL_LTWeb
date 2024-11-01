@@ -149,20 +149,6 @@ namespace web1.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
-
-        [HttpPost]
-        public IActionResult UpdateLike(int maGiay)
-        {
-            var sanPham = db.Sanphams.SingleOrDefault(x => x.MaGiay == maGiay);
-            if (sanPham != null)
-            {
-                sanPham.YeuThich = !sanPham.YeuThich; // Đổi trạng thái yêu thích
-                db.SaveChanges();
-                return Json(new { success = true });
-            }
-            return Json(new { success = false, message = "Sản phẩm không tồn tại." });
-        }
-
-
+        
     }
 }

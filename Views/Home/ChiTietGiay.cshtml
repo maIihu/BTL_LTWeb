@@ -31,10 +31,9 @@
 
                 <div class="d-flex flex-column mt-3">
                     <button type="button" class="btn btn-success rounded-pill btn-lg" style="width: 100%;" onclick="addToCart()">Thêm vào giỏ hàng</button>
-                    <button id="add-to-favorites" type="button" class="btn btn-outline-danger rounded-pill mt-2" style="width: 50px; height: 50px;" onclick="toggleFavorite()">
-                        <i class="@(Model.YeuThich ? "fas" : "far") fa-heart"></i>
+                    <button id="add-to-favorites" type="button" class="btn btn-outline-danger rounded-pill mt-2" style="width: 50px; height: 50px;">
+                        <i class="fas fa-heart"></i>
                     </button>
-
                 </div>
 
             </form>
@@ -86,31 +85,4 @@
             }
          });
     }
-
-    function toggleFavorite() {
-        var maGiay = $('#maGiay').val();
-
-        $.ajax({
-            url: '@Url.Action("UpdateLike", "Home")', // Đường dẫn đến action xử lý yêu thích
-            type: 'POST',
-            data: { maGiay: maGiay },
-            success: function (response) {
-                if (response.success) {
-                    // Đổi biểu tượng trái tim
-                    var heartIcon = $('#add-to-favorites').find('i');
-                    if (heartIcon.hasClass('far')) {
-                        heartIcon.removeClass('far').addClass('fas text-danger'); // Đổi sang trái tim đầy màu đỏ
-                    } else {
-                        heartIcon.removeClass('fas text-danger').addClass('far'); // Đổi sang trái tim rỗng
-                    }
-                } else {
-                    alert('Không thể cập nhật trạng thái yêu thích.');
-                }
-            },
-            error: function () {
-                alert('Có lỗi xảy ra. Vui lòng thử lại.');
-            }
-        });
-    }
-
 </script>
