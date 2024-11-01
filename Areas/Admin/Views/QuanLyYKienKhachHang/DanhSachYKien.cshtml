@@ -1,0 +1,83 @@
+﻿@{
+	ViewBag.Title = "Quản lý ý kiến khách hàng";
+	Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@model IEnumerable<web1.Models.Ykienkhachhang>
+
+<div class="container mt-4">
+	<h2 class="text-center mb-4">DANH SÁCH Ý KIẾN KHÁCH HÀNG</h2>
+
+	<div class="table-responsive">
+		<table class="table table-bordered table-striped table-hover">
+			<thead class="thead-dark text-center">
+				<tr>
+					<th scope="col">Mã ý kiến</th>
+					<th scope="col">Email</th>
+					<th scope="col">Nội dung</th>
+					<th scope="col">Thao tác</th>
+				</tr>
+			</thead>
+			<tbody>
+				@foreach (var s in Model)
+				{
+					<tr>
+						<td class="text-center">@s.Maykien</td>
+						<td>@s.Email</td>
+						<td class="text-truncate" style="max-width: 300px;">@s.NoiDung</td>
+						<td class="text-center">
+							<form asp-action="XacNhanXoa" asp-route-id="@s.Maykien" method="post">
+								@Html.AntiForgeryToken()
+								<a href="@Url.Action("ChiTietYKien", new { id = s.Maykien })" class="btn btn-info">Chi Tiết</a>
+								<button type="button" onclick="confirmDelete(@s.Maykien)" class="btn btn-danger">Xóa</button>
+							</form>
+
+						</td>
+
+					</tr>
+				}
+			</tbody>
+		</table>
+	</div>
+	<!-- Phân trang -->
+	<nav aria-label="Page navigation" class="mt-3">
+		<ul class="pagination justify-content-center">
+			@for (int i = 1; i <= ViewBag.TotalPages; i++)
+			{
+				<li class="page-item @(ViewBag.CurrentPage == i ? "active" : "")">
+					<a class="page-link" href="@Url.Action("DanhSachYKien", new { page = i })">@i</a>
+				</li>
+			}
+		</ul>
+	</nav>
+</div>
+
+
+
+@section Scripts {
+	<script>
+		// Định nghĩa hàm confirmDelete để gọi từ nút "Xóa"
+		function confirmDelete(id) {
+			// Xác nhận trước khi thực hiện xóa
+			if (confirm("Bạn có chắc chắn muốn xóa ý kiến này?")) {
+				$.ajax({
+					url: '/Admin/QuanLyYKienKhachHang/XacNhanXoa/' + id, // Đường dẫn tới action XacNhanXoa
+					type: 'POST',
+					success: function (response) {
+						if (response.success) {
+							alert(response.message);
+							location.reload(); // Tải lại trang sau khi xóa thành công
+						} else {
+							alert(response.message);
+						}
+					},
+					error: function () {
+						alert("Đã xảy ra lỗi khi xóa ý kiến.");
+					}
+				});
+			}
+		}
+	</script>
+}
+
+
