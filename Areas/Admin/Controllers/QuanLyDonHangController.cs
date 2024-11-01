@@ -31,7 +31,7 @@ namespace web1.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        [Route("xoa-don-hang/{id}")]
+        [Route("xoadonhang/{id}")]
         public IActionResult XoaDonHang(int id)
         {
             var donHang = _db.Donhangs.Include(dh => dh.CtDonhangs)
@@ -44,7 +44,7 @@ namespace web1.Areas.Admin.Controllers
             _db.Donhangs.Remove(donHang);
             _db.SaveChanges();
             TempData["SuccessMessage"] = "Đơn hàng đã được xóa thành công.";
-            return RedirectToAction("DanhSachDonHang");
+            return RedirectToAction("DonHang");
         }
         #endregion
 
