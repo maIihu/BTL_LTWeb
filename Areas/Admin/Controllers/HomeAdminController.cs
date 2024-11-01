@@ -8,7 +8,6 @@ using X.PagedList;
 using Microsoft.AspNetCore.Authorization;
 using Humanizer;
 
-
 namespace web1.Areas.Admin.Controllers
 {
     //[Authorize] // đảm bảo đăng nhập mới vào được
@@ -64,10 +63,26 @@ namespace web1.Areas.Admin.Controllers
         [Route("Themsanphammoi")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult ThemSanPhamMoi(Sanpham sanPham)
+        public async Task<IActionResult> ThemSanPhamMoiAsync(Sanpham sanPham, IFormFile AnhBia)
         {
             if (ModelState.IsValid)
             {
+                if (AnhBia != null && AnhBia.Length > 0)
+                {
+                    var filePath = Path.Combine("wwwroot/img/AnhGiay", AnhBia.FileName);
+
+                    Console.WriteLine(filePath.ToString());
+                    using (var stream = new FileStream(filePath, FileMode.Create))
+                    {
+                        await AnhBia.CopyToAsync(stream);
+                    }
+                    sanPham.AnhBia = AnhBia.FileName;
+                }
+                else
+                {
+                    ModelState.AddModelError("AnhBia", "Bạn cần chọn một ảnh.");
+                    return View(sanPham);
+                }
                 db.Sanphams.Add(sanPham);
                 db.SaveChanges();
                 return RedirectToAction("DanhMucSanPham");
