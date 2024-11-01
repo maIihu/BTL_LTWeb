@@ -93,3 +93,17 @@
     EllipsesElementClass = "page-item"
 })
 </div>
+
+@{
+    var message = TempData["Message"] as string;
+}
+
+<!-- Nội dung View -->
+@if (!string.IsNullOrEmpty(message))
+{
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            alert("Sản phẩm đã được xóa"); 
+        });
+    </script>
+}
