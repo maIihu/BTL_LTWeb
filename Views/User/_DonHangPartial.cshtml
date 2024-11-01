@@ -1,6 +1,6 @@
 ﻿@model IEnumerable<web1.Models.Donhang>
 
-<table class="table table-bordered table-striped">
+<table class="table table-bordered table-striped text-center">
     <thead class="thead-dark">
         <tr>
             <th scope="col">Mã đơn hàng</th>
@@ -19,7 +19,11 @@
                 <tr>
                     <td>@donHang.MaDonHang</td>
                     <td>@donHang.NgayDat?.ToString("dd/MM/yyyy")</td>
-                    <td>@(donHang.TinhTrangGiaoHang == true ? "Đã giao" : "Chưa giao")</td>
+                    <td>
+                        <span class="status-badge @(donHang.TinhTrangGiaoHang == true ? "badge-delivered" : "badge-pending")">
+                            @(donHang.TinhTrangGiaoHang == true ? "Đã giao" : "Chưa giao")
+                        </span>
+                    </td>
                     <td>@donHang.NgayGiao?.ToString("dd/MM/yyyy")</td>
                     <td>@donHang.TongTien?.ToString("C")</td>
                     <td>
@@ -36,3 +40,23 @@
         }
     </tbody>
 </table>
+
+<style>
+    .status-badge {
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-weight: bold;
+        color: white;
+        display: inline-block;
+        text-align: center;
+        min-width: 70px; /* Đặt chiều rộng tối thiểu để dễ căn giữa */
+    }
+
+    .badge-delivered {
+        background-color: red;
+    }
+
+    .badge-pending {
+        background-color: green;
+    }
+</style>

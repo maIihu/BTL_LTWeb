@@ -77,7 +77,7 @@ namespace web1.Controllers
 				var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
 				var principal = new ClaimsPrincipal(identity);
 				await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
-				return Json(new { success = true, redirectUrl = Url.Action("Index", "HomeAdmin", new { area = "Admin" }) });
+				return Json(new { success = true, redirectUrl = Url.Action("TrangChu", "HomeAdmin", new { area = "Admin" }) });
 			}
 			else if (userAccount != null)
 			{

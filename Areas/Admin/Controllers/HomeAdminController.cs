@@ -23,9 +23,8 @@ namespace web1.Areas.Admin.Controllers
 		{
 			_db = db;
 		}
-		[Route("")]
-		[Route("index")]
-		public IActionResult Index()
+		[Route("trangchu")]
+		public IActionResult TrangChu()
 		{
 			return View();
 		}
@@ -129,25 +128,6 @@ namespace web1.Areas.Admin.Controllers
 			TempData["Message"] = "Sản phẩm đã được xóa";
 			return RedirectToAction("DanhMucSanPham", "HomeAdmin");
 		}
-		[Route("hoso")]
-		public IActionResult HoSo()
-		{
-			if (User.Identity.IsAuthenticated && User.HasClaim("IsAdmin", "true"))
-			{
-				string adminAccount = User.Identity.Name;
-				var admin = _db.Quanlies.FirstOrDefault(a => a.TaiKhoanQl == adminAccount);
-
-				if (admin != null)
-				{
-					return View(admin);
-				}
-			}
-
-			ViewBag.ErrorMessage = "Không tìm thấy thông tin admin.";
-			return View(null);
-		}
-
-
 
 		[HttpPost]
 		[Route("xoa-don-hang/{id}")]
