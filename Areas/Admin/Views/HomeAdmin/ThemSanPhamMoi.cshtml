@@ -6,9 +6,8 @@
     Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h1>ThemSanPhamMoi</h1>
+<h1>Thêm sản phẩm mới</h1>
 
-<h4>Sanpham</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -63,13 +62,13 @@
                 <span asp-validation-for="SoLuongTon" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Thêm mới" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="DanhMucSanPham">Quay lại danh sách</a>
 </div>
 
