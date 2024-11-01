@@ -1,0 +1,55 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+@model IEnumerable<web1.Models.Quanly>
+<h1>Danh sách quản lý</h1>
+
+<button id="createManagerBtn" class="btn btn-success" onclick="loadCreateManagerForm()">Tạo quản lý</button>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>STT</th>
+            <th>Tài khoản</th>
+            <th>Họ tên</th>
+            <th>Email</th>
+            <th>Điện thoại</th>
+            <th>Trạng thái</th>
+            <th>Avatar</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var quanLy in Model)
+        {
+            <tr>
+                <td>@(Model.ToList().IndexOf(quanLy) + 1)</td>
+                <td>@quanLy.TaiKhoanQl</td>
+                <td>@quanLy.HoTen</td>
+                <td>@quanLy.EmailQl</td>
+                <td>@quanLy.DienThoaiQl</td>
+                <td>@(quanLy.TrangThai == true ? "Kích hoạt" : "Không kích hoạt")</td>
+                <td>
+                    <img src="@quanLy.Avatar" alt="Avatar" style="width:50px;height:50px;" />
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div id="createManagerForm" style="display:none;"></div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    function loadCreateManagerForm() {
+        $.get('@Url.Action("Create", "QuanLys")', function (data) {
+            $('#createManagerForm').html(data);
+            $('#createManagerForm').show();
+        }).fail(function () {
+            alert("Có lỗi xảy ra khi tải form tạo quản lý.");
+        });
+    }
+</script>
+
+

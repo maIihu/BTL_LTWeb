@@ -1,0 +1,102 @@
+﻿@model web1.Models.Quanly
+@{
+    ViewData["Title"] = "Tạo quản lý mới";
+}
+
+<h2>Tạo quản lý mới</h2>
+
+@if (!ViewData.ModelState.IsValid)
+{
+    <div class="alert alert-danger">
+        <strong>Có lỗi xảy ra!</strong><br />
+        @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+        {
+            @error.ErrorMessage
+
+            <br />
+        }
+    </div>
+}
+
+<form action="@Url.Action("Create", "QuanLys", new { area = "Admin" })" method="post">
+    <div class="form-group">
+        <label>Tài khoản</label>
+        <input type="text" name="TaiKhoanQl" class="form-control" required />
+    </div>
+    <div class="form-group">
+        <label>Mật khẩu</label>
+        <input type="password" name="MatKhau" class="form-control" required />
+    </div>
+    <div class="form-group">
+        <label>Họ tên</label>
+        <input type="text" name="HoTen" class="form-control" required />
+    </div>
+    <div class="form-group">
+        <label>Email</label>
+        <input type="email" name="EmailQl" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Điện thoại</label>
+        <input type="text" name="DienThoaiQl" class="form-control" />
+    </div>
+
+    <h3>Quyền</h3>
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" name="PhanQuyen" value="Admin" id="phq_Admin" />
+        <label class="form-check-label" for="phq_Admin">
+            Quản lý Admin
+        </label>
+    </div>
+
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" name="PhanQuyen" value="NhaCungCap" id="phq_NhaCungCap" />
+        <label class="form-check-label" for="phq_NhaCungCap">
+            Quản lý Nhà Cung Cấp
+        </label>
+    </div>
+
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" name="PhanQuyen" value="SanPham" id="phq_SanPham" />
+        <label class="form-check-label" for="phq_SanPham">
+            Quản lý Sản Phẩm
+        </label>
+    </div>
+
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" name="PhanQuyen" value="ThuongHieu" id="phq_ThuongHieu" />
+        <label class="form-check-label" for="phq_ThuongHieu">
+            Quản lý Thương Hiệu
+        </label>
+    </div>
+
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" name="PhanQuyen" value="LoaiGiay" id="phq_LoaiGiay" />
+        <label class="form-check-label" for="phq_LoaiGiay">
+            Quản lý Loại Giày
+        </label>
+    </div>
+
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" name="PhanQuyen" value="DonHang" id="phq_DonHang" />
+        <label class="form-check-label" for="phq_DonHang">
+            Quản lý Đơn Hàng
+        </label>
+    </div>
+
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" name="PhanQuyen" value="KhachHang" id="phq_KhachHang" />
+        <label class="form-check-label" for="phq_KhachHang">
+            Quản lý Khách Hàng
+        </label>
+    </div>
+
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" name="PhanQuyen" value="YKienKhachHang" id="phq_YKienKhachHang" />
+        <label class="form-check-label" for="phq_YKienKhachHang">
+            Quản lý Ý Kiến Khách Hàng
+        </label>
+    </div>
+
+
+    <button type="submit" class="btn btn-primary">Tạo quản lý</button>
+</form>
