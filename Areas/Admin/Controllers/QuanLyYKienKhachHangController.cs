@@ -18,6 +18,7 @@ namespace web1.Areas.Admin.Controllers
         {
             _db = db;
         }
+
         // Danh sách ý kiến khách hàng
         [HttpGet("DanhSach")]
         public async Task<IActionResult> DanhSachYKien(int page = 1)
