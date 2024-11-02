@@ -137,16 +137,29 @@ namespace web1.Controllers
         public async Task<IActionResult> DangNhap(string taikhoan, string matkhau, bool rememberMe)
         {
             var adminAccount = _db.Quanlies.SingleOrDefault(a => a.TaiKhoanQl == taikhoan);
+            var employeeAccount = _db.NhanViens.SingleOrDefault(a => a.TaiKhoan == taikhoan );
             var userAccount = _db.Khachhangs.SingleOrDefault(a => a.TaiKhoanKh == taikhoan);
 
             // Kiểm tra tài khoản quản lý (admin)
-            if (adminAccount != null && adminAccount.MatKhau == matkhau) // Nếu bạn vẫn muốn dùng mật khẩu không hash cho admin
+            if (adminAccount != null && adminAccount.MatKhau == matkhau) 
             {
                 var claims = new List<Claim>
                 {
                     new Claim(ClaimTypes.Name, adminAccount.TaiKhoanQl),
                     new Claim("UserType", UserType.Admin.ToString()),
                     new Claim("IsAdmin", "true")
+                };
+                var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+                var principal = new ClaimsPrincipal(identity);
+                await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
+                return Json(new { success = true, redirectUrl = Url.Action("TrangChu", "HomeAdmin", new { area = "Admin" }) });
+            }
+            else if(employeeAccount != null && employeeAccount.MatKhau == matkhau)
+            {
+                var claims = new List<Claim>
+                {
+                    new Claim(ClaimTypes.Name, employeeAccount.TaiKhoan),
+                    new Claim("UserType", UserType.Admin.ToString())
                 };
                 var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
                 var principal = new ClaimsPrincipal(identity);
