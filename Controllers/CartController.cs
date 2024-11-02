@@ -173,62 +173,38 @@ namespace web1.Controllers
                 return Json(new { success = false, message = "Không tìm thấy sản phẩm để xóa." });
             }
         }
-        #endregion
+		#endregion
 
-        #region ThemSlTrongGio
-        [HttpPost]
-        public JsonResult UpdateQuantity(int maGiay, int soLuong)
-        {
-            try
-            {
-                // Lấy tên đăng nhập từ Claims
-                var currentUserName = User.Identity.Name;
-                if (string.IsNullOrEmpty(currentUserName))
-                {
-                    return Json(new { success = false, message = "Người dùng chưa đăng nhập." });
-                }
+		#region ThemSlTrongGio
+		[HttpPost]
+		public IActionResult UpdateQuantity(int maGiay, int soLuong)
+		{
+			try
+			{
+				// Tìm sản phẩm trong giỏ hàng và cập nhật số lượng
+				var item = _db.CtDonhangs.FirstOrDefault(i => i.MaGiay == maGiay);
+				if (item == null) return Json(new { success = false });
 
-                // Tìm người dùng dựa trên tên đăng nhập
-                var currentUser = _db.Khachhangs.FirstOrDefault(u => u.TaiKhoanKh == currentUserName);
-                if (currentUser == null)
-                {
-                    return Json(new { success = false, message = "Không tìm thấy người dùng." });
-                }
+				item.SoLuong = soLuong;
+				_db.SaveChanges();
 
-                // Tìm hóa đơn hiện tại (chưa giao hàng) của người dùng
-                var currentOrder = _db.Donhangs.FirstOrDefault(o => o.MaKh == currentUser.MaKh && o.TinhTrangGiaoHang == null);
-                if (currentOrder == null)
-                {
-                    return Json(new { success = false, message = "Không tìm thấy hóa đơn hiện tại." });
-                }
+				// Tính tổng tiền mới
+				var tongTien = _db.CtDonhangs
+					.Where(i => i.MaDonHang == item.MaDonHang)
+					.Sum(i => i.GiaLucBan * i.SoLuong);
 
-                // Tìm sản phẩm trong chi tiết hóa đơn
-                var cartItem = _db.CtDonhangs.FirstOrDefault(item => item.MaGiay == maGiay && item.MaDonHang == currentOrder.MaDonHang);
-                if (cartItem != null)
-                {
-                    cartItem.SoLuong = soLuong;
-                    cartItem.ThanhTien = cartItem.GiaLucBan * soLuong;
-                    _db.SaveChanges();
-                    currentOrder.TongTien = _db.CtDonhangs
-                                            .Where(c => c.MaDonHang == currentOrder.MaDonHang)
-                                            .Sum(c => c.ThanhTien);
-                    _db.SaveChanges();
-                    return Json(new { success = true, message = "Cập nhật số lượng thành công." });
-                }
-                else
-                {
-                    return Json(new { success = false, message = "Không tìm thấy sản phẩm trong giỏ hàng." });
-                }
-            }
-            catch (Exception ex)
-            {
-                return Json(new { success = false, message = ex.Message });
-            }
-        }
-        #endregion
+				return Json(new { success = true, tongTien, unitPrice = item.GiaLucBan });
+			}
+			catch
+			{
+				return Json(new { success = false });
+			}
+		}
 
-        #region Checkout
-        [HttpPost]
+		#endregion
+
+		#region Checkout
+		[HttpPost]
         public IActionResult Checkout([FromBody] List<CtDonhang> cartItems)
         {
             var currentUserName = User.Identity.Name;
